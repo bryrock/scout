@@ -52,7 +52,7 @@ function scout_trails_entity_info() {
     'label callback' => 'entity_class_label',
 //    'creation callback' => 'scout_trail_create', // Don't define, use controller default.
     'access callback' => 'scout_trails_access',
-    'module' => 'scout_tours',
+    'module' => 'scout_trails',
     // The information below is used by the ScoutTrailUIController (which extends the EntityDefaultUIController)
     'views controller class' => 'EntityDefaultViewsController',
     // Enable the entity API's admin UI.
@@ -78,7 +78,7 @@ function scout_trails_entity_info() {
       'label' => 'label',
     ),
     'access callback' => 'scout_trails_type_access',
-    'module' => 'scout_tours',
+    'module' => 'scout_trails',
     // Enable the entity API's admin UI.
     'admin ui' => array(
       'path' => 'admin/structure/scout/scout-trail-types',
@@ -110,7 +110,7 @@ function scout_trails_entity_info() {
     'label callback' => 'entity_class_label',
 //    'creation callback' => 'scout_trail_create', // Don't define, use controller default.
     'access callback' => 'scout_trails_access',
-    'module' => 'scout_tours',
+    'module' => 'scout_trails',
     // The information below is used by the ScoutTipUIController (which extends the EntityDefaultUIController)
     'views controller class' => 'EntityDefaultViewsController',
     // Enable the entity API's admin UI.
@@ -140,7 +140,7 @@ function scout_trails_entity_info() {
       'label' => 'label',
     ),
     'access callback' => 'scout_trails_type_access',
-    'module' => 'scout_tours',
+    'module' => 'scout_trails',
     // Enable the entity API's admin UI.
     'admin ui' => array(
       'path' => 'admin/structure/scout/scout-tip-types',
@@ -406,7 +406,7 @@ function scout_tips_default_entity($type) {
 /**
  * Implements hook_forms().
  *
- * All scout_tours forms share the same form handler.
+ * All scout_trails forms share the same form handler.
  */
 function scout_trails_forms() {
   $forms = array();

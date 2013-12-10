@@ -19,7 +19,7 @@ function scout_trails_entity_property_info() {
     'description' => t('The internal numeric ID of the trail.'),
     'type' => 'integer',
     'setter callback' => 'entity_property_verbatim_set',
-    'setter permission' => 'admin scout tours',
+    'setter permission' => 'admin scout trails',
     'required' => TRUE,
     'schema field' => 'trail_id',
   );
@@ -36,17 +36,17 @@ function scout_trails_entity_property_info() {
     'type' => 'token',
     'description' => t("The language the node is written in."),
     'setter callback' => 'entity_property_verbatim_set',
-    'setter permission' => 'admin scout tours',
+    'setter permission' => 'admin scout trails',
     'options list' => 'entity_metadata_language_list',
     'schema field' => 'language',
-    'setter permission' => 'admin scout tours',
+    'setter permission' => 'admin scout trails',
   );
   $properties['title'] = array(
     'label' => t('Trail Name'),
     'description' => t('The trail name displayed for this trail.'),
     'type' => 'text',
     'setter callback' => 'entity_property_verbatim_set',
-    'setter permission' => 'admin scout tours',
+    'setter permission' => 'admin scout trails',
     'required' => TRUE,
     'schema field' => 'title',
   );
@@ -55,7 +55,7 @@ function scout_trails_entity_property_info() {
     'description' => t('A decription of this scout trail, for admin purposes.'),
     'type' => 'text',
     'setter callback' => 'entity_property_verbatim_set',
-    'setter permission' => 'admin scout tours',
+    'setter permission' => 'admin scout trails',
     'required' => TRUE,
     'schema field' => 'description',
   );
@@ -64,7 +64,7 @@ function scout_trails_entity_property_info() {
     'type' => 'integer',
     'description' => t('The author of this trail'),
     'setter callback' => 'entity_property_verbatim_set',
-    'setter permission' => 'admin scout tours',
+    'setter permission' => 'admin scout trails',
     'required' => TRUE,
     'schema field' => 'uid',
   );
@@ -76,7 +76,7 @@ function scout_trails_entity_property_info() {
     'type' => 'integer',
     'options list' => 'entity_metadata_status_options_list',
     'setter callback' => 'entity_property_verbatim_set',
-    'setter permission' => 'admin scout tours',
+    'setter permission' => 'admin scout trails',
     'schema field' => 'published',
   );
   $properties['created'] = array(
@@ -84,7 +84,7 @@ function scout_trails_entity_property_info() {
     'type' => 'date',
     'description' => t("The date the scout trail was posted."),
     'setter callback' => 'entity_property_verbatim_set',
-    'setter permission' => 'admin scout tours',
+    'setter permission' => 'admin scout trails',
     'schema field' => 'created',
   );
   $properties['changed'] = array(
@@ -92,7 +92,7 @@ function scout_trails_entity_property_info() {
     'type' => 'date',
     'schema field' => 'changed',
     'setter callback' => 'entity_property_verbatim_set',
-    'setter permission' => 'admin scout tours',
+    'setter permission' => 'admin scout trails',
     'description' => t("The date the scout trail was most recently updated."),
   );
   $properties['status'] = array(
@@ -111,7 +111,7 @@ function scout_trails_entity_property_info() {
     'type' => 'integer',
     'required' => TRUE,
     'setter callback' => 'entity_property_verbatim_set',
-    'setter permission' => 'admin scout tours',
+    'setter permission' => 'admin scout trails',
     'schema field' => 'tip_id',
   );
   $properties['type'] = array(
@@ -119,7 +119,7 @@ function scout_trails_entity_property_info() {
     'description' => t('The human readable name of the scout tip type.'),
     'type' => 'token',
     'setter callback' => 'entity_property_verbatim_set',
-    'setter permission' => 'admin scout tours',
+    'setter permission' => 'admin scout trails',
     'required' => TRUE,
     'schema field' => 'type',
   );
@@ -128,7 +128,7 @@ function scout_trails_entity_property_info() {
     'type' => 'token',
     'description' => t("The language the node is written in."),
     'setter callback' => 'entity_property_verbatim_set',
-    'setter permission' => 'admin scout tours',
+    'setter permission' => 'admin scout trails',
     'options list' => 'entity_metadata_language_list',
     'schema field' => 'language',
   );
@@ -137,7 +137,7 @@ function scout_trails_entity_property_info() {
     'description' => t('The title displayed for this scout tip.'),
     'type' => 'text',
     'setter callback' => 'entity_property_verbatim_set',
-    'setter permission' => 'admin scout tours',
+    'setter permission' => 'admin scout trails',
     'required' => TRUE,
     'schema field' => 'title',
   );
@@ -146,7 +146,7 @@ function scout_trails_entity_property_info() {
     'type' => 'integer',
     'description' => t('The author of this scout tip'),
     'setter callback' => 'entity_property_verbatim_set',
-    'setter permission' => 'admin scout tours',
+    'setter permission' => 'admin scout trails',
     'required' => true,
     'schema field' => 'uid',
   );
@@ -158,7 +158,7 @@ function scout_trails_entity_property_info() {
     'type' => 'integer',
     'options list' => 'entity_metadata_status_options_list',
     'setter callback' => 'entity_property_verbatim_set',
-    'setter permission' => 'admin scout tours',
+    'setter permission' => 'admin scout trails',
     'schema field' => 'published',
   );
   $properties['created'] = array(
@@ -166,7 +166,7 @@ function scout_trails_entity_property_info() {
     'type' => 'date',
     'description' => t("The date the scout tip was posted."),
     'setter callback' => 'entity_property_verbatim_set',
-    'setter permission' => 'admin scout tours',
+    'setter permission' => 'admin scout trails',
     'schema field' => 'created',
   );
   $properties['changed'] = array(
@@ -175,7 +175,7 @@ function scout_trails_entity_property_info() {
     'schema field' => 'changed',
     'description' => t("The date the scout tip was most recently updated."),
     'setter callback' => 'entity_property_verbatim_set',
-    'setter permission' => 'admin scout tours',
+    'setter permission' => 'admin scout trails',
   );
   $properties['status'] = array(
     'label' => t("Export Status"),

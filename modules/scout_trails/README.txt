@@ -1,1 +1,1 @@
-This is the Read Me file for Scout Tours.
+This is the Read Me file for Scout Trails.

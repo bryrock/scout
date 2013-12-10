@@ -112,7 +112,7 @@ class scout_context_reaction_trail extends context_reaction {
 	        $scout_tip_content[] = scout_tip_load($key['target_id'], FALSE);
         }
         // Preprocess trail stops into (html) trail content for theming and Joyride library jquery
-        $trail_content = scout_tours_markup_scout_trail($scout_tip_content);
+        $trail_content = scout_trails_markup_scout_trail($scout_tip_content);
 
         // Build the jquery settings with our completed content and context settings.
         $js_settings = array(
