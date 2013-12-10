@@ -1,1 +1,11 @@
 name = Scout
+description = Navigational Assistance with Joyride
+core = 7.x
+package = Scout
+php = 5.2.4
+dependencies[] = context
+dependencies[] = libraries (>=7.x-2.0)
+features[ctools][] = context:context:3
+features[features_api][] = api:2
+features_exclude[dependencies][ctools] = ctools
+project path = sites/scout1/modules/scout/
