@@ -40,7 +40,7 @@ function scout_trails_default_scout_tip() {
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
-    "module" : "scout_tours",
+    "module" : "scout_trails",
     "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
     "field_scout_tip_button_text" : { "und" : [ { "value" : "Next", "format" : null, "safe_value" : "Next" } ] },
     "field_scout_tip_class" : { "und" : [
@@ -79,7 +79,7 @@ function scout_trails_default_scout_tip() {
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
-    "module" : "scout_tours",
+    "module" : "scout_trails",
     "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
     "field_scout_tip_button_text" : { "und" : [ { "value" : "Next", "format" : null, "safe_value" : "Next" } ] },
     "field_scout_tip_class" : { "und" : [
@@ -122,7 +122,7 @@ function scout_trails_default_scout_tip() {
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
-    "module" : "scout_tours",
+    "module" : "scout_trails",
     "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
     "field_scout_tip_button_text" : { "und" : [
         {
@@ -172,7 +172,7 @@ function scout_trails_default_scout_tip() {
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
-    "module" : "scout_tours",
+    "module" : "scout_trails",
     "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
     "field_scout_tip_button_text" : { "und" : [
         { "value" : "Do it Now!", "format" : null, "safe_value" : "Do it Now!" }
@@ -211,7 +211,7 @@ function scout_trails_default_scout_tip() {
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
-    "module" : "scout_tours",
+    "module" : "scout_trails",
     "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
     "field_scout_tip_button_text" : { "und" : [ { "value" : "Bubye!", "format" : null, "safe_value" : "Bubye!" } ] },
     "field_scout_tip_class" : { "und" : [
@@ -247,7 +247,7 @@ function scout_trails_default_scout_tip() {
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
-    "module" : "scout_tours",
+    "module" : "scout_trails",
     "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
     "field_scout_tip_button_text" : { "und" : [ { "value" : "Next", "format" : null, "safe_value" : "Next" } ] },
     "field_scout_tip_class" : { "und" : [
@@ -290,7 +290,7 @@ function scout_trails_default_scout_tip() {
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
-    "module" : "scout_tours",
+    "module" : "scout_trails",
     "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
     "field_scout_tip_button_text" : { "und" : [ { "value" : "Coolio", "format" : null, "safe_value" : "Coolio" } ] },
     "field_scout_tip_class" : { "und" : [
@@ -326,7 +326,7 @@ function scout_trails_default_scout_tip() {
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
-    "module" : "scout_tours",
+    "module" : "scout_trails",
     "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
     "field_scout_tip_button_text" : { "und" : [ { "value" : "Next", "format" : null, "safe_value" : "Next" } ] },
     "field_scout_tip_class" : { "und" : [
@@ -369,7 +369,7 @@ function scout_trails_default_scout_tip() {
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
-    "module" : "scout_tours",
+    "module" : "scout_trails",
     "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
     "field_scout_tip_button_text" : { "und" : [ { "value" : "Next", "format" : null, "safe_value" : "Next" } ] },
     "field_scout_tip_class" : { "und" : [
@@ -412,7 +412,7 @@ function scout_trails_default_scout_tip() {
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
-    "module" : "scout_tours",
+    "module" : "scout_trails",
     "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
     "field_scout_tip_button_text" : { "und" : [ { "value" : "Got it!", "format" : null, "safe_value" : "Got it!" } ] },
     "field_scout_tip_class" : { "und" : [
@@ -448,7 +448,7 @@ function scout_trails_default_scout_tip() {
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
-    "module" : "scout_tours",
+    "module" : "scout_trails",
     "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
     "field_scout_tip_button_text" : { "und" : [ { "value" : "Next", "format" : null, "safe_value" : "Next" } ] },
     "field_scout_tip_class" : { "und" : [
@@ -491,7 +491,7 @@ function scout_trails_default_scout_tip() {
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
-    "module" : "scout_tours",
+    "module" : "scout_trails",
     "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
     "field_scout_tip_button_text" : { "und" : [ { "value" : "Thanks", "format" : null, "safe_value" : "Thanks" } ] },
     "field_scout_tip_class" : { "und" : [
@@ -527,7 +527,7 @@ function scout_trails_default_scout_tip() {
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
-    "module" : "scout_tours",
+    "module" : "scout_trails",
     "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
     "field_scout_tip_button_text" : { "und" : [ { "value" : "Next", "format" : null, "safe_value" : "Next" } ] },
     "field_scout_tip_class" : { "und" : [
@@ -570,7 +570,7 @@ function scout_trails_default_scout_tip() {
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
-    "module" : "scout_tours",
+    "module" : "scout_trails",
     "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
     "field_scout_tip_button_text" : { "und" : [ { "value" : "Yada-yada", "format" : null, "safe_value" : "Yada-yada" } ] },
     "field_scout_tip_class" : { "und" : [
@@ -613,7 +613,7 @@ function scout_trails_default_scout_tip() {
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
-    "module" : "scout_tours",
+    "module" : "scout_trails",
     "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
     "field_scout_tip_button_text" : { "und" : [
         {
@@ -663,7 +663,7 @@ function scout_trails_default_scout_tip() {
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
-    "module" : "scout_tours",
+    "module" : "scout_trails",
     "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
     "field_scout_tip_button_text" : { "und" : [ { "value" : "No thanks", "format" : null, "safe_value" : "No thanks" } ] },
     "field_scout_tip_class" : { "und" : [
@@ -699,7 +699,7 @@ function scout_trails_default_scout_tip() {
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
-    "module" : "scout_tours",
+    "module" : "scout_trails",
     "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
     "field_scout_tip_button_text" : { "und" : [ { "value" : "Next", "format" : null, "safe_value" : "Next" } ] },
     "field_scout_tip_class" : { "und" : [
@@ -742,7 +742,7 @@ function scout_trails_default_scout_tip() {
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
-    "module" : "scout_tours",
+    "module" : "scout_trails",
     "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
     "field_scout_tip_button_text" : { "und" : [ { "value" : "Next", "format" : null, "safe_value" : "Next" } ] },
     "field_scout_tip_class" : { "und" : [
@@ -785,7 +785,7 @@ function scout_trails_default_scout_tip() {
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
-    "module" : "scout_tours",
+    "module" : "scout_trails",
     "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
     "field_scout_tip_button_text" : { "und" : [
         { "value" : "Eazy peazy", "format" : null, "safe_value" : "Eazy peazy" }
@@ -831,7 +831,7 @@ function scout_trails_default_scout_tip() {
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
-    "module" : "scout_tours",
+    "module" : "scout_trails",
     "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
     "field_scout_tip_button_text" : { "und" : [
         {
@@ -874,7 +874,7 @@ function scout_trails_default_scout_tip() {
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
-    "module" : "scout_tours",
+    "module" : "scout_trails",
     "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
     "field_scout_tip_button_text" : { "und" : [ { "value" : "Next", "format" : null, "safe_value" : "Next" } ] },
     "field_scout_tip_class" : { "und" : [
@@ -940,7 +940,7 @@ function scout_trails_default_scout_trail() {
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
-    "module" : "scout_tours",
+    "module" : "scout_trails",
     "field_scout_trail_tips" : { "und" : [
         { "target_id" : "1" },
         { "target_id" : "2" },
@@ -965,7 +965,7 @@ function scout_trails_default_scout_trail() {
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
-    "module" : "scout_tours",
+    "module" : "scout_trails",
     "field_scout_trail_tips" : { "und" : [ { "target_id" : "9" }, { "target_id" : "10" } ] }
   }');
   $items['5'] = entity_import('scout_trail', '{
@@ -981,7 +981,7 @@ function scout_trails_default_scout_trail() {
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
-    "module" : "scout_tours",
+    "module" : "scout_trails",
     "field_scout_trail_tips" : { "und" : [ { "target_id" : "11" }, { "target_id" : "12" } ] }
   }');
   $items['6'] = entity_import('scout_trail', '{
@@ -997,7 +997,7 @@ function scout_trails_default_scout_trail() {
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
-    "module" : "scout_tours",
+    "module" : "scout_trails",
     "field_scout_trail_tips" : { "und" : [
         { "target_id" : "13" },
         { "target_id" : "14" },
@@ -1019,7 +1019,7 @@ function scout_trails_default_scout_trail() {
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
-    "module" : "scout_tours",
+    "module" : "scout_trails",
     "field_scout_trail_tips" : { "und" : [
         { "target_id" : "17" },
         { "target_id" : "18" },
