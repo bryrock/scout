@@ -1,4 +1,4 @@
-<div class="scout-help-page">
+<div class="scout-trails-help-page">
   <style type="text/css">
     .scout-help-page ol li { list-style : decimal inside; margin-left: 10px;}
   </style>
