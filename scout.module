@@ -240,7 +240,7 @@ function scout_enable() {
  */
 function scout_block_info() {
   $blocks['scout_trailhead'] = array(
-    'info' => t('Scout: Tour Trailhead'),
+    'info' => t('Scout: Trailhead'),
     'cache' => DRUPAL_NO_CACHE
   );
 
@@ -258,8 +258,7 @@ function scout_block_view($delta = '') {
 
   switch ($delta) {
     case 'scout_trailhead':
-//      $block['subject'] = '<none>';
-      $block['subject'] = 'Scout';
+      $block['subject'] = 'Scout Trail';
       $block['content'] = array(
         '#theme' => 'scout_trailhead',
       );
