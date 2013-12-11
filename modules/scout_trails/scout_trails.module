@@ -249,6 +249,7 @@ function scout_trails_menu() {
     'file' => 'inc/scout_trails.tips.admin.inc',
   );
 
+/*
    $items['admin/structure/scout'] = array(
     'title' => 'Scout - Trails & Tips',
     'description' => 'Manage Scout Trail & Trail Tip types.',
@@ -257,9 +258,10 @@ function scout_trails_menu() {
     'access arguments' => array('admin scout trails'),
     'weight' => 1,
 //    'type' => MENU_CALLBACK,
-    'type' => MENU_NORMAL_ITEM,
+//    'type' => MENU_NORMAL_ITEM,
 //    'file' => 'inc/scout_trails.admin.inc',
   );
+*/
 
 
   }
