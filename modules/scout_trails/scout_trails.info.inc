@@ -184,7 +184,7 @@ function scout_trails_entity_property_info() {
     'schema field' => 'status',
   );
 
-  dsm($info, '$info');
+//  dsm($info, '$info');
   return $info;
 }
 

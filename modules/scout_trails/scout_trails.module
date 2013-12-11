@@ -226,7 +226,6 @@ function scout_trails_entity_info_alter(&$entity_info) {
  * Implements hook_menu().
  */
 function scout_trails_menu() {
-  dsm('scout_trails_menu');
   $items = array();
 
 //  $scout_trails_uri = 'admin/content/scout-trails';
