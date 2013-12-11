@@ -286,24 +286,26 @@ class ScoutTipUIController extends EntityBundleableUIController {
     );
 
     // Change the add page default access callback
-    $items[$this->path . '/add']['weight'] = -20;
-    $items[$this->path . '/add']['title'] = 'Add a Scout Tip';
-    $items[$this->path . '/add']['description'] = 'Add a new scout tip';
+//    $items[$this->path . '/add']['weight'] = -20;
+//    $items[$this->path . '/add']['title'] = 'Add a Scout Tip';
+//    $items[$this->path . '/add']['description'] = 'Add a new scout tip';
     $items[$this->path . '/add']['page callback'] = 'scout_tip_admin_add_page';
-    $items[$this->path . '/add']['access callback'] = 'user_access';
-    $items[$this->path . '/add']['access arguments'] = array('admin scout tours');
+//    $items[$this->path . '/add']['access callback'] = 'entity_access';
+//    $items[$this->path . '/add']['access arguments'] = array('create', 'scout_tip');
 
     // Pass add links through to a form factory.
     // Override default titles and page callback.
     $types = scout_tip_types();
 //    dsm($types, '$types in ScoutTipUIController hook_menu');
     foreach ($types as $type => $info) {
-      $items[$this->path . '/add/' . $type]['title'] = t('Add ' . $type . ' Scout Tip');
+      $items[$this->path . '/add/' . $type]['title'] = t('Add Scout Tip of type ' . $type);
       $items[$this->path . '/add/' . $type]['page callback'] = 'scout_tips_forms_wrapper';
       $items[$this->path . '/add/' . $type]['page arguments'] = array($type, NULL, 'add');
       $items[$this->path . '/add/' . $type]['access callback'] = 'entity_access';
       $items[$this->path . '/add/' . $type]['access arguments'] = array('create', 'scout_tip', $type);
-    }
+      $items[$this->path . '/add/' . $type]['file'] = 'inc/scout_trails.tips.admin.inc';
+      $items[$this->path . '/add/' . $type]['file path'] = drupal_get_path('module', 'scout_trails');
+   }
 
     // Add delete menu items.
     $items[$this->path . '/' . $wildcard . '/delete']['page callback'] = 'drupal_get_form';
