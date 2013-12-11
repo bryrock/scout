@@ -6,7 +6,8 @@
 
 	include_once 'scout_trails.features.inc';
 
-	// These three includes sometimes throw "Deprecated function: Call-time pass-by-reference has been deprecated in include_once()"
+	// These four includes sometimes throw "Deprecated function: Call-time pass-by-reference has been deprecated in include_once()"
+	// depending on PHP version,
 	// but they don't work at all if removed, relying only on project info file to load them.
 	include_once 'inc/scout_trails.tips.admin.inc';
 	include_once 'inc/scout_trails.trails.admin.inc';
@@ -41,12 +42,8 @@ function scout_trails_help($path, $arg) {
 }
 
 /**
- * Implement hook_entity_info().
+ * Implements hook_entity_info().
  *
- * We define three entities here - the actual entity that will hold our domain
- * specific Scout Trail entities, an entity that holds information about the different
- * types of  Scout Trail entities, and Scout Trail Tip entities. See here: http://drupal.org/node/977380 for a discussion on this
- * choice.
  */
 function scout_trails_entity_info() {
   // Scout trail entities (trails) consist of related scout tip entities.
@@ -114,7 +111,7 @@ function scout_trails_entity_info() {
     ),
   );
 
-  // Scout trail tip entities - Scout Trails are collections of these entities (support joyride tour tips).
+  // Scout tip entities - Scout Trails are collections of these entities (supports joyride tour tips).
   $return['scout_tip'] = array(
     'label' => t('Scout Tip'),
     'plural label' => t('Scout Tips'),
@@ -467,7 +464,7 @@ function scout_trails_form_alter(&$form, &$form_state, $form_id) {
  * Alter scout_trail_form() form to add Scout Tips
  */
 function scout_trails_form_scout_trail_form_alter(&$form, &$form_state, $form_id) {
-  dpm('Implements hook_form_BASE_FORM_ID_alter()');
+//  dpm('Implements hook_form_BASE_FORM_ID_alter()');
 /*
   dpm($form, '$form - scout_trails_form_alter');  // pretty print array using Krumo to messages
   dpm($form_id, '$form_id - scout_trails_form_alter');  // print form ID to messages
@@ -484,6 +481,7 @@ function scout_trails_form_scout_trail_form_alter(&$form, &$form_state, $form_id
  * Implements hook_entity_property_info_alter().
  */
 function scout_trails_entity_property_info_alter(&$info) {
+//TODO - Figure out if this is doing anything at all.
   $properties = &$info['scout_trail']['properties'];
   $properties['created'] = array(
     'label' => t("Date created"),
