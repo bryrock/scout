@@ -33,14 +33,14 @@ class scout_context_reaction_trail extends context_reaction {
     return array(
       'trail_auto_start' => array(
         '#type' => 'checkbox',
-        '#title' => t('Start scout tour automatically'),
-        '#description' => t('Starts a Scout Tour on page load. If you disable this be sure to add a <em>Scout Tour Trailhead</em> block on this page.'),
+        '#title' => t('Start scout trail automatically'),
+        '#description' => t('Starts a Scout Trail on page load. If you disable this be sure to add a <em>Scout: Trailhead</em> block on this page.'),
         '#default_value' => isset($context_values['trail_auto_start']) ? $context_values['trail_auto_start'] : FALSE,
       ),
       'trail_play_once' => array(
         '#type' => 'checkbox',
-        '#title' => t('Play tour only once'),
-        '#description' => t('Check this to play the tour only once'),
+        '#title' => t('Play trail only once'),
+        '#description' => t('Check this to play the trail only once'),
         '#default_value' => isset($context_values['trail_play_once']) ? $context_values['trail_play_once'] : FALSE,
         '#states' => array(
           'visible' => array(

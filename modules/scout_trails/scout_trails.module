@@ -29,6 +29,18 @@ function scout_trails_theme($existing, $type, $theme, $path) {
 }
 
 /**
+ * Implements hook_help().
+ *
+ * @see http://api.drupalize.me/api/drupal/function/hook_help/7
+ */
+function scout_trails_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#scout_trails':
+      return theme('scout_trails_help');
+  }
+}
+
+/**
  * Implement hook_entity_info().
  *
  * We define three entities here - the actual entity that will hold our domain
@@ -37,7 +49,7 @@ function scout_trails_theme($existing, $type, $theme, $path) {
  * choice.
  */
 function scout_trails_entity_info() {
-  // Scout trail entities (tours) consist of related scout tip entities.
+  // Scout trail entities (trails) consist of related scout tip entities.
   $return['scout_trail'] = array(
     'label' => t('Scout Trail'),
     'plural label' => t('Scout Trails'),
@@ -192,7 +204,7 @@ function scout_trails_entity_info_alter(&$entity_info) {
         'path' => 'admin/structure/scout/scout-trail-types/manage/%scout_trail_type',
         'real path' => 'admin/structure/scout/scout-trail-types/manage/' . $type,
         'bundle argument' => 5,
-        'access arguments' => array('admin scout tours'),
+        'access arguments' => array('admin scout trails'),
       ),
     );
   }
@@ -204,7 +216,7 @@ function scout_trails_entity_info_alter(&$entity_info) {
         'path' => 'admin/structure/scout/scout-tip-types/manage/%scout_tip_type',
         'real path' => 'admin/structure/scout/scout-tip-types/manage/' . $type,
         'bundle argument' => 5,
-        'access arguments' => array('admin scout tours'),
+        'access arguments' => array('admin scout trails'),
       ),
     );
   }
@@ -225,7 +237,7 @@ function scout_trails_menu() {
     'title' => 'Delete',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('scout_trail_type_form_delete_confirm', 4),
-    'access arguments' => array('admin scout tours'),
+    'access arguments' => array('admin scout trails'),
     'weight' => 1,
     'type' => MENU_NORMAL_ITEM,
     'file' => 'inc/scout_trails.trails.admin.inc',
@@ -235,7 +247,7 @@ function scout_trails_menu() {
     'title' => 'Delete',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('scout_tip_type_form_delete_confirm', 4),
-    'access arguments' => array('admin scout tours'),
+    'access arguments' => array('admin scout trails'),
     'weight' => 1,
     'type' => MENU_NORMAL_ITEM,
     'file' => 'inc/scout_trails.tips.admin.inc',
@@ -246,7 +258,7 @@ function scout_trails_menu() {
     'description' => 'Manage Scout Trail & Trail Tip types.',
 //    'page callback' => 'drupal_get_form',
 //    'page arguments' => array('scout_tip_type_form_delete_confirm', 4),
-    'access arguments' => array('admin scout tours'),
+    'access arguments' => array('admin scout trails'),
     'weight' => 1,
 //    'type' => MENU_CALLBACK,
     'type' => MENU_NORMAL_ITEM,
@@ -269,14 +281,14 @@ function scout_trails_permission() {
   // We set up permisssions to manage entity types, manage all entities and the
   // permissions for each individual entity
   $permissions = array(
-    'admin scout tours' => array(
-      'title' => t('Administer Scout Tours'),
+    'admin scout trails' => array(
+      'title' => t('Administer Scout Trails'),
       'description' => t('Administer (create, update, delete) Scout trails and scout tips.'),
       'restrict access' => TRUE,
     ),
-    'access scout tours' => array(
-      'title' => t('Access Scout Tours'),
-      'description' => t('User has options to see and use page tours.'),
+    'access scout trails' => array(
+      'title' => t('Access Scout Trails'),
+      'description' => t('User has options to see and use scout trails.'),
       'restrict access' => FALSE,
     ),
   );
@@ -315,9 +327,9 @@ function scout_trails_permission() {
 
 
 /**
-* Access callback for Scout Tours.
+* Access callback for Scout Trails.
  *
- * Determines whether the given user has access to Scout Tours functionality.
+ * Determines whether the given user has access to Scout Trails functionality.
  *
  * @param $op
  *   The operation being performed. One of 'view'
@@ -493,7 +505,7 @@ function scout_trails_entity_property_info_alter(&$info) {
     'type' => 'user',
     'description' => t("The author of the task."),
     'setter callback' => 'entity_property_verbatim_set',
-    'setter permission' => 'admin scout tours',
+    'setter permission' => 'admin scout trails',
     'required' => TRUE,
     'schema field' => 'uid',
   );
@@ -575,7 +587,7 @@ function scout_trail_delete_multiple(array $trail_ids) {
  * Access callback for Scout Trail Type.
  */
 function scout_trails_type_access($op, $entity = NULL) {
-  return user_access('admin scout tours');
+  return user_access('admin scout trails');
 }
 
 /**
@@ -682,7 +694,7 @@ function scout_tip_delete_multiple(array $tip_ids) {
  * Access callback for Scout Tip Type.
  */
 function scout_tip_type_access($op, $entity = NULL) {
-  return user_access('admin scout tours');
+  return user_access('admin scout trails');
 }
 
 /**
