@@ -18,8 +18,6 @@ Scout Tips and Trails are exportable (using Features), so they can be created on
 
 ---
 
-Requires: Context, Chaos tools, Entity API, Entity Connect, Entity Reference, Features, Fieldgroup, Field, Field SQL storage, Inline Editing (will be ditched soon as this is a custom module), Options, List, Number, Scout (included), Libraries, Text, Views
+Requires: Context, Chaos tools, Entity API, Entity Connect, Entity Reference, Features, Fieldgroup, Field, Field SQL storage, Options, List, Number, Scout (included), Libraries, Text, Views
 
 Once installed, there is help information and a skinny tutorial at /admin/help/scout_trails.
-
-<!-- TODO - Remove Inline Editing dependency. -->

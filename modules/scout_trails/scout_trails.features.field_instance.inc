@@ -23,12 +23,9 @@ function scout_trails_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'inline_editing',
-        'settings' => array(
-          'base_formatter' => 'list_key',
-          'base_formatter_settings' => array(),
-        ),
-        'type' => 'inline_editing',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_key',
         'weight' => 7,
       ),
     ),
@@ -61,12 +58,9 @@ function scout_trails_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'inline_editing',
-        'settings' => array(
-          'base_formatter' => 'text_plain',
-          'base_formatter_settings' => array(),
-        ),
-        'type' => 'inline_editing',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_plain',
         'weight' => 1,
       ),
     ),
@@ -102,12 +96,9 @@ function scout_trails_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'inline_editing',
-        'settings' => array(
-          'base_formatter' => 'text_plain',
-          'base_formatter_settings' => array(),
-        ),
-        'type' => 'inline_editing',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_plain',
         'weight' => 6,
       ),
     ),
@@ -143,12 +134,9 @@ function scout_trails_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'inline_editing',
-        'settings' => array(
-          'base_formatter' => 'list_key',
-          'base_formatter_settings' => array(),
-        ),
-        'type' => 'inline_editing',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_key',
         'weight' => 5,
       ),
     ),
@@ -177,12 +165,9 @@ function scout_trails_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'inline_editing',
-        'settings' => array(
-          'base_formatter' => 'text_plain',
-          'base_formatter_settings' => array(),
-        ),
-        'type' => 'inline_editing',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_plain',
         'weight' => 4,
       ),
     ),
@@ -214,12 +199,9 @@ function scout_trails_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'inline_editing',
-        'settings' => array(
-          'base_formatter' => 'text_plain',
-          'base_formatter_settings' => array(),
-        ),
-        'type' => 'inline_editing',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_plain',
         'weight' => 3,
       ),
     ),
@@ -255,12 +237,9 @@ function scout_trails_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'inline_editing',
-        'settings' => array(
-          'base_formatter' => 'list_key',
-          'base_formatter_settings' => array(),
-        ),
-        'type' => 'inline_editing',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_key',
         'weight' => 2,
       ),
     ),
@@ -289,12 +268,9 @@ function scout_trails_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'inline_editing',
-        'settings' => array(
-          'base_formatter' => 'text_plain',
-          'base_formatter_settings' => array(),
-        ),
-        'type' => 'inline_editing',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_plain',
         'weight' => 0,
       ),
     ),
