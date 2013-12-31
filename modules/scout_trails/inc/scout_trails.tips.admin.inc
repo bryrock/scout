@@ -137,7 +137,8 @@ function scout_tip_form($form, &$form_state, $scout_tip = NULL) {
 function scout_tip_form_submit(&$form, &$form_state) {
   $scout_tip = $form_state['scout_tip'];
   $scout_tip->title = $form_state['values']['title'];
-  dsm($scout_tip, '$scout_tip scout_tip_form_submit');
+  $scout_tip->changed = REQUEST_TIME;
+//  dpm($scout_tip, '$scout_tip scout_tip_form_submit');
 
   // Save and go back.
   //field_attach_submit($type, $entity, $form, &$form_state, $options = array());
@@ -149,8 +150,8 @@ function scout_tip_form_submit(&$form, &$form_state) {
   $redirect = $redirect['admin ui']['path'];
   $form_state['redirect'] = $redirect;
 
-  watchdog('scout_tip', 'Created scout tip %title.', array('%title' => $scout_tip->title));
-  drupal_set_message(t('%title has been created.', array('%title' => $scout_tip->title)));
+  watchdog('scout_tip', 'Created / updated scout tip %title.', array('%title' => $scout_tip->title));
+  drupal_set_message(t('%title has been created or updated.', array('%title' => $scout_tip->title)));
 }
 
 /**

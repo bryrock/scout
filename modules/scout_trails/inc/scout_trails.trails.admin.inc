@@ -137,6 +137,9 @@ function scout_trail_form_submit(&$form, &$form_state) {
   $trail = $form_state['trail'];
   $trail->title = $form_state['values']['title'];
   $trail->description = $form_state['values']['description'];
+  $trail->changed = REQUEST_TIME;
+//  dpm($trail, '$scout_trail scout_trail_form_submit');
+
 
   // Save and go back.
   //field_attach_submit($type, $entity, $form, &$form_state, $options = array());
@@ -148,8 +151,8 @@ function scout_trail_form_submit(&$form, &$form_state) {
   $redirect = $redirect['admin ui']['path'];
   $form_state['redirect'] = $redirect;
 
-  watchdog('scout_trail', 'Created scout trail %title.', array('%title' => $trail->title));
-  drupal_set_message(t('%title has been created.', array('%title' => $trail->title)));
+  watchdog('scout_trail', 'Created / updated scout trail %title.', array('%title' => $trail->title));
+  drupal_set_message(t('%title has been created or updated.', array('%title' => $trail->title)));
 }
 
 /**
