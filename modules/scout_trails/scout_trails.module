@@ -664,15 +664,15 @@ function scout_tip_create($values = array()) {
 /**
  * Save a Scout Tip.
  */
-function scout_tip_save($tip_id) {
-  entity_save('scout_tip', $tip_id);
+function scout_tip_save(ScoutTip $tip_id) {
+  $tip_id->save();
 }
 
 /**
 * Delete single Scout Tip.
 */
-function scout_tip_delete($tip_id) {
-  entity_delete('scout_tip', entity_id('tip_id' ,$tip_id));
+function scout_tip_delete(ScoutTip $tip_id) {
+  $tip_id->delete();
 }
 
 /**
