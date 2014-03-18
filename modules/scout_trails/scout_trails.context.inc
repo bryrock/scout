@@ -159,7 +159,9 @@ function scout_trails_context_default_contexts() {
   $context->conditions = array(
     'path' => array(
       'values' => array(
+        'admin/content/scout-trails/add/scout_trail' => 'admin/content/scout-trails/add/scout_trail',
         'admin/content/scout-trails/scout-trail/*/edit' => 'admin/content/scout-trails/scout-trail/*/edit',
+
       ),
     ),
   );
