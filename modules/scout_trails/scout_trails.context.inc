@@ -161,6 +161,7 @@ function scout_trails_context_default_contexts() {
       'values' => array(
         'admin/content/scout-trails/add/scout_trail' => 'admin/content/scout-trails/add/scout_trail',
         'admin/content/scout-trails/*/edit' => 'admin/content/scout-trails/*/edit',
+        '~admin/content/scout-trails/scout-tips/*/edit' => '~admin/content/scout-trails/scout-tips/*/edit',
       ),
     ),
   );
