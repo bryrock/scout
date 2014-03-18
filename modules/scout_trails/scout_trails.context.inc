@@ -41,7 +41,7 @@ function scout_trails_context_default_contexts() {
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'scout_tip_create';
-  $context->description = 'Shows how to create Scout Stops';
+  $context->description = 'Shows how to create Scout Tips';
   $context->tag = 'Scout Trails';
   $context->conditions = array(
     'path' => array(
@@ -72,7 +72,7 @@ function scout_trails_context_default_contexts() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Scout Trails');
-  t('Shows how to create Scout Stops');
+  t('Shows how to create Scout Tips');
   $export['scout_tip_create'] = $context;
 
   $context = new stdClass();
