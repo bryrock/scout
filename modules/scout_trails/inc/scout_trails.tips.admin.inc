@@ -142,7 +142,7 @@ function scout_tip_form_submit(&$form, &$form_state) {
 
   // Save and go back.
   //field_attach_submit($type, $entity, $form, &$form_state, $options = array());
-  field_attach_submit('scout_tip', $scout_tip, $form, &$form_state);
+  field_attach_submit('scout_tip', $scout_tip, $form, $form_state);
   scout_tip_save($scout_tip);
 
   // Redirect user back to list of Scout Trails (since tips are part of trails).

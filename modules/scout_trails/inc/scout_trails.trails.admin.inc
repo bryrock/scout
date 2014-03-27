@@ -143,7 +143,7 @@ function scout_trail_form_submit(&$form, &$form_state) {
 
   // Save and go back.
   //field_attach_submit($type, $entity, $form, &$form_state, $options = array());
-  field_attach_submit('scout_trail', $trail, $form, &$form_state);
+  field_attach_submit('scout_trail', $trail, $form, $form_state);
   scout_trail_save($trail);
 
   // Redirect user back to list of task types.
