@@ -13,33 +13,6 @@ function scout_trails_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
-  $context->name = 'news_trail';
-  $context->description = '';
-  $context->tag = 'Scout Trails';
-  $context->conditions = array(
-    'path' => array(
-      'values' => array(
-        'news' => 'news',
-      ),
-    ),
-  );
-  $context->reactions = array(
-    'scout_trail' => array(
-      'trail_auto_start' => 1,
-      'trail_play_once' => 0,
-      'trail_content' => '3',
-    ),
-  );
-  $context->condition_mode = 0;
-
-  // Translatables
-  // Included for use with string extractors like potx.
-  t('Scout Trails');
-  $export['news_trail'] = $context;
-
-  $context = new stdClass();
-  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
-  $context->api_version = 3;
   $context->name = 'scout_tip_create';
   $context->description = 'Shows how to create Scout Tips';
   $context->tag = 'Scout Trails';
