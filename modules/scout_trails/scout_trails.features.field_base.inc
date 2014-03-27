@@ -250,7 +250,14 @@ function scout_trails_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_scout_trail_tips',
-    'foreign keys' => array(),
+    'foreign keys' => array(
+      'scout_tip' => array(
+        'columns' => array(
+          'target_id' => 'tip_id',
+        ),
+        'table' => 'scout_tip',
+      ),
+    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
