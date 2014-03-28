@@ -56,7 +56,7 @@ function scout_trails_default_scout_tip() {
         { "value" : "description", "format" : null, "safe_value" : "description" }
       ]
     },
-    "field_scout_tip_selector_id" : [],
+    "field_scout_tip_selector_id" : [  ],
     "field_scout_tip_selector_type" : { "und" : [ { "value" : "Class ID" } ] },
     "field_scout_tip_text" : { "und" : [
         {
@@ -99,7 +99,7 @@ function scout_trails_default_scout_tip() {
         }
       ]
     },
-    "field_scout_tip_selector_id" : [],
+    "field_scout_tip_selector_id" : [  ],
     "field_scout_tip_selector_type" : { "und" : [ { "value" : "Class ID" } ] },
     "field_scout_tip_text" : { "und" : [
         {
@@ -149,7 +149,7 @@ function scout_trails_default_scout_tip() {
         }
       ]
     },
-    "field_scout_tip_selector_id" : [],
+    "field_scout_tip_selector_id" : [  ],
     "field_scout_tip_selector_type" : { "und" : [ { "value" : "Class ID" } ] },
     "field_scout_tip_text" : { "und" : [
         {
@@ -188,13 +188,13 @@ function scout_trails_default_scout_tip() {
     },
     "field_scout_tip_orientation" : { "und" : [ { "value" : "left" } ] },
     "field_scout_tip_selector_class" : { "und" : [ { "value" : "selected", "format" : null, "safe_value" : "selected" } ] },
-    "field_scout_tip_selector_id" : [],
+    "field_scout_tip_selector_id" : [  ],
     "field_scout_tip_selector_type" : { "und" : [ { "value" : "Class ID" } ] },
     "field_scout_tip_text" : { "und" : [
         {
-          "value" : "Decide how you will anchor the Scout Tip to a page.  You can do it by Data ID (#) or Class (.) selectors.\\r\\n\\r\\nOr you can make a tip Modal, anchored to the entire page.\\r\\n\\r\\nThis tip is anchored to a class for the tabs at the left.\\r\\n\\r\\nOpen the \\u0022Scout Tip Location Attribute\\u0022 to see your options.",
+          "value" : "Decide how you will anchor the Scout Tip to a page.  You can do it by Data ID (#) or Class (.) selectors.\\u000D\\u000A\\u000D\\u000AOr you can make a tip Modal, anchored to the entire page.\\u000D\\u000A\\u000D\\u000AThis tip is anchored to a class for the tabs at the left.\\u000D\\u000A\\u000D\\u000AOpen the \\u0022Scout Tip Location Attribute\\u0022 to see your options.",
           "format" : null,
-          "safe_value" : "Decide how you will anchor the Scout Tip to a page.  You can do it by Data ID (#) or Class (.) selectors.\\r\\n\\r\\nOr you can make a tip Modal, anchored to the entire page.\\r\\n\\r\\nThis tip is anchored to a class for the tabs at the left.\\r\\n\\r\\nOpen the \\u0026quot;Scout Tip Location Attribute\\u0026quot; to see your options."
+          "safe_value" : "Decide how you will anchor the Scout Tip to a page.  You can do it by Data ID (#) or Class (.) selectors.\\u000D\\u000A\\u000D\\u000AOr you can make a tip Modal, anchored to the entire page.\\u000D\\u000A\\u000D\\u000AThis tip is anchored to a class for the tabs at the left.\\u000D\\u000A\\u000D\\u000AOpen the \\u0026quot;Scout Tip Location Attribute\\u0026quot; to see your options."
         }
       ]
     }
@@ -223,14 +223,14 @@ function scout_trails_default_scout_tip() {
       ]
     },
     "field_scout_tip_orientation" : { "und" : [ { "value" : "top" } ] },
-    "field_scout_tip_selector_class" : [],
-    "field_scout_tip_selector_id" : [],
+    "field_scout_tip_selector_class" : [  ],
+    "field_scout_tip_selector_id" : [  ],
     "field_scout_tip_selector_type" : { "und" : [ { "value" : "Modal" } ] },
     "field_scout_tip_text" : { "und" : [
         {
-          "value" : "Now you can also create Scout Tips right in Scout Trails!\\r\\n\\r\\n\\u003Ca href=\\u0022\\/admin\\/content\\/scout-trails\\/add\\/scout_trail\\u0022\\u003ESHOW ME!\\u003C\\/a\\u003E.",
+          "value" : "Now you can also create Scout Tips right in Scout Trails!\\u000D\\u000A\\u000D\\u000A\\u003Ca href=\\u0022\\u002Fadmin\\u002Fcontent\\u002Fscout-trails\\u002Fadd\\u002Fscout_trail\\u0022\\u003ESHOW ME!\\u003C\\u002Fa\\u003E.",
           "format" : null,
-          "safe_value" : "Now you can also create Scout Tips right in Scout Trails!\\r\\n\\r\\n\\u0026lt;a href=\\u0026quot;\\/admin\\/content\\/scout-trails\\/add\\/scout_trail\\u0026quot;\\u0026gt;SHOW ME!\\u0026lt;\\/a\\u0026gt;."
+          "safe_value" : "Now you can also create Scout Tips right in Scout Trails!\\u000D\\u000A\\u000D\\u000A\\u0026lt;a href=\\u0026quot;\\u002Fadmin\\u002Fcontent\\u002Fscout-trails\\u002Fadd\\u002Fscout_trail\\u0026quot;\\u0026gt;SHOW ME!\\u0026lt;\\u002Fa\\u0026gt;."
         }
       ]
     }
@@ -267,7 +267,7 @@ function scout_trails_default_scout_tip() {
         }
       ]
     },
-    "field_scout_tip_selector_id" : [],
+    "field_scout_tip_selector_id" : [  ],
     "field_scout_tip_selector_type" : { "und" : [ { "value" : "Class ID" } ] },
     "field_scout_tip_text" : { "und" : [
         {
@@ -303,13 +303,13 @@ function scout_trails_default_scout_tip() {
     },
     "field_scout_tip_orientation" : { "und" : [ { "value" : "left" } ] },
     "field_scout_tip_selector_class" : { "und" : [ { "value" : "selected", "format" : null, "safe_value" : "selected" } ] },
-    "field_scout_tip_selector_id" : [],
+    "field_scout_tip_selector_id" : [  ],
     "field_scout_tip_selector_type" : { "und" : [ { "value" : "Class ID" } ] },
     "field_scout_tip_text" : { "und" : [
         {
-          "value" : "Add (optional) custom classes for custom style changes \\/ additions to the Joyride style used by Scout Tips. ",
+          "value" : "Add (optional) custom classes for custom style changes \\u002F additions to the Joyride style used by Scout Tips. ",
           "format" : null,
-          "safe_value" : "Add (optional) custom classes for custom style changes \\/ additions to the Joyride style used by Scout Tips. "
+          "safe_value" : "Add (optional) custom classes for custom style changes \\u002F additions to the Joyride style used by Scout Tips. "
         }
       ]
     }
@@ -361,7 +361,7 @@ function scout_trails_default_scout_tip() {
     "tip_id" : "9",
     "type" : "scout_tip",
     "language" : "und",
-    "title" : "Scout Tips Admin \\/ Creation",
+    "title" : "Scout Tips Admin \\u002F Creation",
     "uid" : "5",
     "published" : "1",
     "created" : "1384881275",
@@ -389,7 +389,7 @@ function scout_trails_default_scout_tip() {
         }
       ]
     },
-    "field_scout_tip_selector_id" : [],
+    "field_scout_tip_selector_id" : [  ],
     "field_scout_tip_selector_type" : { "und" : [ { "value" : "Class ID" } ] },
     "field_scout_tip_text" : { "und" : [
         {
@@ -425,7 +425,7 @@ function scout_trails_default_scout_tip() {
     },
     "field_scout_tip_orientation" : { "und" : [ { "value" : "left" } ] },
     "field_scout_tip_selector_class" : { "und" : [ { "value" : "even", "format" : null, "safe_value" : "even" } ] },
-    "field_scout_tip_selector_id" : [],
+    "field_scout_tip_selector_id" : [  ],
     "field_scout_tip_selector_type" : { "und" : [ { "value" : "Class ID" } ] },
     "field_scout_tip_text" : { "und" : [
         {
@@ -440,7 +440,7 @@ function scout_trails_default_scout_tip() {
     "tip_id" : "11",
     "type" : "scout_tip",
     "language" : "und",
-    "title" : "Scout Trails Admin \\/ Creation",
+    "title" : "Scout Trails Admin \\u002F Creation",
     "uid" : "5",
     "published" : "1",
     "created" : "1384882469",
@@ -468,7 +468,7 @@ function scout_trails_default_scout_tip() {
         }
       ]
     },
-    "field_scout_tip_selector_id" : [],
+    "field_scout_tip_selector_id" : [  ],
     "field_scout_tip_selector_type" : { "und" : [ { "value" : "Class ID" } ] },
     "field_scout_tip_text" : { "und" : [
         {
@@ -504,7 +504,7 @@ function scout_trails_default_scout_tip() {
     },
     "field_scout_tip_orientation" : { "und" : [ { "value" : "left" } ] },
     "field_scout_tip_selector_class" : { "und" : [ { "value" : "even", "format" : null, "safe_value" : "even" } ] },
-    "field_scout_tip_selector_id" : [],
+    "field_scout_tip_selector_id" : [  ],
     "field_scout_tip_selector_type" : { "und" : [ { "value" : "Class ID" } ] },
     "field_scout_tip_text" : { "und" : [
         {
@@ -547,7 +547,7 @@ function scout_trails_default_scout_tip() {
         }
       ]
     },
-    "field_scout_tip_selector_id" : [],
+    "field_scout_tip_selector_id" : [  ],
     "field_scout_tip_selector_type" : { "und" : [ { "value" : "Class ID" } ] },
     "field_scout_tip_text" : { "und" : [
         {
@@ -590,7 +590,7 @@ function scout_trails_default_scout_tip() {
         }
       ]
     },
-    "field_scout_tip_selector_id" : [],
+    "field_scout_tip_selector_id" : [  ],
     "field_scout_tip_selector_type" : { "und" : [ { "value" : "Class ID" } ] },
     "field_scout_tip_text" : { "und" : [
         {
@@ -632,7 +632,7 @@ function scout_trails_default_scout_tip() {
       ]
     },
     "field_scout_tip_orientation" : { "und" : [ { "value" : "bottom" } ] },
-    "field_scout_tip_selector_class" : [],
+    "field_scout_tip_selector_class" : [  ],
     "field_scout_tip_selector_id" : { "und" : [
         {
           "value" : "edit-field-scout-trail-tips-und-actions-ief-add-existing",
@@ -675,14 +675,14 @@ function scout_trails_default_scout_tip() {
       ]
     },
     "field_scout_tip_orientation" : { "und" : [ { "value" : "bottom" } ] },
-    "field_scout_tip_selector_class" : [],
-    "field_scout_tip_selector_id" : [],
+    "field_scout_tip_selector_class" : [  ],
+    "field_scout_tip_selector_id" : [  ],
     "field_scout_tip_selector_type" : { "und" : [ { "value" : "Modal" } ] },
     "field_scout_tip_text" : { "und" : [
         {
-          "value" : "Your trails won\\u0027t appear anywhere until you add them to Context.\\u003Cbr \\/\\u003E\\u003Cbr \\/\\u003E\\r\\n\\u003Ca href=\\u0022\\/admin\\/structure\\/context\\/list\\/scout_trail_context\\/edit\\/showme\\u0022\\u003ESee how this is done\\u003C\\/a\\u003E.",
+          "value" : "Your trails won\\u0027t appear anywhere until you add them to Context.\\u003Cbr \\u002F\\u003E\\u003Cbr \\u002F\\u003E\\u000D\\u000A\\u003Ca href=\\u0022\\u002Fadmin\\u002Fstructure\\u002Fcontext\\u002Flist\\u002Fscout_trail_context\\u002Fedit\\u002Fshowme\\u0022\\u003ESee how this is done\\u003C\\u002Fa\\u003E.",
           "format" : null,
-          "safe_value" : "Your trails won\\u0026#039;t appear anywhere until you add them to Context.\\u0026lt;br \\/\\u0026gt;\\u0026lt;br \\/\\u0026gt;\\r\\n\\u0026lt;a href=\\u0026quot;\\/admin\\/structure\\/context\\/list\\/scout_trail_context\\/edit\\/showme\\u0026quot;\\u0026gt;See how this is done\\u0026lt;\\/a\\u0026gt;."
+          "safe_value" : "Your trails won\\u0026#039;t appear anywhere until you add them to Context.\\u0026lt;br \\u002F\\u0026gt;\\u0026lt;br \\u002F\\u0026gt;\\u000D\\u000A\\u0026lt;a href=\\u0026quot;\\u002Fadmin\\u002Fstructure\\u002Fcontext\\u002Flist\\u002Fscout_trail_context\\u002Fedit\\u002Fshowme\\u0026quot;\\u0026gt;See how this is done\\u0026lt;\\u002Fa\\u0026gt;."
         }
       ]
     }
@@ -711,7 +711,7 @@ function scout_trails_default_scout_tip() {
       ]
     },
     "field_scout_tip_orientation" : { "und" : [ { "value" : "bottom" } ] },
-    "field_scout_tip_selector_class" : [],
+    "field_scout_tip_selector_class" : [  ],
     "field_scout_tip_selector_id" : { "und" : [
         {
           "value" : "edit-conditions-plugins-path-values",
@@ -754,7 +754,7 @@ function scout_trails_default_scout_tip() {
       ]
     },
     "field_scout_tip_orientation" : { "und" : [ { "value" : "right" } ] },
-    "field_scout_tip_selector_class" : [],
+    "field_scout_tip_selector_class" : [  ],
     "field_scout_tip_selector_id" : { "und" : [
         {
           "value" : "scout-scout_trailhead",
@@ -800,7 +800,7 @@ function scout_trails_default_scout_tip() {
       ]
     },
     "field_scout_tip_orientation" : { "und" : [ { "value" : "right" } ] },
-    "field_scout_tip_selector_class" : [],
+    "field_scout_tip_selector_class" : [  ],
     "field_scout_tip_selector_id" : { "und" : [
         {
           "value" : "edit-reactions-plugins-scout-trail-trail-content",
@@ -850,14 +850,143 @@ function scout_trails_default_scout_tip() {
       ]
     },
     "field_scout_tip_orientation" : { "und" : [ { "value" : "top" } ] },
-    "field_scout_tip_selector_class" : [],
-    "field_scout_tip_selector_id" : [],
+    "field_scout_tip_selector_class" : [  ],
+    "field_scout_tip_selector_id" : [  ],
     "field_scout_tip_selector_type" : { "und" : [ { "value" : "Modal" } ] },
     "field_scout_tip_text" : { "und" : [
         {
-          "value" : "This demo has shown some Scout Tips that were attached to selectors that normally would be contained inside closed fieldsets on page load.  They only worked in this demo because I opened those fieldsets prior to proceeding to that tip.  In normal conditions, Scout Tips that are attached to selectors not available on page load will not know where to go, and will appear in the upper left corner of the screen. \\u003Cbr \\/\\u003E\\u003Cbr \\/\\u003E\\nAn alternative is to make those tips modal (like this tip), but then they are not a precise as those tips that point to the area they are addressing.",
+          "value" : "This demo has shown some Scout Tips that were attached to selectors that normally would be contained inside closed fieldsets on page load.  They only worked in this demo because I opened those fieldsets prior to proceeding to that tip.  In normal conditions, Scout Tips that are attached to selectors not available on page load will not know where to go, and will appear in the upper left corner of the screen. \\u003Cbr \\u002F\\u003E\\u003Cbr \\u002F\\u003E\\u000AAn alternative is to make those tips modal (like this tip), but then they are not a precise as those tips that point to the area they are addressing.",
           "format" : null,
-          "safe_value" : "This demo has shown some Scout Tips that were attached to selectors that normally would be contained inside closed fieldsets on page load.  They only worked in this demo because I opened those fieldsets prior to proceeding to that tip.  In normal conditions, Scout Tips that are attached to selectors not available on page load will not know where to go, and will appear in the upper left corner of the screen. \\u0026lt;br \\/\\u0026gt;\\u0026lt;br \\/\\u0026gt;\\nAn alternative is to make those tips modal (like this tip), but then they are not a precise as those tips that point to the area they are addressing."
+          "safe_value" : "This demo has shown some Scout Tips that were attached to selectors that normally would be contained inside closed fieldsets on page load.  They only worked in this demo because I opened those fieldsets prior to proceeding to that tip.  In normal conditions, Scout Tips that are attached to selectors not available on page load will not know where to go, and will appear in the upper left corner of the screen. \\u0026lt;br \\u002F\\u0026gt;\\u0026lt;br \\u002F\\u0026gt;\\u000AAn alternative is to make those tips modal (like this tip), but then they are not a precise as those tips that point to the area they are addressing."
+        }
+      ]
+    }
+  }');
+  $items['21'] = entity_import('scout_tip', '{
+    "tip_id" : "21",
+    "type" : "scout_tip",
+    "language" : "und",
+    "title" : "Scout Trails - Create New Tips Inline",
+    "uid" : "1",
+    "published" : "1",
+    "created" : "1396034423",
+    "changed" : "1396035996",
+    "tnid" : "0",
+    "translate" : "0",
+    "status" : "1",
+    "module" : "scout_trails",
+    "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
+    "field_scout_tip_button_text" : { "und" : [ { "value" : "Awesome!", "format" : null, "safe_value" : "Awesome!" } ] },
+    "field_scout_tip_class" : { "und" : [
+        {
+          "value" : "custom-scout-tip",
+          "format" : null,
+          "safe_value" : "custom-scout-tip"
+        }
+      ]
+    },
+    "field_scout_tip_orientation" : { "und" : [ { "value" : "bottom" } ] },
+    "field_scout_tip_selector_class" : [  ],
+    "field_scout_tip_selector_id" : { "und" : [
+        {
+          "value" : "edit-field-scout-trail-tips-und-actions-ief-add",
+          "format" : null,
+          "safe_value" : "edit-field-scout-trail-tips-und-actions-ief-add"
+        }
+      ]
+    },
+    "field_scout_tip_selector_type" : { "und" : [ { "value" : "Data ID" } ] },
+    "field_scout_tip_text" : { "und" : [
+        {
+          "value" : "Use this to create new Scout Tips without leaving this form.",
+          "format" : null,
+          "safe_value" : "Use this to create new Scout Tips without leaving this form."
+        }
+      ]
+    }
+  }');
+  $items['22'] = entity_import('scout_tip', '{
+    "tip_id" : "22",
+    "type" : "scout_tip",
+    "language" : "und",
+    "title" : "Scout Trails - Saving Your Trail",
+    "uid" : "1",
+    "published" : "1",
+    "created" : "1396034834",
+    "changed" : "1396035928",
+    "tnid" : "0",
+    "translate" : "0",
+    "status" : "1",
+    "module" : "scout_trails",
+    "field_scout_tip_animation" : { "und" : [ { "value" : "fade" } ] },
+    "field_scout_tip_button_text" : { "und" : [ { "value" : "Duh", "format" : null, "safe_value" : "Duh" } ] },
+    "field_scout_tip_class" : { "und" : [
+        {
+          "value" : "custom-scout-tip",
+          "format" : null,
+          "safe_value" : "custom-scout-tip"
+        }
+      ]
+    },
+    "field_scout_tip_orientation" : { "und" : [ { "value" : "top" } ] },
+    "field_scout_tip_selector_class" : [  ],
+    "field_scout_tip_selector_id" : { "und" : [
+        {
+          "value" : "edit-trail--2",
+          "format" : null,
+          "safe_value" : "edit-trail--2"
+        }
+      ]
+    },
+    "field_scout_tip_selector_type" : { "und" : [ { "value" : "Data ID" } ] },
+    "field_scout_tip_text" : { "und" : [
+        {
+          "value" : "Don\\u0027t forget to save your trail, especially if you added new tips here, because they won\\u0027t be saved until you save it all.",
+          "format" : null,
+          "safe_value" : "Don\\u0026#039;t forget to save your trail, especially if you added new tips here, because they won\\u0026#039;t be saved until you save it all."
+        }
+      ]
+    }
+  }');
+  $items['23'] = entity_import('scout_tip', '{
+    "tip_id" : "23",
+    "type" : "scout_tip",
+    "language" : "und",
+    "title" : "Scout Trails - Ordering Tips",
+    "uid" : "1",
+    "published" : "1",
+    "created" : "1396035268",
+    "changed" : "1396036893",
+    "tnid" : "0",
+    "translate" : "0",
+    "status" : "1",
+    "module" : "scout_trails",
+    "field_scout_tip_animation" : { "und" : [ { "value" : "fade" } ] },
+    "field_scout_tip_button_text" : { "und" : [ { "value" : "Got it", "format" : null, "safe_value" : "Got it" } ] },
+    "field_scout_tip_class" : { "und" : [
+        {
+          "value" : "custom-scout-tip",
+          "format" : null,
+          "safe_value" : "custom-scout-tip"
+        }
+      ]
+    },
+    "field_scout_tip_orientation" : { "und" : [ { "value" : "top" } ] },
+    "field_scout_tip_selector_class" : { "und" : [
+        {
+          "value" : "tabledrag-toggle-weight-wrapper",
+          "format" : null,
+          "safe_value" : "tabledrag-toggle-weight-wrapper"
+        }
+      ]
+    },
+    "field_scout_tip_selector_id" : [  ],
+    "field_scout_tip_selector_type" : { "und" : [ { "value" : "Class ID" } ] },
+    "field_scout_tip_text" : { "und" : [
+        {
+          "value" : "This is the weight toggle.  If this says, \\u0022Show row weights,\\u0022 that means you can reorder the tips simply by dragging them.\\u000AIf this says, \\u0022Hide row weights,\\u0022 that means you\\u0027ll have to adjust the weights to change the order (lightest float to the top).\\u003Cbr \\u002F\\u003E\\u003Cbr \\u002F\\u003E\\u000A(Yeah, and sometimes it\\u0027s just impossible to position a tip exactly where you want it ;)",
+          "format" : null,
+          "safe_value" : "This is the weight toggle.  If this says, \\u0026quot;Show row weights,\\u0026quot; that means you can reorder the tips simply by dragging them.\\u000AIf this says, \\u0026quot;Hide row weights,\\u0026quot; that means you\\u0026#039;ll have to adjust the weights to change the order (lightest float to the top).\\u0026lt;br \\u002F\\u0026gt;\\u0026lt;br \\u002F\\u0026gt;\\u000A(Yeah, and sometimes it\\u0026#039;s just impossible to position a tip exactly where you want it ;)"
         }
       ]
     }

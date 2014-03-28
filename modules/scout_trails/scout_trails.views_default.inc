@@ -397,12 +397,11 @@ function scout_trails_views_default_views() {
   $handler->display->display_options['fields']['status']['id'] = 'status';
   $handler->display->display_options['fields']['status']['table'] = 'scout_trail';
   $handler->display->display_options['fields']['status']['field'] = 'status';
-  /* Field: Scout Trail: Scout Trail Tips */
+  /* Field: Scout Trail: Scout Tips */
   $handler->display->display_options['fields']['field_scout_trail_tips']['id'] = 'field_scout_trail_tips';
   $handler->display->display_options['fields']['field_scout_trail_tips']['table'] = 'field_data_field_scout_trail_tips';
   $handler->display->display_options['fields']['field_scout_trail_tips']['field'] = 'field_scout_trail_tips';
   $handler->display->display_options['fields']['field_scout_trail_tips']['group_type'] = 'stddev_pop';
-  $handler->display->display_options['fields']['field_scout_trail_tips']['label'] = 'Scout Tips';
   $handler->display->display_options['fields']['field_scout_trail_tips']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_scout_trail_tips']['alter']['text'] = '[field_scout_trail_tips]-[field_scout_trail_tips-target_id]';
   $handler->display->display_options['fields']['field_scout_trail_tips']['alter']['make_link'] = TRUE;
