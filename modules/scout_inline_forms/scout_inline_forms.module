@@ -11,7 +11,7 @@ function scout_inline_forms_entity_info_alter(&$entity_info) {
 
   if (isset($entity_info['scout_tip'])) {
     $entity_info['scout_tip']['inline entity form'] = array(
-      'controller' => 'EntityInlineEntityFormController',
+      'controller' => 'ScoutInlineEntityFormController',
     );
   }
 
