@@ -13,7 +13,7 @@ function scout_trails_views_default_views() {
   $view = new view();
   $view->name = 'scout_tips';
   $view->description = '';
-  $view->tag = 'default';
+  $view->tag = 'Scout Trails';
   $view->base_table = 'scout_tip';
   $view->human_name = 'Scout Tips';
   $view->core = 7;
@@ -182,7 +182,7 @@ function scout_trails_views_default_views() {
   $view = new view();
   $view->name = 'scout_trails';
   $view->description = '';
-  $view->tag = 'default';
+  $view->tag = 'Scout Trails';
   $view->base_table = 'scout_trail';
   $view->human_name = 'Scout Trails';
   $view->core = 7;
@@ -218,8 +218,11 @@ function scout_trails_views_default_views() {
     'nothing_2' => 'nothing',
     'nothing_1' => 'nothing',
     'created' => 'created',
+    'changed' => 'changed',
     'uid' => 'uid',
+    'status' => 'status',
     'field_scout_trail_tips' => 'field_scout_trail_tips',
+    'field_scout_trail_tips_1' => 'field_scout_trail_tips_1',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
@@ -273,6 +276,13 @@ function scout_trails_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
+    'changed' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
     'uid' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
@@ -280,7 +290,19 @@ function scout_trails_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
+    'status' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
     'field_scout_trail_tips' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_scout_trail_tips_1' => array(
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -381,11 +403,14 @@ function scout_trails_views_default_views() {
   $handler->display->display_options['fields']['field_scout_trail_tips']['field'] = 'field_scout_trail_tips';
   $handler->display->display_options['fields']['field_scout_trail_tips']['group_type'] = 'stddev_pop';
   $handler->display->display_options['fields']['field_scout_trail_tips']['label'] = 'Scout Tips';
+  $handler->display->display_options['fields']['field_scout_trail_tips']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_scout_trail_tips']['alter']['text'] = '[field_scout_trail_tips]-[field_scout_trail_tips-target_id]';
   $handler->display->display_options['fields']['field_scout_trail_tips']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_scout_trail_tips']['alter']['path'] = 'admin/content/scout-trails/scout-tips/[field_scout_trail_tips-target_id]/edit';
+  $handler->display->display_options['fields']['field_scout_trail_tips']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_scout_trail_tips']['empty'] = '(None)';
   $handler->display->display_options['fields']['field_scout_trail_tips']['settings'] = array(
-    'link' => 0,
+    'link' => 1,
   );
   $handler->display->display_options['fields']['field_scout_trail_tips']['group_column'] = 'entity_id';
   $handler->display->display_options['fields']['field_scout_trail_tips']['delta_limit'] = '0';
