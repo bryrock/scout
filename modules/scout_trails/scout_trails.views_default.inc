@@ -410,7 +410,7 @@ function scout_trails_views_default_views() {
   $handler->display->display_options['fields']['field_scout_trail_tips']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_scout_trail_tips']['empty'] = '(None)';
   $handler->display->display_options['fields']['field_scout_trail_tips']['settings'] = array(
-    'link' => 1,
+    'link' => 0,
   );
   $handler->display->display_options['fields']['field_scout_trail_tips']['group_column'] = 'entity_id';
   $handler->display->display_options['fields']['field_scout_trail_tips']['delta_limit'] = '0';
