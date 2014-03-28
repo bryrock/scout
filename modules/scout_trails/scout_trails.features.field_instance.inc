@@ -298,7 +298,7 @@ function scout_trails_field_default_field_instances() {
     'bundle' => 'scout_trail',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Add Tips related to this trail.',
+    'description' => 'Add Scout Tips for this trail.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -314,7 +314,7 @@ function scout_trails_field_default_field_instances() {
     'entityconnect_unload_add' => 0,
     'entityconnect_unload_edit' => 0,
     'field_name' => 'field_scout_trail_tips',
-    'label' => 'Scout Trail Tips',
+    'label' => 'Scout Tips',
     'required' => 1,
     'settings' => array(
       'behaviors' => array(
@@ -347,7 +347,7 @@ function scout_trails_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('"Next" Button Text');
   t('(optional) Add a custom CSS class for styling this scout tip.');
-  t('Add Tips related to this trail.');
+  t('Add Scout Tips for this trail.');
   t('Animation');
   t('Class ID (.)');
   t('Custom Style Class');
@@ -355,7 +355,7 @@ function scout_trails_field_default_field_instances() {
   t('Location Selector Type');
   t('Orientation');
   t('Scout Tip Text');
-  t('Scout Trail Tips');
+  t('Scout Tips');
   t('This is the main text displayed for this scout tip.');
   t('This text will appear on the "Next" button.');
   t('Where / How this tip is oriented relative to your selectors.');
