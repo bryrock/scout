@@ -203,17 +203,17 @@ function scout_trails_default_scout_tip() {
     "tip_id" : "5",
     "type" : "scout_tip",
     "language" : "und",
-    "title" : "Thank You for Flying Scout",
+    "title" : "Learn About Scout Trails",
     "uid" : "5",
     "published" : "1",
     "created" : "1384757611",
-    "changed" : "1384757611",
+    "changed" : "1395967431",
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
     "module" : "scout_trails",
     "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
-    "field_scout_tip_button_text" : { "und" : [ { "value" : "Bubye!", "format" : null, "safe_value" : "Bubye!" } ] },
+    "field_scout_tip_button_text" : { "und" : [ { "value" : "No thanks", "format" : null, "safe_value" : "No thanks" } ] },
     "field_scout_tip_class" : { "und" : [
         {
           "value" : "custom-scout-tip",
@@ -228,9 +228,9 @@ function scout_trails_default_scout_tip() {
     "field_scout_tip_selector_type" : { "und" : [ { "value" : "Modal" } ] },
     "field_scout_tip_text" : { "und" : [
         {
-          "value" : "Thank you for flying Scout.  We know you have options, so we appreciate your continued patience.",
+          "value" : "Now you can also create Scout Tips right in Scout Trails!\\r\\n\\r\\n\\u003Ca href=\\u0022\\/admin\\/content\\/scout-trails\\/add\\/scout_trail\\u0022\\u003ESHOW ME!\\u003C\\/a\\u003E.",
           "format" : null,
-          "safe_value" : "Thank you for flying Scout.  We know you have options, so we appreciate your continued patience."
+          "safe_value" : "Now you can also create Scout Tips right in Scout Trails!\\r\\n\\r\\n\\u0026lt;a href=\\u0026quot;\\/admin\\/content\\/scout-trails\\/add\\/scout_trail\\u0026quot;\\u0026gt;SHOW ME!\\u0026lt;\\/a\\u0026gt;."
         }
       ]
     }
@@ -609,7 +609,7 @@ function scout_trails_default_scout_tip() {
     "uid" : "5",
     "published" : "1",
     "created" : "1384883859",
-    "changed" : "1384883859",
+    "changed" : "1395966878",
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
@@ -617,9 +617,9 @@ function scout_trails_default_scout_tip() {
     "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
     "field_scout_tip_button_text" : { "und" : [
         {
-          "value" : "That\\u0027s it",
+          "value" : "See how to add new ones",
           "format" : null,
-          "safe_value" : "That\\u0026#039;s it"
+          "safe_value" : "See how to add new ones"
         }
       ]
     },
@@ -631,22 +631,22 @@ function scout_trails_default_scout_tip() {
         }
       ]
     },
-    "field_scout_tip_orientation" : { "und" : [ { "value" : "left" } ] },
+    "field_scout_tip_orientation" : { "und" : [ { "value" : "bottom" } ] },
     "field_scout_tip_selector_class" : [],
     "field_scout_tip_selector_id" : { "und" : [
         {
-          "value" : "field-scout-tips-entities-values",
+          "value" : "edit-field-scout-trail-tips-und-actions-ief-add-existing",
           "format" : null,
-          "safe_value" : "field-scout-tips-entities-values"
+          "safe_value" : "edit-field-scout-trail-tips-und-actions-ief-add-existing"
         }
       ]
     },
     "field_scout_tip_selector_type" : { "und" : [ { "value" : "Data ID" } ] },
     "field_scout_tip_text" : { "und" : [
         {
-          "value" : "Add scout tips to your trail with auto complete.  If you know the tip_id of your tip, you can type any word followed by that id in parens (15).  You can drag the order of your tips.\\u003Cbr \\/\\u003E\\u003Cbr \\/\\u003EThen save.",
+          "value" : "Add existing scout tips to your trail with auto complete.",
           "format" : null,
-          "safe_value" : "Add scout tips to your trail with auto complete.  If you know the tip_id of your tip, you can type any word followed by that id in parens (15).  You can drag the order of your tips.\\u0026lt;br \\/\\u0026gt;\\u0026lt;br \\/\\u0026gt;Then save."
+          "safe_value" : "Add existing scout tips to your trail with auto complete."
         }
       ]
     }
@@ -659,7 +659,7 @@ function scout_trails_default_scout_tip() {
     "uid" : "5",
     "published" : "1",
     "created" : "1384884812",
-    "changed" : "1384884812",
+    "changed" : "1395968650",
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
@@ -680,9 +680,9 @@ function scout_trails_default_scout_tip() {
     "field_scout_tip_selector_type" : { "und" : [ { "value" : "Modal" } ] },
     "field_scout_tip_text" : { "und" : [
         {
-          "value" : "Your trails won\\u0027t appear anywhere until you add them to Context.\\u003Cbr \\/\\u003E\\u003Cbr \\/\\u003E\\r\\n\\u003Ca href=\\u0022\\/admin\\/structure\\/context\\/add\\u0022\\u003ESee how this is done\\u003C\\/a\\u003E.",
+          "value" : "Your trails won\\u0027t appear anywhere until you add them to Context.\\u003Cbr \\/\\u003E\\u003Cbr \\/\\u003E\\r\\n\\u003Ca href=\\u0022\\/admin\\/structure\\/context\\/list\\/scout_trail_context\\/edit\\/showme\\u0022\\u003ESee how this is done\\u003C\\/a\\u003E.",
           "format" : null,
-          "safe_value" : "Your trails won\\u0026#039;t appear anywhere until you add them to Context.\\u0026lt;br \\/\\u0026gt;\\u0026lt;br \\/\\u0026gt;\\r\\n\\u0026lt;a href=\\u0026quot;\\/admin\\/structure\\/context\\/add\\u0026quot;\\u0026gt;See how this is done\\u0026lt;\\/a\\u0026gt;."
+          "safe_value" : "Your trails won\\u0026#039;t appear anywhere until you add them to Context.\\u0026lt;br \\/\\u0026gt;\\u0026lt;br \\/\\u0026gt;\\r\\n\\u0026lt;a href=\\u0026quot;\\/admin\\/structure\\/context\\/list\\/scout_trail_context\\/edit\\/showme\\u0026quot;\\u0026gt;See how this is done\\u0026lt;\\/a\\u0026gt;."
         }
       ]
     }
@@ -862,49 +862,6 @@ function scout_trails_default_scout_tip() {
       ]
     }
   }');
-  $items['25'] = entity_import('scout_tip', '{
-    "tip_id" : "25",
-    "type" : "scout_tip",
-    "language" : "und",
-    "title" : "Articles - One",
-    "uid" : "5",
-    "published" : "1",
-    "created" : "1384970307",
-    "changed" : "1384970307",
-    "tnid" : "0",
-    "translate" : "0",
-    "status" : "2",
-    "module" : "scout_trails",
-    "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
-    "field_scout_tip_button_text" : { "und" : [ { "value" : "Next", "format" : null, "safe_value" : "Next" } ] },
-    "field_scout_tip_class" : { "und" : [
-        {
-          "value" : "custom-scout-tip",
-          "format" : null,
-          "safe_value" : "custom-scout-tip"
-        }
-      ]
-    },
-    "field_scout_tip_orientation" : { "und" : [ { "value" : "top" } ] },
-    "field_scout_tip_selector_class" : { "und" : [
-        {
-          "value" : "menu-block-2",
-          "format" : null,
-          "safe_value" : "menu-block-2"
-        }
-      ]
-    },
-    "field_scout_tip_selector_id" : [],
-    "field_scout_tip_selector_type" : { "und" : [ { "value" : "Class ID" } ] },
-    "field_scout_tip_text" : { "und" : [
-        {
-          "value" : "Articles has its own quick news menu.  Quickly target the news of your choice, between artist blogs or outside articles and reviews.",
-          "format" : null,
-          "safe_value" : "Articles has its own quick news menu.  Quickly target the news of your choice, between artist blogs or outside articles and reviews."
-        }
-      ]
-    }
-  }');
   return $items;
 }
 
@@ -936,7 +893,7 @@ function scout_trails_default_scout_trail() {
     "uid" : "5",
     "published" : "1",
     "created" : "1384728030",
-    "changed" : "1384728030",
+    "changed" : "1395967014",
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",

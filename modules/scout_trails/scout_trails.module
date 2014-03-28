@@ -217,6 +217,20 @@ function scout_trails_entity_info_alter(&$entity_info) {
       ),
     );
   }
+
+  // Add support for inline entity forms
+  if (isset($entity_info['scout_tip'])) {
+    $entity_info['scout_tip']['inline entity form'] = array(
+      'controller' => 'ScoutInlineEntityFormController',
+    );
+  }
+
+  if (isset($entity_info['scout_trail'])) {
+    $entity_info['scout_trail']['inline entity form'] = array(
+      'controller' => 'EntityInlineEntityFormController',
+    );
+  }
+
 }
 
 /**
