@@ -59,7 +59,7 @@ function scout_trails_entity_info() {
     'entity keys' => array(
       'id'     => 'trail_id',
       'bundle' => 'type',
-      'label'  => 'label',
+      'label'  => 'title',
     ),
     'bundle keys' => array(
       'bundle' => 'type',
@@ -124,7 +124,8 @@ function scout_trails_entity_info() {
     'entity keys' => array(
       'id' => 'tip_id',
       'bundle' => 'type',
-      ),
+      'label' => 'title',
+     ),
     'bundle keys' => array(
       'bundle' => 'type',
     ),
@@ -309,11 +310,9 @@ function scout_trails_permission() {
   foreach (scout_trail_types() as $type) {
     $type_name = check_plain($type->type);
     $permissions += array(
-/*
       "edit any $type_name trail" => array(
         'title' => t('%type_name: Edit any trail', array('%type_name' => $type->label)),
       ),
-*/
       "view any $type_name trail" => array(
         'title' => t('%type_name: View any trail', array('%type_name' => $type->label)),
       ),
@@ -323,11 +322,9 @@ function scout_trails_permission() {
   foreach (scout_tip_types() as $type) {
     $type_name = check_plain($type->type);
     $permissions += array(
-/*
       "edit any $type_name tip" => array(
         'title' => t('%type_name: Edit any tip', array('%type_name' => $type->label)),
       ),
-*/
       "view any $type_name tip" => array(
         'title' => t('%type_name: View any tip', array('%type_name' => $type->label)),
       ),
