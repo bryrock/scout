@@ -827,7 +827,7 @@ function scout_trails_default_scout_tip() {
     "uid" : "5",
     "published" : "1",
     "created" : "1384887705",
-    "changed" : "1384887705",
+    "changed" : "1395980429",
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
@@ -855,9 +855,9 @@ function scout_trails_default_scout_tip() {
     "field_scout_tip_selector_type" : { "und" : [ { "value" : "Modal" } ] },
     "field_scout_tip_text" : { "und" : [
         {
-          "value" : "This demo has shown some Scout Tips that were attached to selectors that normally would be contained inside closed fieldsets on page load.  They only worked in this demo because I opened those fieldsets prior to proceeding to that tip.  In normal conditions, Scout Tips that are attached to selectors not available on page load will not know where to go, and will appear in the upper left corner of the screen. \\u003Cbr \\/\\u003E\\u003Cbr \\/\\u003E\\r\\nAn alternative is to make those tips modal (like this tip), but then they are not a precise as those tips that point to the area they are addressing.",
+          "value" : "This demo has shown some Scout Tips that were attached to selectors that normally would be contained inside closed fieldsets on page load.  They only worked in this demo because I opened those fieldsets prior to proceeding to that tip.  In normal conditions, Scout Tips that are attached to selectors not available on page load will not know where to go, and will appear in the upper left corner of the screen. \\u003Cbr \\/\\u003E\\u003Cbr \\/\\u003E\\nAn alternative is to make those tips modal (like this tip), but then they are not a precise as those tips that point to the area they are addressing.",
           "format" : null,
-          "safe_value" : "This demo has shown some Scout Tips that were attached to selectors that normally would be contained inside closed fieldsets on page load.  They only worked in this demo because I opened those fieldsets prior to proceeding to that tip.  In normal conditions, Scout Tips that are attached to selectors not available on page load will not know where to go, and will appear in the upper left corner of the screen. \\u0026lt;br \\/\\u0026gt;\\u0026lt;br \\/\\u0026gt;\\r\\nAn alternative is to make those tips modal (like this tip), but then they are not a precise as those tips that point to the area they are addressing."
+          "safe_value" : "This demo has shown some Scout Tips that were attached to selectors that normally would be contained inside closed fieldsets on page load.  They only worked in this demo because I opened those fieldsets prior to proceeding to that tip.  In normal conditions, Scout Tips that are attached to selectors not available on page load will not know where to go, and will appear in the upper left corner of the screen. \\u0026lt;br \\/\\u0026gt;\\u0026lt;br \\/\\u0026gt;\\nAn alternative is to make those tips modal (like this tip), but then they are not a precise as those tips that point to the area they are addressing."
         }
       ]
     }
@@ -972,7 +972,7 @@ function scout_trails_default_scout_trail() {
     "uid" : "5",
     "published" : "1",
     "created" : "1384885694",
-    "changed" : "1384885694",
+    "changed" : "1395980432",
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
