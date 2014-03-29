@@ -84,14 +84,19 @@ class ScoutInlineEntityFormController extends EntityInlineEntityFormController {
     $parent = $form_state['trail'];
     $parent_trail = $form_state['trail']->trail_id;
     $parent_title = $form_state['trail']->title;
-
     $info = entity_get_info($this->entityType);
+
     if ($info['fieldable']) {
       field_attach_submit($this->entityType, $entity, $entity_form, $form_state);
     }
 
-  watchdog('scout_trail', 'Created / updated inline scout tip %title (%tip), in trail %trail (%id).', array('%title' => $entity->title,'%trail' => $parent_title,'%id' => $parent_trail, '%tip' => $entity->tip_id));
-  drupal_set_message(t('%title has been created or updated.', array('%title' => $entity->title)));
+    If (isset($entity->tip_id)) {
+	    watchdog('scout_trail', 'Updated inline scout tip %title (%tip), in trail %trail (%id).', array('%title' => $entity->title,'%trail' => $parent_title,'%id' => $parent_trail, '%tip' => $entity->tip_id));
+	    drupal_set_message(t('Scout Tip %title has been updated.', array('%title' => $entity->title)));
+    } else {
+      watchdog('scout_trail', 'Created inline scout tip %title, in trail %trail (%id).', array('%title' => $entity->title,'%trail' => $parent_title,'%id' => $parent_trail));
+      drupal_set_message(t('Scout Tip %title has been created.', array('%title' => $entity->title)));
+    }
   }
 
 }
