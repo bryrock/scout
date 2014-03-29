@@ -23,4 +23,4 @@ Scout Tips and Trails are exportable (using Features), so they can be created on
 Scout Trails Requires: Context, Chaos tools, Entity API, Entity Reference, Features, Fieldgroup, inline_entity_form, List, Number, Options, Scout, Text, Views
 
 
-Once installed, there is help information and a skinny tutorial at /admin/help/scout_trails.
+Once installed, there is help information at /admin/help/scout_trails.  If you also enable scout_pak, you can use the FastTrack tutorial, which also starts at /admin/help/scout_trails.
