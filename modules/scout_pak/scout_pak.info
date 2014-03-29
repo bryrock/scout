@@ -7,7 +7,6 @@ dependencies[] = ctools
 dependencies[] = entity
 dependencies[] = scout
 dependencies[] = scout_trails
-features[context][] = clone_of_scout_tip_create
 features[context][] = fast_track_scout_tip_create
 features[context][] = fast_track_scout_trail_create
 features[context][] = first_time_scout

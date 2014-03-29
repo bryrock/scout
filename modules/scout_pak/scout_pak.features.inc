@@ -1485,8 +1485,8 @@ function scout_pak_default_scout_trail() {
     "changed" : "1396058018",
     "tnid" : "0",
     "translate" : "0",
-    "status" : "1",
-    "module" : "scout_trails",
+    "status" : "2",
+    "module" : "scout_pak",
     "field_scout_trail_tips" : { "und" : [ { "target_id" : "31" } ] }
   }');
   $items['9'] = entity_import('scout_trail', '{
@@ -1501,8 +1501,8 @@ function scout_pak_default_scout_trail() {
     "changed" : "1396059154",
     "tnid" : "0",
     "translate" : "0",
-    "status" : "1",
-    "module" : "scout_trails",
+    "status" : "2",
+    "module" : "scout_pak",
     "field_scout_trail_tips" : { "und" : [ { "target_id" : "32" } ] }
   }');
   $items['10'] = entity_import('scout_trail', '{
@@ -1517,8 +1517,8 @@ function scout_pak_default_scout_trail() {
     "changed" : "1396063997",
     "tnid" : "0",
     "translate" : "0",
-    "status" : "1",
-    "module" : "scout_trails",
+    "status" : "2",
+    "module" : "scout_pak",
     "field_scout_trail_tips" : { "und" : [ { "target_id" : "33" } ] }
   }');
   return $items;
