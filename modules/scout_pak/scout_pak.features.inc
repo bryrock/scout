@@ -1872,32 +1872,32 @@ function scout_pak_default_scout_trail() {
     "trail_id" : "12",
     "type" : "scout_trail",
     "language" : "und",
-    "title" : "Scout Help Page",
-    "description" : "Encourages user to actually look at the help info",
+    "title" : "Scout Content and Context Trick",
+    "description" : "Shows Scout Admin and a Context Trick",
     "uid" : "1",
     "published" : "1",
     "created" : "1396092321",
-    "changed" : "1396092385",
+    "changed" : "1396097452",
     "tnid" : "0",
     "translate" : "0",
-    "status" : "1",
-    "module" : "scout_trails",
-    "field_scout_trail_tips" : { "und" : [ { "target_id" : "32" } ] }
+    "status" : "3",
+    "module" : "scout_pak",
+    "field_scout_trail_tips" : { "und" : [ { "target_id" : "41" }, { "target_id" : "42" }, { "target_id" : "43" } ] }
   }');
   $items['13'] = entity_import('scout_trail', '{
     "trail_id" : "13",
     "type" : "scout_trail",
     "language" : "und",
-    "title" : "Scout Trails Help Page",
+    "title" : "Scout Trails FastTrack Help Page",
     "description" : "Invites User to FastTrack Tutorial",
     "uid" : "1",
     "published" : "1",
     "created" : "1396092400",
-    "changed" : "1396092455",
+    "changed" : "1396097066",
     "tnid" : "0",
     "translate" : "0",
-    "status" : "1",
-    "module" : "scout_trails",
+    "status" : "3",
+    "module" : "scout_pak",
     "field_scout_trail_tips" : { "und" : [ { "target_id" : "33" } ] }
   }');
   return $items;

@@ -89,6 +89,11 @@ function scout_pak_context_default_contexts() {
         'admin/*' => 'admin/*',
       ),
     ),
+    'user' => array(
+      'values' => array(
+        'authenticated user' => 'authenticated user',
+      ),
+    ),
   );
   $context->reactions = array(
     'scout_trail' => array(
@@ -127,7 +132,7 @@ function scout_pak_context_default_contexts() {
     'scout_trail' => array(
       'trail_auto_start' => 1,
       'trail_play_once' => 0,
-      'trail_content' => '11',
+      'trail_content' => '12',
     ),
   );
   $context->condition_mode = 1;
