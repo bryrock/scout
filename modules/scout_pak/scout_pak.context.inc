@@ -108,13 +108,18 @@ function scout_pak_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
-  $context->name = 'scout_help_page';
-  $context->description = 'One stop scout trail on help page';
+  $context->name = 'scout_context_trick';
+  $context->description = 'Shows how to auto start Scout Trails with Fake URLs';
   $context->tag = 'Scout Pak';
   $context->conditions = array(
     'path' => array(
       'values' => array(
-        'admin/help/scout' => 'admin/help/scout',
+        'admin/content/context-trick' => 'admin/content/context-trick',
+      ),
+    ),
+    'user' => array(
+      'values' => array(
+        'authenticated user' => 'authenticated user',
       ),
     ),
   );
@@ -122,16 +127,16 @@ function scout_pak_context_default_contexts() {
     'scout_trail' => array(
       'trail_auto_start' => 1,
       'trail_play_once' => 0,
-      'trail_content' => '9',
+      'trail_content' => '11',
     ),
   );
-  $context->condition_mode = 0;
+  $context->condition_mode = 1;
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('One stop scout trail on help page');
   t('Scout Pak');
-  $export['scout_help_page'] = $context;
+  t('Shows how to auto start Scout Trails with Fake URLs');
+  $export['scout_context_trick'] = $context;
 
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
@@ -221,6 +226,11 @@ function scout_pak_context_default_contexts() {
         'admin/structure/context/list/scout_trail_context/edit' => 'admin/structure/context/list/scout_trail_context/edit',
       ),
     ),
+    'user' => array(
+      'values' => array(
+        'authenticated user' => 'authenticated user',
+      ),
+    ),
   );
   $context->reactions = array(
     'block' => array(
@@ -239,7 +249,7 @@ function scout_pak_context_default_contexts() {
       'trail_content' => '7',
     ),
   );
-  $context->condition_mode = 0;
+  $context->condition_mode = 1;
 
   // Translatables
   // Included for use with string extractors like potx.
@@ -296,6 +306,7 @@ function scout_pak_context_default_contexts() {
   $context->conditions = array(
     'path' => array(
       'values' => array(
+        'admin/help/scout' => 'admin/help/scout',
         'admin/help/scout_trails' => 'admin/help/scout_trails',
       ),
     ),
@@ -304,7 +315,7 @@ function scout_pak_context_default_contexts() {
     'scout_trail' => array(
       'trail_auto_start' => 1,
       'trail_play_once' => 0,
-      'trail_content' => '10',
+      'trail_content' => '13',
     ),
   );
   $context->condition_mode = 0;
@@ -355,4 +366,3 @@ function scout_pak_context_default_contexts() {
 
   return $export;
 }
-

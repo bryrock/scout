@@ -225,49 +225,6 @@ function scout_pak_default_scout_tip() {
       ]
     }
   }');
-  $items['6'] = entity_import('scout_tip', '{
-    "tip_id" : "6",
-    "type" : "scout_tip",
-    "language" : "und",
-    "title" : "Blog Tip",
-    "uid" : "5",
-    "published" : "1",
-    "created" : "1384758837",
-    "changed" : "1384758837",
-    "tnid" : "0",
-    "translate" : "0",
-    "status" : "2",
-    "module" : "scout_pak",
-    "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
-    "field_scout_tip_button_text" : { "und" : [ { "value" : "Next", "format" : null, "safe_value" : "Next" } ] },
-    "field_scout_tip_class" : { "und" : [
-        {
-          "value" : "custom-scout-tip",
-          "format" : null,
-          "safe_value" : "custom-scout-tip"
-        }
-      ]
-    },
-    "field_scout_tip_orientation" : { "und" : [ { "value" : "bottom" } ] },
-    "field_scout_tip_selector_class" : { "und" : [
-        {
-          "value" : "menu-mlid-1533",
-          "format" : null,
-          "safe_value" : "menu-mlid-1533"
-        }
-      ]
-    },
-    "field_scout_tip_selector_id" : [  ],
-    "field_scout_tip_selector_type" : { "und" : [ { "value" : "Class ID" } ] },
-    "field_scout_tip_text" : { "und" : [
-        {
-          "value" : "This is a blog, dumbass",
-          "format" : null,
-          "safe_value" : "This is a blog, dumbass"
-        }
-      ]
-    }
-  }');
   $items['7'] = entity_import('scout_tip', '{
     "tip_id" : "7",
     "type" : "scout_tip",
@@ -370,7 +327,7 @@ function scout_pak_default_scout_tip() {
         }
       ]
     },
-    "field_scout_tip_orientation" : { "und" : [ { "value" : "top" } ] },
+    "field_scout_tip_orientation" : { "und" : [ { "value" : "bottom" } ] },
     "field_scout_tip_selector_class" : { "und" : [
         {
           "value" : "action-links",
@@ -449,7 +406,7 @@ function scout_pak_default_scout_tip() {
         }
       ]
     },
-    "field_scout_tip_orientation" : { "und" : [ { "value" : "top" } ] },
+    "field_scout_tip_orientation" : { "und" : [ { "value" : "bottom" } ] },
     "field_scout_tip_selector_class" : { "und" : [
         {
           "value" : "action-links",
@@ -728,7 +685,7 @@ function scout_pak_default_scout_tip() {
     "uid" : "5",
     "published" : "1",
     "created" : "1384886288",
-    "changed" : "1384886288",
+    "changed" : "1396081056",
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
@@ -756,9 +713,9 @@ function scout_pak_default_scout_tip() {
     "field_scout_tip_selector_type" : { "und" : [ { "value" : "Class ID" } ] },
     "field_scout_tip_text" : { "und" : [
         {
-          "value" : "If you don\\u0027t want the Scout Tour to begin automatically, then add the Trailhead block to an appropriate region.",
+          "value" : "If you don\\u0027t want the Scout Tour to begin automatically, then add the Trailhead block to an appropriate region.\\u003Cbr \\u002F\\u003E\\u003Cbr \\u002F\\u003E\\u000ASince this is an admin page, the block is in the content region.\\u003Cbr \\u002F\\u003E\\u003Cbr \\u002F\\u003E\\u000AFor pages seen by your site visitors, you could style the block to appear in an out of the way place, such as a user bar, etc.",
           "format" : null,
-          "safe_value" : "If you don\\u0026#039;t want the Scout Tour to begin automatically, then add the Trailhead block to an appropriate region."
+          "safe_value" : "If you don\\u0026#039;t want the Scout Tour to begin automatically, then add the Trailhead block to an appropriate region.\\u0026lt;br \\u002F\\u0026gt;\\u0026lt;br \\u002F\\u0026gt;\\u000ASince this is an admin page, the block is in the content region.\\u0026lt;br \\u002F\\u0026gt;\\u0026lt;br \\u002F\\u0026gt;\\u000AFor pages seen by your site visitors, you could style the block to appear in an out of the way place, such as a user bar, etc."
         }
       ]
     }
@@ -813,11 +770,11 @@ function scout_pak_default_scout_tip() {
     "tip_id" : "20",
     "type" : "scout_tip",
     "language" : "und",
-    "title" : "Scout Tips Caveat",
+    "title" : "Scout Trail Review",
     "uid" : "5",
     "published" : "1",
     "created" : "1384887705",
-    "changed" : "1395980429",
+    "changed" : "1396085620",
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
@@ -845,9 +802,9 @@ function scout_pak_default_scout_tip() {
     "field_scout_tip_selector_type" : { "und" : [ { "value" : "Modal" } ] },
     "field_scout_tip_text" : { "und" : [
         {
-          "value" : "This demo has shown some Scout Tips that were attached to selectors that normally would be contained inside closed fieldsets on page load.  They only worked in this demo because I opened those fieldsets prior to proceeding to that tip.  In normal conditions, Scout Tips that are attached to selectors not available on page load will not know where to go, and will appear in the upper left corner of the screen. \\u003Cbr \\u002F\\u003E\\u003Cbr \\u002F\\u003E\\u000AAn alternative is to make those tips modal (like this tip), but then they are not a precise as those tips that point to the area they are addressing.",
+          "value" : "Keep in mind that if you use Scout Trails on admin forms with fields hidden in fieldsets, you will have to do as we have done and add action tips for the user to open them before you can show them what\\u0027s inside. Otherwise, Scout Tips that are attached to selectors not available on page load will not know where to go, and will appear in the upper left corner of the screen. \\u003Cbr \\u002F\\u003E\\u003Cbr \\u002F\\u003E\\u000D\\u000ATo highlight required actions, you can wrap them in a simple span tag, with a class of \\u0022action\\u0022 and it will be colored green.\\u003Cbr \\u002F\\u003E\\u003Cbr \\u002F\\u003E\\u000D\\u000AAn alternative is to make those tips modal (like this tip), but then they are not a precise as those tips that point to the area they are addressing.",
           "format" : null,
-          "safe_value" : "This demo has shown some Scout Tips that were attached to selectors that normally would be contained inside closed fieldsets on page load.  They only worked in this demo because I opened those fieldsets prior to proceeding to that tip.  In normal conditions, Scout Tips that are attached to selectors not available on page load will not know where to go, and will appear in the upper left corner of the screen. \\u0026lt;br \\u002F\\u0026gt;\\u0026lt;br \\u002F\\u0026gt;\\u000AAn alternative is to make those tips modal (like this tip), but then they are not a precise as those tips that point to the area they are addressing."
+          "safe_value" : "Keep in mind that if you use Scout Trails on admin forms with fields hidden in fieldsets, you will have to do as we have done and add action tips for the user to open them before you can show them what\\u0026#039;s inside. Otherwise, Scout Tips that are attached to selectors not available on page load will not know where to go, and will appear in the upper left corner of the screen. \\u0026lt;br \\u002F\\u0026gt;\\u0026lt;br \\u002F\\u0026gt;\\u000D\\u000ATo highlight required actions, you can wrap them in a simple span tag, with a class of \\u0026quot;action\\u0026quot; and it will be colored green.\\u0026lt;br \\u002F\\u0026gt;\\u0026lt;br \\u002F\\u0026gt;\\u000D\\u000AAn alternative is to make those tips modal (like this tip), but then they are not a precise as those tips that point to the area they are addressing."
         }
       ]
     }
@@ -1111,7 +1068,7 @@ function scout_pak_default_scout_tip() {
     "uid" : "1",
     "published" : "1",
     "created" : "1396054254",
-    "changed" : "1396054503",
+    "changed" : "1396080939",
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
@@ -1139,9 +1096,9 @@ function scout_pak_default_scout_tip() {
     "field_scout_tip_selector_type" : { "und" : [ { "value" : "Class ID" } ] },
     "field_scout_tip_text" : { "und" : [
         {
-          "value" : "For the next tip to appear in the right place, please click where it says, \\u0022Path,\\u0022 BEFORE you click the Next button.",
+          "value" : "For the next tip to appear in the right place,  \\u003Cspan class =\\u0022action\\u0022\\u003Eplease click where it says, \\u0022Path,\\u0022\\u003C\\u002Fspan\\u003E BEFORE you click the Next button.",
           "format" : null,
-          "safe_value" : "For the next tip to appear in the right place, please click where it says, \\u0026quot;Path,\\u0026quot; BEFORE you click the Next button."
+          "safe_value" : "For the next tip to appear in the right place,  \\u0026lt;span class =\\u0026quot;action\\u0026quot;\\u0026gt;please click where it says, \\u0026quot;Path,\\u0026quot;\\u0026lt;\\u002Fspan\\u0026gt; BEFORE you click the Next button."
         }
       ]
     }
@@ -1193,11 +1150,11 @@ function scout_pak_default_scout_tip() {
     "tip_id" : "30",
     "type" : "scout_tip",
     "language" : "und",
-    "title" : "Scout Trails Contect - Reaction II",
+    "title" : "Scout Trails Context - Reaction II",
     "uid" : "1",
     "published" : "1",
     "created" : "1396055703",
-    "changed" : "1396055827",
+    "changed" : "1396083757",
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
@@ -1212,22 +1169,22 @@ function scout_pak_default_scout_tip() {
         }
       ]
     },
-    "field_scout_tip_orientation" : { "und" : [ { "value" : "top" } ] },
-    "field_scout_tip_selector_class" : [  ],
-    "field_scout_tip_selector_id" : { "und" : [
+    "field_scout_tip_orientation" : { "und" : [ { "value" : "bottom" } ] },
+    "field_scout_tip_selector_class" : { "und" : [
         {
-          "value" : "edit-reactions-selector",
+          "value" : "context-plugin-scout_trail",
           "format" : null,
-          "safe_value" : "edit-reactions-selector"
+          "safe_value" : "context-plugin-scout_trail"
         }
       ]
     },
-    "field_scout_tip_selector_type" : { "und" : [ { "value" : "Data ID" } ] },
+    "field_scout_tip_selector_id" : [  ],
+    "field_scout_tip_selector_type" : { "und" : [ { "value" : "Class ID" } ] },
     "field_scout_tip_text" : { "und" : [
         {
-          "value" : "Now open (click on) Scout Trail.",
+          "value" : "Now \\u003Cspan class=\\u0022action\\u0022\\u003Eopen (click on) the Scout Trail\\u003C\\u002Fspan\\u003E context reaction.",
           "format" : null,
-          "safe_value" : "Now open (click on) Scout Trail."
+          "safe_value" : "Now \\u0026lt;span class=\\u0026quot;action\\u0026quot;\\u0026gt;open (click on) the Scout Trail\\u0026lt;\\u002Fspan\\u0026gt; context reaction."
         }
       ]
     }
@@ -1283,7 +1240,7 @@ function scout_pak_default_scout_tip() {
     "uid" : "1",
     "published" : "1",
     "created" : "1396058522",
-    "changed" : "1396060401",
+    "changed" : "1396091523",
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
@@ -1326,7 +1283,7 @@ function scout_pak_default_scout_tip() {
     "uid" : "1",
     "published" : "1",
     "created" : "1396062202",
-    "changed" : "1396063994",
+    "changed" : "1396091571",
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
@@ -1357,6 +1314,421 @@ function scout_pak_default_scout_tip() {
           "value" : "Read this page and\\u002For \\u003Cbr \\u002F\\u003E\\u003Cbr \\u002F\\u003E\\u000A\\u003Ca href =\\u0022\\u002Fadmin\\u002Fcontent\\u002Fscout-trails\\u002Fscout-tips\\u002F1\\u002Fedit\\u002Ffast-track\\u0022\\u003EFAST TRACK HERE!\\u003C\\u002Fa\\u003E",
           "format" : null,
           "safe_value" : "Read this page and\\u002For \\u0026lt;br \\u002F\\u0026gt;\\u0026lt;br \\u002F\\u0026gt;\\u000A\\u0026lt;a href =\\u0026quot;\\u002Fadmin\\u002Fcontent\\u002Fscout-trails\\u002Fscout-tips\\u002F1\\u002Fedit\\u002Ffast-track\\u0026quot;\\u0026gt;FAST TRACK HERE!\\u0026lt;\\u002Fa\\u0026gt;"
+        }
+      ]
+    }
+  }');
+  $items['34'] = entity_import('scout_tip', '{
+    "tip_id" : "34",
+    "type" : "scout_tip",
+    "language" : "und",
+    "title" : "IMPORTANT",
+    "uid" : "1",
+    "published" : "1",
+    "created" : "1396076524",
+    "changed" : "1396080904",
+    "tnid" : "0",
+    "translate" : "0",
+    "status" : "2",
+    "module" : "scout_pak",
+    "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
+    "field_scout_tip_button_text" : { "und" : [
+        { "value" : "Understood", "format" : null, "safe_value" : "Understood" }
+      ]
+    },
+    "field_scout_tip_class" : { "und" : [
+        {
+          "value" : "custom-scout-tip",
+          "format" : null,
+          "safe_value" : "custom-scout-tip"
+        }
+      ]
+    },
+    "field_scout_tip_orientation" : { "und" : [ { "value" : "bottom" } ] },
+    "field_scout_tip_selector_class" : [  ],
+    "field_scout_tip_selector_id" : [  ],
+    "field_scout_tip_selector_type" : { "und" : [ { "value" : "Modal" } ] },
+    "field_scout_tip_text" : { "und" : [
+        {
+          "value" : "This trail contains tips with \\u003Cspan class =\\u0022action\\u0022\\u003Eactions\\u003C\\u002Fspan\\u003E that are necessary to perform before clicking the Next button, otherwise the tips will be unable to point you in the right direction.",
+          "format" : null,
+          "safe_value" : "This trail contains tips with \\u0026lt;span class =\\u0026quot;action\\u0026quot;\\u0026gt;actions\\u0026lt;\\u002Fspan\\u0026gt; that are necessary to perform before clicking the Next button, otherwise the tips will be unable to point you in the right direction."
+        }
+      ]
+    }
+  }');
+  $items['35'] = entity_import('scout_tip', '{
+    "tip_id" : "35",
+    "type" : "scout_tip",
+    "language" : "und",
+    "title" : "Scout Trails Context Conditions",
+    "uid" : "1",
+    "published" : "1",
+    "created" : "1396076855",
+    "changed" : "1396077043",
+    "tnid" : "0",
+    "translate" : "0",
+    "status" : "2",
+    "module" : "scout_pak",
+    "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
+    "field_scout_tip_button_text" : { "und" : [ { "value" : "Next", "format" : null, "safe_value" : "Next" } ] },
+    "field_scout_tip_class" : { "und" : [
+        {
+          "value" : "custom-scout-tip",
+          "format" : null,
+          "safe_value" : "custom-scout-tip"
+        }
+      ]
+    },
+    "field_scout_tip_orientation" : { "und" : [ { "value" : "top" } ] },
+    "field_scout_tip_selector_class" : { "und" : [
+        {
+          "value" : "context-plugin-info",
+          "format" : null,
+          "safe_value" : "context-plugin-info"
+        }
+      ]
+    },
+    "field_scout_tip_selector_id" : [  ],
+    "field_scout_tip_selector_type" : { "und" : [ { "value" : "Class ID" } ] },
+    "field_scout_tip_text" : { "und" : [
+        {
+          "value" : "We\\u0027re going to look at a Context Condition.  Please click on \\u0022Path\\u0022 below, before hitting the next button.",
+          "format" : null,
+          "safe_value" : "We\\u0026#039;re going to look at a Context Condition.  Please click on \\u0026quot;Path\\u0026quot; below, before hitting the next button."
+        }
+      ]
+    }
+  }');
+  $items['36'] = entity_import('scout_tip', '{
+    "tip_id" : "36",
+    "type" : "scout_tip",
+    "language" : "und",
+    "title" : "Scout Trails Context Reactions",
+    "uid" : "1",
+    "published" : "1",
+    "created" : "1396077207",
+    "changed" : "1396083854",
+    "tnid" : "0",
+    "translate" : "0",
+    "status" : "2",
+    "module" : "scout_pak",
+    "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
+    "field_scout_tip_button_text" : { "und" : [ { "value" : "Next", "format" : null, "safe_value" : "Next" } ] },
+    "field_scout_tip_class" : { "und" : [
+        {
+          "value" : "custom-scout-tip",
+          "format" : null,
+          "safe_value" : "custom-scout-tip"
+        }
+      ]
+    },
+    "field_scout_tip_orientation" : { "und" : [ { "value" : "top" } ] },
+    "field_scout_tip_selector_class" : [  ],
+    "field_scout_tip_selector_id" : { "und" : [
+        {
+          "value" : "edit-reactions-selector",
+          "format" : null,
+          "safe_value" : "edit-reactions-selector"
+        }
+      ]
+    },
+    "field_scout_tip_selector_type" : { "und" : [ { "value" : "Data ID" } ] },
+    "field_scout_tip_text" : { "und" : [
+        {
+          "value" : "Next we\\u0027ll look at the Context Reactions that will activate Scout Trails.  Please \\u003Cspan class=\\u0022action\\u0022\\u003Eclick on \\u0022Blocks\\u0022\\u003C\\u002Fspan\\u003Ebefore hitting Next button.",
+          "format" : null,
+          "safe_value" : "Next we\\u0026#039;ll look at the Context Reactions that will activate Scout Trails.  Please \\u0026lt;span class=\\u0026quot;action\\u0026quot;\\u0026gt;click on \\u0026quot;Blocks\\u0026quot;\\u0026lt;\\u002Fspan\\u0026gt;before hitting Next button."
+        }
+      ]
+    }
+  }');
+  $items['37'] = entity_import('scout_tip', '{
+    "tip_id" : "37",
+    "type" : "scout_tip",
+    "language" : "und",
+    "title" : "Scout Trails Context - Scout Trail",
+    "uid" : "1",
+    "published" : "1",
+    "created" : "1396077932",
+    "changed" : "1396078376",
+    "tnid" : "0",
+    "translate" : "0",
+    "status" : "2",
+    "module" : "scout_pak",
+    "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
+    "field_scout_tip_button_text" : { "und" : [ { "value" : "Next", "format" : null, "safe_value" : "Next" } ] },
+    "field_scout_tip_class" : { "und" : [
+        {
+          "value" : "custom-scout-tip",
+          "format" : null,
+          "safe_value" : "custom-scout-tip"
+        }
+      ]
+    },
+    "field_scout_tip_orientation" : { "und" : [ { "value" : "bottom" } ] },
+    "field_scout_tip_selector_class" : { "und" : [
+        {
+          "value" : "context-plugin-scout_trail",
+          "format" : null,
+          "safe_value" : "context-plugin-scout_trail"
+        }
+      ]
+    },
+    "field_scout_tip_selector_id" : [  ],
+    "field_scout_tip_selector_type" : { "und" : [ { "value" : "Class ID" } ] },
+    "field_scout_tip_text" : { "und" : [
+        {
+          "value" : "Scout Trail is available as a Context reaction.  Please click on \\u0022Scout Trail\\u0022 below, before proceeding with the Next button.",
+          "format" : null,
+          "safe_value" : "Scout Trail is available as a Context reaction.  Please click on \\u0026quot;Scout Trail\\u0026quot; below, before proceeding with the Next button."
+        }
+      ]
+    }
+  }');
+  $items['38'] = entity_import('scout_tip', '{
+    "tip_id" : "38",
+    "type" : "scout_tip",
+    "language" : "und",
+    "title" : "Scout Trails Context - Auto Start",
+    "uid" : "1",
+    "published" : "1",
+    "created" : "1396084314",
+    "changed" : "1396084951",
+    "tnid" : "0",
+    "translate" : "0",
+    "status" : "2",
+    "module" : "scout_pak",
+    "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
+    "field_scout_tip_button_text" : { "und" : [
+        {
+          "value" : "Okay, thanks",
+          "format" : null,
+          "safe_value" : "Okay, thanks"
+        }
+      ]
+    },
+    "field_scout_tip_class" : { "und" : [
+        {
+          "value" : "custom-scout-tip",
+          "format" : null,
+          "safe_value" : "custom-scout-tip"
+        }
+      ]
+    },
+    "field_scout_tip_orientation" : { "und" : [ { "value" : "right" } ] },
+    "field_scout_tip_selector_class" : { "und" : [
+        {
+          "value" : "form-item-reactions-plugins-scout-trail-trail-auto-start",
+          "format" : null,
+          "safe_value" : "form-item-reactions-plugins-scout-trail-trail-auto-start"
+        }
+      ]
+    },
+    "field_scout_tip_selector_id" : [  ],
+    "field_scout_tip_selector_type" : { "und" : [ { "value" : "Class ID" } ] },
+    "field_scout_tip_text" : { "und" : [
+        {
+          "value" : "Here is how you make a Scout Trail start automatically on a page.  You typically wouldn\\u0027t do this along with a Trailhead block.\\u003Cbr \\u002F\\u003E\\u003Cbr \\u002F\\u003E\\u000AYou probably will want to use this sparingly, especially on pages with frequent visitors who already know how to use them. There are other tricks for showing them only sometimes on those pages.",
+          "format" : null,
+          "safe_value" : "Here is how you make a Scout Trail start automatically on a page.  You typically wouldn\\u0026#039;t do this along with a Trailhead block.\\u0026lt;br \\u002F\\u0026gt;\\u0026lt;br \\u002F\\u0026gt;\\u000AYou probably will want to use this sparingly, especially on pages with frequent visitors who already know how to use them. There are other tricks for showing them only sometimes on those pages."
+        }
+      ]
+    }
+  }');
+  $items['39'] = entity_import('scout_tip', '{
+    "tip_id" : "39",
+    "type" : "scout_tip",
+    "language" : "und",
+    "title" : "Scout Trails Context - \\u0022Play Once\\u0022",
+    "uid" : "1",
+    "published" : "1",
+    "created" : "1396084681",
+    "changed" : "1396084930",
+    "tnid" : "0",
+    "translate" : "0",
+    "status" : "2",
+    "module" : "scout_pak",
+    "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
+    "field_scout_tip_button_text" : { "und" : [ { "value" : "Next", "format" : null, "safe_value" : "Next" } ] },
+    "field_scout_tip_class" : { "und" : [
+        {
+          "value" : "custom-scout-tip",
+          "format" : null,
+          "safe_value" : "custom-scout-tip"
+        }
+      ]
+    },
+    "field_scout_tip_orientation" : { "und" : [ { "value" : "bottom" } ] },
+    "field_scout_tip_selector_class" : { "und" : [
+        {
+          "value" : "form-item-reactions-plugins-scout-trail-trail-play-once",
+          "format" : null,
+          "safe_value" : "form-item-reactions-plugins-scout-trail-trail-play-once"
+        }
+      ]
+    },
+    "field_scout_tip_selector_id" : [  ],
+    "field_scout_tip_selector_type" : { "und" : [ { "value" : "Class ID" } ] },
+    "field_scout_tip_text" : { "und" : [
+        {
+          "value" : "\\u0022Play trail only once\\u0022 is cookie-based, but it\\u0027s hard to test, so you may find little use for it.",
+          "format" : null,
+          "safe_value" : "\\u0026quot;Play trail only once\\u0026quot; is cookie-based, but it\\u0026#039;s hard to test, so you may find little use for it."
+        }
+      ]
+    }
+  }');
+  $items['40'] = entity_import('scout_tip', '{
+    "tip_id" : "40",
+    "type" : "scout_tip",
+    "language" : "und",
+    "title" : "Context Tricks",
+    "uid" : "1",
+    "published" : "1",
+    "created" : "1396085782",
+    "changed" : "1396088258",
+    "tnid" : "0",
+    "translate" : "0",
+    "status" : "2",
+    "module" : "scout_pak",
+    "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
+    "field_scout_tip_button_text" : { "und" : [
+        { "value" : "Maybe later", "format" : null, "safe_value" : "Maybe later" }
+      ]
+    },
+    "field_scout_tip_class" : { "und" : [
+        {
+          "value" : "custom-scout-tip",
+          "format" : null,
+          "safe_value" : "custom-scout-tip"
+        }
+      ]
+    },
+    "field_scout_tip_orientation" : { "und" : [ { "value" : "bottom" } ] },
+    "field_scout_tip_selector_class" : [  ],
+    "field_scout_tip_selector_id" : [  ],
+    "field_scout_tip_selector_type" : { "und" : [ { "value" : "Modal" } ] },
+    "field_scout_tip_text" : { "und" : [
+        {
+          "value" : "You wanna see a neat trick you can do with context?  This is how you can make common pages have autostart Scout Trails, but only under a certain condition.\\u003Cbr \\u002F\\u003E\\u003Cbr \\u002F\\u003E\\u000D\\u000AIf you want to see it, \\u003Ca href=\\u0022\\u002Fadmin\\u002Fcontent\\u002Fcontext-trick\\u0022\\u003EClick This Trick\\u003C\\u002Fa\\u003E.",
+          "format" : null,
+          "safe_value" : "You wanna see a neat trick you can do with context?  This is how you can make common pages have autostart Scout Trails, but only under a certain condition.\\u0026lt;br \\u002F\\u0026gt;\\u0026lt;br \\u002F\\u0026gt;\\u000D\\u000AIf you want to see it, \\u0026lt;a href=\\u0026quot;\\u002Fadmin\\u002Fcontent\\u002Fcontext-trick\\u0026quot;\\u0026gt;Click This Trick\\u0026lt;\\u002Fa\\u0026gt;."
+        }
+      ]
+    }
+  }');
+  $items['41'] = entity_import('scout_tip', '{
+    "tip_id" : "41",
+    "type" : "scout_tip",
+    "language" : "und",
+    "title" : "Context Only URLs",
+    "uid" : "1",
+    "published" : "1",
+    "created" : "1396086166",
+    "changed" : "1396087471",
+    "tnid" : "0",
+    "translate" : "0",
+    "status" : "2",
+    "module" : "scout_pak",
+    "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
+    "field_scout_tip_button_text" : { "und" : [
+        {
+          "value" : "Let Me Noodle on That",
+          "format" : null,
+          "safe_value" : "Let Me Noodle on That"
+        }
+      ]
+    },
+    "field_scout_tip_class" : { "und" : [
+        {
+          "value" : "custom-scout-tip",
+          "format" : null,
+          "safe_value" : "custom-scout-tip"
+        }
+      ]
+    },
+    "field_scout_tip_orientation" : { "und" : [ { "value" : "bottom" } ] },
+    "field_scout_tip_selector_class" : [  ],
+    "field_scout_tip_selector_id" : [  ],
+    "field_scout_tip_selector_type" : { "und" : [ { "value" : "Modal" } ] },
+    "field_scout_tip_text" : { "und" : [
+        {
+          "value" : "Note the address above.  It\\u0027s \\u002Fadmin\\u002Fcontent\\u002Fcontext-trick, but there\\u0027s really no such page.  There\\u0027s only a Scout Trail context reaction for it, in autostart mode.\\u003Cbr \\u002F\\u003E\\u003Cbr \\u002F\\u003E\\u000AThat\\u0027s enough to get a reaction out of Context and Scout, but since the page doesn\\u0027t actually exist, the fallback is to the left of the fake address (admin\\u002Fcontent), which is real.\\u003Cbr \\u002F\\u003E\\u003Cbr \\u002F\\u003E\\u000AIf a user goes to that URL as usual, there won\\u0027t be any Scout Trails in their way.  Typically, the only way to get to the fake URL is the way we just did, via a direct link.",
+          "format" : null,
+          "safe_value" : "Note the address above.  It\\u0026#039;s \\u002Fadmin\\u002Fcontent\\u002Fcontext-trick, but there\\u0026#039;s really no such page.  There\\u0026#039;s only a Scout Trail context reaction for it, in autostart mode.\\u0026lt;br \\u002F\\u0026gt;\\u0026lt;br \\u002F\\u0026gt;\\u000AThat\\u0026#039;s enough to get a reaction out of Context and Scout, but since the page doesn\\u0026#039;t actually exist, the fallback is to the left of the fake address (admin\\u002Fcontent), which is real.\\u0026lt;br \\u002F\\u0026gt;\\u0026lt;br \\u002F\\u0026gt;\\u000AIf a user goes to that URL as usual, there won\\u0026#039;t be any Scout Trails in their way.  Typically, the only way to get to the fake URL is the way we just did, via a direct link."
+        }
+      ]
+    }
+  }');
+  $items['42'] = entity_import('scout_tip', '{
+    "tip_id" : "42",
+    "type" : "scout_tip",
+    "language" : "und",
+    "title" : "Scout Trails in Content",
+    "uid" : "1",
+    "published" : "1",
+    "created" : "1396086935",
+    "changed" : "1396087237",
+    "tnid" : "0",
+    "translate" : "0",
+    "status" : "2",
+    "module" : "scout_pak",
+    "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
+    "field_scout_tip_button_text" : { "und" : [ { "value" : "Got it", "format" : null, "safe_value" : "Got it" } ] },
+    "field_scout_tip_class" : { "und" : [
+        {
+          "value" : "custom-scout-tip",
+          "format" : null,
+          "safe_value" : "custom-scout-tip"
+        }
+      ]
+    },
+    "field_scout_tip_orientation" : { "und" : [ { "value" : "left" } ] },
+    "field_scout_tip_selector_class" : { "und" : [ { "value" : "tabs", "format" : null, "safe_value" : "tabs" } ] },
+    "field_scout_tip_selector_id" : [  ],
+    "field_scout_tip_selector_type" : { "und" : [ { "value" : "Class ID" } ] },
+    "field_scout_tip_text" : { "und" : [
+        {
+          "value" : "While we\\u0027re here, we just wanted to show you that when Scout is enabled you can find your Scout Trails in the content administration tabs.",
+          "format" : null,
+          "safe_value" : "While we\\u0026#039;re here, we just wanted to show you that when Scout is enabled you can find your Scout Trails in the content administration tabs."
+        }
+      ]
+    }
+  }');
+  $items['43'] = entity_import('scout_tip', '{
+    "tip_id" : "43",
+    "type" : "scout_tip",
+    "language" : "und",
+    "title" : "Go For It",
+    "uid" : "1",
+    "published" : "1",
+    "created" : "1396087243",
+    "changed" : "1396088530",
+    "tnid" : "0",
+    "translate" : "0",
+    "status" : "2",
+    "module" : "scout_pak",
+    "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
+    "field_scout_tip_button_text" : { "und" : [ { "value" : "Bubbye!", "format" : null, "safe_value" : "Bubbye!" } ] },
+    "field_scout_tip_class" : { "und" : [
+        {
+          "value" : "custom-scout-tip",
+          "format" : null,
+          "safe_value" : "custom-scout-tip"
+        }
+      ]
+    },
+    "field_scout_tip_orientation" : { "und" : [ { "value" : "bottom" } ] },
+    "field_scout_tip_selector_class" : [  ],
+    "field_scout_tip_selector_id" : [  ],
+    "field_scout_tip_selector_type" : { "und" : [ { "value" : "Modal" } ] },
+    "field_scout_tip_text" : { "und" : [
+        {
+          "value" : "That wraps up our FastTrack tour of Scout and Scout Trails.  We\\u0027ll leave you now to dive in and start exploring and making your own Scout Trails.\\u003Cbr \\u002F\\u003E\\u003Cbr \\u002F\\u003E\\u000D\\u000AWhen you no longer need these tutorial Scout Trails, you can turn them off by disabling and uninstalling the Scout Pak feature.\\u000D\\u000AIf you\\u0027d like to take this tour again, \\u003Ca href=\\u0022\\u002Fadmin\\u002Fhelp\\u002Fscout\\u0022\\u003Ego back to the Scout help pages\\u003C\\u002Fa\\u003E.",
+          "format" : null,
+          "safe_value" : "That wraps up our FastTrack tour of Scout and Scout Trails.  We\\u0026#039;ll leave you now to dive in and start exploring and making your own Scout Trails.\\u0026lt;br \\u002F\\u0026gt;\\u0026lt;br \\u002F\\u0026gt;\\u000D\\u000AWhen you no longer need these tutorial Scout Trails, you can turn them off by disabling and uninstalling the Scout Pak feature.\\u000D\\u000AIf you\\u0026#039;d like to take this tour again, \\u0026lt;a href=\\u0026quot;\\u002Fadmin\\u002Fhelp\\u002Fscout\\u0026quot;\\u0026gt;go back to the Scout help pages\\u0026lt;\\u002Fa\\u0026gt;."
         }
       ]
     }
@@ -1460,16 +1832,23 @@ function scout_pak_default_scout_trail() {
     "uid" : "5",
     "published" : "1",
     "created" : "1384885694",
-    "changed" : "1395980432",
+    "changed" : "1396086022",
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
     "module" : "scout_pak",
     "field_scout_trail_tips" : { "und" : [
+        { "target_id" : "34" },
+        { "target_id" : "28" },
         { "target_id" : "17" },
+        { "target_id" : "36" },
         { "target_id" : "18" },
+        { "target_id" : "30" },
         { "target_id" : "19" },
-        { "target_id" : "20" }
+        { "target_id" : "38" },
+        { "target_id" : "39" },
+        { "target_id" : "20" },
+        { "target_id" : "40" }
       ]
     }
   }');
@@ -1489,36 +1868,36 @@ function scout_pak_default_scout_trail() {
     "module" : "scout_pak",
     "field_scout_trail_tips" : { "und" : [ { "target_id" : "31" } ] }
   }');
-  $items['9'] = entity_import('scout_trail', '{
-    "trail_id" : "9",
+  $items['12'] = entity_import('scout_trail', '{
+    "trail_id" : "12",
     "type" : "scout_trail",
     "language" : "und",
     "title" : "Scout Help Page",
     "description" : "Encourages user to actually look at the help info",
     "uid" : "1",
     "published" : "1",
-    "created" : "1396058480",
-    "changed" : "1396059154",
+    "created" : "1396092321",
+    "changed" : "1396092385",
     "tnid" : "0",
     "translate" : "0",
-    "status" : "2",
-    "module" : "scout_pak",
+    "status" : "1",
+    "module" : "scout_trails",
     "field_scout_trail_tips" : { "und" : [ { "target_id" : "32" } ] }
   }');
-  $items['10'] = entity_import('scout_trail', '{
-    "trail_id" : "10",
+  $items['13'] = entity_import('scout_trail', '{
+    "trail_id" : "13",
     "type" : "scout_trail",
     "language" : "und",
-    "title" : "Scout Trails HelpPage",
-    "description" : "Invites user to start tutorial",
+    "title" : "Scout Trails Help Page",
+    "description" : "Invites User to FastTrack Tutorial",
     "uid" : "1",
     "published" : "1",
-    "created" : "1396061956",
-    "changed" : "1396063997",
+    "created" : "1396092400",
+    "changed" : "1396092455",
     "tnid" : "0",
     "translate" : "0",
-    "status" : "2",
-    "module" : "scout_pak",
+    "status" : "1",
+    "module" : "scout_trails",
     "field_scout_trail_tips" : { "und" : [ { "target_id" : "33" } ] }
   }');
   return $items;
