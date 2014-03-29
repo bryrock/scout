@@ -15,7 +15,7 @@ function scout_pak_context_default_contexts() {
   $context->api_version = 3;
   $context->name = 'fast_track_scout_tip_create';
   $context->description = 'Shows how to create Scout Tips (autostart)';
-  $context->tag = 'Scout Trails';
+  $context->tag = 'Scout Pak';
   $context->conditions = array(
     'path' => array(
       'values' => array(
@@ -39,7 +39,7 @@ function scout_pak_context_default_contexts() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Scout Trails');
+  t('Scout Pak');
   t('Shows how to create Scout Tips (autostart)');
   $export['fast_track_scout_tip_create'] = $context;
 
@@ -48,7 +48,7 @@ function scout_pak_context_default_contexts() {
   $context->api_version = 3;
   $context->name = 'fast_track_scout_trail_create';
   $context->description = 'Shows how to create Scout Trails (autostart)';
-  $context->tag = 'Scout Trails';
+  $context->tag = 'Scout Pak';
   $context->conditions = array(
     'path' => array(
       'values' => array(
@@ -73,7 +73,7 @@ function scout_pak_context_default_contexts() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Scout Trails');
+  t('Scout Pak');
   t('Shows how to create Scout Trails (autostart)');
   $export['fast_track_scout_trail_create'] = $context;
 
@@ -82,7 +82,7 @@ function scout_pak_context_default_contexts() {
   $context->api_version = 3;
   $context->name = 'first_time_scout';
   $context->description = 'After new install, this points administrator to help info';
-  $context->tag = 'Scout Trails';
+  $context->tag = 'Scout Pak';
   $context->conditions = array(
     'path' => array(
       'values' => array(
@@ -102,7 +102,7 @@ function scout_pak_context_default_contexts() {
   // Translatables
   // Included for use with string extractors like potx.
   t('After new install, this points administrator to help info');
-  t('Scout Trails');
+  t('Scout Pak');
   $export['first_time_scout'] = $context;
 
   $context = new stdClass();
@@ -110,7 +110,7 @@ function scout_pak_context_default_contexts() {
   $context->api_version = 3;
   $context->name = 'scout_help_page';
   $context->description = 'One stop scout trail on help page';
-  $context->tag = 'Scout Trails';
+  $context->tag = 'Scout Pak';
   $context->conditions = array(
     'path' => array(
       'values' => array(
@@ -130,15 +130,169 @@ function scout_pak_context_default_contexts() {
   // Translatables
   // Included for use with string extractors like potx.
   t('One stop scout trail on help page');
-  t('Scout Trails');
+  t('Scout Pak');
   $export['scout_help_page'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'scout_tip_create';
+  $context->description = 'Shows how to create Scout Tips';
+  $context->tag = 'Scout Pak';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'admin/content/scout-trails/scout-tips/*/edit' => 'admin/content/scout-trails/scout-tips/*/edit',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'scout-scout_trailhead' => array(
+          'module' => 'scout',
+          'delta' => 'scout_trailhead',
+          'region' => 'content',
+          'weight' => '-13',
+        ),
+      ),
+    ),
+    'scout_trail' => array(
+      'trail_auto_start' => 0,
+      'trail_play_once' => FALSE,
+      'trail_content' => '1',
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Scout Pak');
+  t('Shows how to create Scout Tips');
+  $export['scout_tip_create'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'scout_tips_list';
+  $context->description = 'Navigation Scout Tip Admin';
+  $context->tag = 'Scout Pak';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'admin/content/scout-trails/scout-tips' => 'admin/content/scout-trails/scout-tips',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'scout-scout_trailhead' => array(
+          'module' => 'scout',
+          'delta' => 'scout_trailhead',
+          'region' => 'content',
+          'weight' => '-13',
+        ),
+      ),
+    ),
+    'scout_trail' => array(
+      'trail_auto_start' => 0,
+      'trail_play_once' => FALSE,
+      'trail_content' => '4',
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Navigation Scout Tip Admin');
+  t('Scout Pak');
+  $export['scout_tips_list'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'scout_trail_context';
+  $context->description = 'Shows how to add Scout Trails to a page';
+  $context->tag = 'Scout Pak';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'admin/structure/context/list/scout_trail_context/edit' => 'admin/structure/context/list/scout_trail_context/edit',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'scout-scout_trailhead' => array(
+          'module' => 'scout',
+          'delta' => 'scout_trailhead',
+          'region' => 'content',
+          'weight' => '-13',
+        ),
+      ),
+    ),
+    'scout_trail' => array(
+      'trail_auto_start' => 1,
+      'trail_play_once' => 0,
+      'trail_content' => '7',
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Scout Pak');
+  t('Shows how to add Scout Trails to a page');
+  $export['scout_trail_context'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'scout_trail_create';
+  $context->description = 'Shows how to create Scout Trails';
+  $context->tag = 'Scout Pak';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'admin/content/scout-trails/add/scout_trail' => 'admin/content/scout-trails/add/scout_trail',
+        'admin/content/scout-trails/*/edit' => 'admin/content/scout-trails/*/edit',
+        '~admin/content/scout-trails/scout-tips/*/edit' => '~admin/content/scout-trails/scout-tips/*/edit',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'scout-scout_trailhead' => array(
+          'module' => 'scout',
+          'delta' => 'scout_trailhead',
+          'region' => 'content',
+          'weight' => '-13',
+        ),
+      ),
+    ),
+    'scout_trail' => array(
+      'trail_auto_start' => 0,
+      'trail_play_once' => FALSE,
+      'trail_content' => '6',
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Scout Pak');
+  t('Shows how to create Scout Trails');
+  $export['scout_trail_create'] = $context;
 
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'scout_trails_help_page';
   $context->description = 'One stop scout trail on Scout Trails help page';
-  $context->tag = 'Scout Trails';
+  $context->tag = 'Scout Pak';
   $context->conditions = array(
     'path' => array(
       'values' => array(
@@ -158,8 +312,47 @@ function scout_pak_context_default_contexts() {
   // Translatables
   // Included for use with string extractors like potx.
   t('One stop scout trail on Scout Trails help page');
-  t('Scout Trails');
+  t('Scout Pak');
   $export['scout_trails_help_page'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'scout_trails_list';
+  $context->description = 'Navigation Scout Trail Admin';
+  $context->tag = 'Scout Pak';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'admin/content/scout-trails' => 'admin/content/scout-trails',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'scout-scout_trailhead' => array(
+          'module' => 'scout',
+          'delta' => 'scout_trailhead',
+          'region' => 'content',
+          'weight' => '-13',
+        ),
+      ),
+    ),
+    'scout_trail' => array(
+      'trail_auto_start' => 0,
+      'trail_play_once' => FALSE,
+      'trail_content' => '5',
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Navigation Scout Trail Admin');
+  t('Scout Pak');
+  $export['scout_trails_list'] = $context;
 
   return $export;
 }
+
