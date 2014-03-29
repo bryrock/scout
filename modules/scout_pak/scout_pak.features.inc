@@ -1880,7 +1880,7 @@ function scout_pak_default_scout_trail() {
     "changed" : "1396097452",
     "tnid" : "0",
     "translate" : "0",
-    "status" : "3",
+    "status" : "2",
     "module" : "scout_pak",
     "field_scout_trail_tips" : { "und" : [ { "target_id" : "41" }, { "target_id" : "42" }, { "target_id" : "43" } ] }
   }');
@@ -1896,7 +1896,7 @@ function scout_pak_default_scout_trail() {
     "changed" : "1396097066",
     "tnid" : "0",
     "translate" : "0",
-    "status" : "3",
+    "status" : "2",
     "module" : "scout_pak",
     "field_scout_trail_tips" : { "und" : [ { "target_id" : "33" } ] }
   }');
