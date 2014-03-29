@@ -197,7 +197,7 @@ function scout_pak_default_scout_tip() {
     "uid" : "5",
     "published" : "1",
     "created" : "1384757611",
-    "changed" : "1395967431",
+    "changed" : "1396067139",
     "tnid" : "0",
     "translate" : "0",
     "status" : "2",
@@ -218,9 +218,9 @@ function scout_pak_default_scout_tip() {
     "field_scout_tip_selector_type" : { "und" : [ { "value" : "Modal" } ] },
     "field_scout_tip_text" : { "und" : [
         {
-          "value" : "Now you can also create Scout Tips right in Scout Trails!\\u000D\\u000A\\u000D\\u000A\\u003Ca href=\\u0022\\u002Fadmin\\u002Fcontent\\u002Fscout-trails\\u002Fadd\\u002Fscout_trail\\u0022\\u003ESHOW ME!\\u003C\\u002Fa\\u003E.",
+          "value" : "Now you can also create Scout Tips right in Scout Trails!\\u003Cbr \\u002F\\u003E\\u003Cbr \\u002F\\u003E\\u000D\\u000A\\u000D\\u000A\\u003Ca href=\\u0022\\u002Fadmin\\u002Fcontent\\u002Fscout-trails\\u002Fadd\\u002Fscout_trail\\u002Ffast-track\\u0022\\u003EShow me a NEW TRAIL\\u003C\\u002Fa\\u003E\\u003Cbr \\u002F\\u003E\\u000D\\u000A\\u003Ca href=\\u0022\\u002Fadmin\\u002Fcontent\\u002Fscout-trails\\u002F6\\u002Fedit\\u002Ffast-track\\u0022\\u003EShow me an EXISTING TRAIL\\u003C\\u002Fa\\u003E",
           "format" : null,
-          "safe_value" : "Now you can also create Scout Tips right in Scout Trails!\\u000D\\u000A\\u000D\\u000A\\u0026lt;a href=\\u0026quot;\\u002Fadmin\\u002Fcontent\\u002Fscout-trails\\u002Fadd\\u002Fscout_trail\\u0026quot;\\u0026gt;SHOW ME!\\u0026lt;\\u002Fa\\u0026gt;."
+          "safe_value" : "Now you can also create Scout Tips right in Scout Trails!\\u0026lt;br \\u002F\\u0026gt;\\u0026lt;br \\u002F\\u0026gt;\\u000D\\u000A\\u000D\\u000A\\u0026lt;a href=\\u0026quot;\\u002Fadmin\\u002Fcontent\\u002Fscout-trails\\u002Fadd\\u002Fscout_trail\\u002Ffast-track\\u0026quot;\\u0026gt;Show me a NEW TRAIL\\u0026lt;\\u002Fa\\u0026gt;\\u0026lt;br \\u002F\\u0026gt;\\u000D\\u000A\\u0026lt;a href=\\u0026quot;\\u002Fadmin\\u002Fcontent\\u002Fscout-trails\\u002F6\\u002Fedit\\u002Ffast-track\\u0026quot;\\u0026gt;Show me an EXISTING TRAIL\\u0026lt;\\u002Fa\\u0026gt;"
         }
       ]
     }
@@ -992,8 +992,8 @@ function scout_pak_default_scout_tip() {
     "changed" : "1396049863",
     "tnid" : "0",
     "translate" : "0",
-    "status" : "1",
-    "module" : "scout_trails",
+    "status" : "2",
+    "module" : "scout_pak",
     "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
     "field_scout_tip_button_text" : { "und" : [ { "value" : "Far Out!", "format" : null, "safe_value" : "Far Out!" } ] },
     "field_scout_tip_class" : { "und" : [
@@ -1035,8 +1035,8 @@ function scout_pak_default_scout_tip() {
     "changed" : "1396050496",
     "tnid" : "0",
     "translate" : "0",
-    "status" : "1",
-    "module" : "scout_trails",
+    "status" : "2",
+    "module" : "scout_pak",
     "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
     "field_scout_tip_button_text" : { "und" : [ { "value" : "Duh", "format" : null, "safe_value" : "Duh" } ] },
     "field_scout_tip_class" : { "und" : [
@@ -1063,6 +1063,300 @@ function scout_pak_default_scout_tip() {
           "value" : "Don\\u0027t forget to save your trail.  New tips you created in this trail are also not saved until you save the entire form.",
           "format" : null,
           "safe_value" : "Don\\u0026#039;t forget to save your trail.  New tips you created in this trail are also not saved until you save the entire form."
+        }
+      ]
+    }
+  }');
+  $items['27'] = entity_import('scout_tip', '{
+    "tip_id" : "27",
+    "type" : "scout_tip",
+    "language" : "und",
+    "title" : "Welcome to Scout Trails Context",
+    "uid" : "1",
+    "published" : "1",
+    "created" : "1396054022",
+    "changed" : "1396055609",
+    "tnid" : "0",
+    "translate" : "0",
+    "status" : "2",
+    "module" : "scout_pak",
+    "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
+    "field_scout_tip_button_text" : { "und" : [ { "value" : "Next", "format" : null, "safe_value" : "Next" } ] },
+    "field_scout_tip_class" : { "und" : [
+        {
+          "value" : "custom-scout-tip",
+          "format" : null,
+          "safe_value" : "custom-scout-tip"
+        }
+      ]
+    },
+    "field_scout_tip_orientation" : { "und" : [ { "value" : "top" } ] },
+    "field_scout_tip_selector_class" : [  ],
+    "field_scout_tip_selector_id" : [  ],
+    "field_scout_tip_selector_type" : { "und" : [ { "value" : "Modal" } ] },
+    "field_scout_tip_text" : { "und" : [
+        {
+          "value" : "We\\u0027re going to show you some tips.  This tutorial needs some help from you, to open some areas of the page we want to tell you about.\\u003Cbr \\u002F\\u003E\\u000D\\u000ARead the tips carefully for actions to take BEFORE you press Next.",
+          "format" : null,
+          "safe_value" : "We\\u0026#039;re going to show you some tips.  This tutorial needs some help from you, to open some areas of the page we want to tell you about.\\u0026lt;br \\u002F\\u0026gt;\\u000D\\u000ARead the tips carefully for actions to take BEFORE you press Next."
+        }
+      ]
+    }
+  }');
+  $items['28'] = entity_import('scout_tip', '{
+    "tip_id" : "28",
+    "type" : "scout_tip",
+    "language" : "und",
+    "title" : "Scout Trails Context - Condition",
+    "uid" : "1",
+    "published" : "1",
+    "created" : "1396054254",
+    "changed" : "1396054503",
+    "tnid" : "0",
+    "translate" : "0",
+    "status" : "2",
+    "module" : "scout_pak",
+    "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
+    "field_scout_tip_button_text" : { "und" : [ { "value" : "Next", "format" : null, "safe_value" : "Next" } ] },
+    "field_scout_tip_class" : { "und" : [
+        {
+          "value" : "custom-scout-tip",
+          "format" : null,
+          "safe_value" : "custom-scout-tip"
+        }
+      ]
+    },
+    "field_scout_tip_orientation" : { "und" : [ { "value" : "top" } ] },
+    "field_scout_tip_selector_class" : { "und" : [
+        {
+          "value" : "context-plugin-title",
+          "format" : null,
+          "safe_value" : "context-plugin-title"
+        }
+      ]
+    },
+    "field_scout_tip_selector_id" : [  ],
+    "field_scout_tip_selector_type" : { "und" : [ { "value" : "Class ID" } ] },
+    "field_scout_tip_text" : { "und" : [
+        {
+          "value" : "For the next tip to appear in the right place, please click where it says, \\u0022Path,\\u0022 BEFORE you click the Next button.",
+          "format" : null,
+          "safe_value" : "For the next tip to appear in the right place, please click where it says, \\u0026quot;Path,\\u0026quot; BEFORE you click the Next button."
+        }
+      ]
+    }
+  }');
+  $items['29'] = entity_import('scout_tip', '{
+    "tip_id" : "29",
+    "type" : "scout_tip",
+    "language" : "und",
+    "title" : "Scout Trails Context - Reaction",
+    "uid" : "1",
+    "published" : "1",
+    "created" : "1396054861",
+    "changed" : "1396055134",
+    "tnid" : "0",
+    "translate" : "0",
+    "status" : "2",
+    "module" : "scout_pak",
+    "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
+    "field_scout_tip_button_text" : { "und" : [ { "value" : "Next", "format" : null, "safe_value" : "Next" } ] },
+    "field_scout_tip_class" : { "und" : [
+        {
+          "value" : "custom-scout-tip",
+          "format" : null,
+          "safe_value" : "custom-scout-tip"
+        }
+      ]
+    },
+    "field_scout_tip_orientation" : { "und" : [ { "value" : "top" } ] },
+    "field_scout_tip_selector_class" : [  ],
+    "field_scout_tip_selector_id" : { "und" : [
+        {
+          "value" : "edit-reactions-selector",
+          "format" : null,
+          "safe_value" : "edit-reactions-selector"
+        }
+      ]
+    },
+    "field_scout_tip_selector_type" : { "und" : [ { "value" : "Data ID" } ] },
+    "field_scout_tip_text" : { "und" : [
+        {
+          "value" : "Now we need you to open the Blocks condition, before pressing Next.",
+          "format" : null,
+          "safe_value" : "Now we need you to open the Blocks condition, before pressing Next."
+        }
+      ]
+    }
+  }');
+  $items['30'] = entity_import('scout_tip', '{
+    "tip_id" : "30",
+    "type" : "scout_tip",
+    "language" : "und",
+    "title" : "Scout Trails Contect - Reaction II",
+    "uid" : "1",
+    "published" : "1",
+    "created" : "1396055703",
+    "changed" : "1396055827",
+    "tnid" : "0",
+    "translate" : "0",
+    "status" : "2",
+    "module" : "scout_pak",
+    "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
+    "field_scout_tip_button_text" : { "und" : [ { "value" : "Next", "format" : null, "safe_value" : "Next" } ] },
+    "field_scout_tip_class" : { "und" : [
+        {
+          "value" : "custom-scout-tip",
+          "format" : null,
+          "safe_value" : "custom-scout-tip"
+        }
+      ]
+    },
+    "field_scout_tip_orientation" : { "und" : [ { "value" : "top" } ] },
+    "field_scout_tip_selector_class" : [  ],
+    "field_scout_tip_selector_id" : { "und" : [
+        {
+          "value" : "edit-reactions-selector",
+          "format" : null,
+          "safe_value" : "edit-reactions-selector"
+        }
+      ]
+    },
+    "field_scout_tip_selector_type" : { "und" : [ { "value" : "Data ID" } ] },
+    "field_scout_tip_text" : { "und" : [
+        {
+          "value" : "Now open (click on) Scout Trail.",
+          "format" : null,
+          "safe_value" : "Now open (click on) Scout Trail."
+        }
+      ]
+    }
+  }');
+  $items['31'] = entity_import('scout_tip', '{
+    "tip_id" : "31",
+    "type" : "scout_tip",
+    "language" : "und",
+    "title" : "Thanks for Installing Scout!",
+    "uid" : "1",
+    "published" : "1",
+    "created" : "1396057915",
+    "changed" : "1396061674",
+    "tnid" : "0",
+    "translate" : "0",
+    "status" : "2",
+    "module" : "scout_pak",
+    "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
+    "field_scout_tip_button_text" : { "und" : [
+        {
+          "value" : "Thanks, but later",
+          "format" : null,
+          "safe_value" : "Thanks, but later"
+        }
+      ]
+    },
+    "field_scout_tip_class" : { "und" : [
+        {
+          "value" : "custom-scout-tip",
+          "format" : null,
+          "safe_value" : "custom-scout-tip"
+        }
+      ]
+    },
+    "field_scout_tip_orientation" : { "und" : [ { "value" : "bottom" } ] },
+    "field_scout_tip_selector_class" : [  ],
+    "field_scout_tip_selector_id" : [  ],
+    "field_scout_tip_selector_type" : { "und" : [ { "value" : "Modal" } ] },
+    "field_scout_tip_text" : { "und" : [
+        {
+          "value" : "Don\\u0027t worry, this won\\u0027t keep appearring, but since you\\u0027ve just enabled Scout we thought you might want to see how it works.\\u003Cbr \\u002F\\u003E\\u003Cbr \\u002F\\u003E\\u000D\\u000AYou can learn more \\u003Ca href = \\u0022\\u002Fadmin\\u002Fhelp\\u002Fscout\\u0022\\u003ENOW\\u003C\\u002Fa\\u003E or checkout your help pages later (admin\\u002Fhelp) and look for Scout.",
+          "format" : null,
+          "safe_value" : "Don\\u0026#039;t worry, this won\\u0026#039;t keep appearring, but since you\\u0026#039;ve just enabled Scout we thought you might want to see how it works.\\u0026lt;br \\u002F\\u0026gt;\\u0026lt;br \\u002F\\u0026gt;\\u000D\\u000AYou can learn more \\u0026lt;a href = \\u0026quot;\\u002Fadmin\\u002Fhelp\\u002Fscout\\u0026quot;\\u0026gt;NOW\\u0026lt;\\u002Fa\\u0026gt; or checkout your help pages later (admin\\u002Fhelp) and look for Scout."
+        }
+      ]
+    }
+  }');
+  $items['32'] = entity_import('scout_tip', '{
+    "tip_id" : "32",
+    "type" : "scout_tip",
+    "language" : "und",
+    "title" : "Learn More",
+    "uid" : "1",
+    "published" : "1",
+    "created" : "1396058522",
+    "changed" : "1396060401",
+    "tnid" : "0",
+    "translate" : "0",
+    "status" : "2",
+    "module" : "scout_pak",
+    "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
+    "field_scout_tip_button_text" : { "und" : [
+        {
+          "value" : "Have a nice day",
+          "format" : null,
+          "safe_value" : "Have a nice day"
+        }
+      ]
+    },
+    "field_scout_tip_class" : { "und" : [
+        {
+          "value" : "custom-scout-tip",
+          "format" : null,
+          "safe_value" : "custom-scout-tip"
+        }
+      ]
+    },
+    "field_scout_tip_orientation" : { "und" : [ { "value" : "top" } ] },
+    "field_scout_tip_selector_class" : { "und" : [ { "value" : "scout", "format" : null, "safe_value" : "scout" } ] },
+    "field_scout_tip_selector_id" : [  ],
+    "field_scout_tip_selector_type" : { "und" : [ { "value" : "Class ID" } ] },
+    "field_scout_tip_text" : { "und" : [
+        {
+          "value" : "The page linked below has some useful tutorial information it.  Just thought you\\u0027d like to know.",
+          "format" : null,
+          "safe_value" : "The page linked below has some useful tutorial information it.  Just thought you\\u0026#039;d like to know."
+        }
+      ]
+    }
+  }');
+  $items['33'] = entity_import('scout_tip', '{
+    "tip_id" : "33",
+    "type" : "scout_tip",
+    "language" : "und",
+    "title" : "GET STARTED",
+    "uid" : "1",
+    "published" : "1",
+    "created" : "1396062202",
+    "changed" : "1396063994",
+    "tnid" : "0",
+    "translate" : "0",
+    "status" : "2",
+    "module" : "scout_pak",
+    "field_scout_tip_animation" : { "und" : [ { "value" : "pop" } ] },
+    "field_scout_tip_button_text" : { "und" : [
+        {
+          "value" : "Thanks, but later",
+          "format" : null,
+          "safe_value" : "Thanks, but later"
+        }
+      ]
+    },
+    "field_scout_tip_class" : { "und" : [
+        {
+          "value" : "custom-scout-tip",
+          "format" : null,
+          "safe_value" : "custom-scout-tip"
+        }
+      ]
+    },
+    "field_scout_tip_orientation" : { "und" : [ { "value" : "bottom" } ] },
+    "field_scout_tip_selector_class" : [  ],
+    "field_scout_tip_selector_id" : [  ],
+    "field_scout_tip_selector_type" : { "und" : [ { "value" : "Modal" } ] },
+    "field_scout_tip_text" : { "und" : [
+        {
+          "value" : "Read this page and\\u002For \\u003Cbr \\u002F\\u003E\\u003Cbr \\u002F\\u003E\\u000A\\u003Ca href =\\u0022\\u002Fadmin\\u002Fcontent\\u002Fscout-trails\\u002Fscout-tips\\u002F1\\u002Fedit\\u002Ffast-track\\u0022\\u003EFAST TRACK HERE!\\u003C\\u002Fa\\u003E",
+          "format" : null,
+          "safe_value" : "Read this page and\\u002For \\u0026lt;br \\u002F\\u0026gt;\\u0026lt;br \\u002F\\u0026gt;\\u000A\\u0026lt;a href =\\u0026quot;\\u002Fadmin\\u002Fcontent\\u002Fscout-trails\\u002Fscout-tips\\u002F1\\u002Fedit\\u002Ffast-track\\u0026quot;\\u0026gt;FAST TRACK HERE!\\u0026lt;\\u002Fa\\u0026gt;"
         }
       ]
     }
@@ -1178,6 +1472,54 @@ function scout_pak_default_scout_trail() {
         { "target_id" : "20" }
       ]
     }
+  }');
+  $items['8'] = entity_import('scout_trail', '{
+    "trail_id" : "8",
+    "type" : "scout_trail",
+    "language" : "und",
+    "title" : "Thanks for Installing Scout!",
+    "description" : "First time Scout Trail",
+    "uid" : "1",
+    "published" : "1",
+    "created" : "1396057826",
+    "changed" : "1396058018",
+    "tnid" : "0",
+    "translate" : "0",
+    "status" : "1",
+    "module" : "scout_trails",
+    "field_scout_trail_tips" : { "und" : [ { "target_id" : "31" } ] }
+  }');
+  $items['9'] = entity_import('scout_trail', '{
+    "trail_id" : "9",
+    "type" : "scout_trail",
+    "language" : "und",
+    "title" : "Scout Help Page",
+    "description" : "Encourages user to actually look at the help info",
+    "uid" : "1",
+    "published" : "1",
+    "created" : "1396058480",
+    "changed" : "1396059154",
+    "tnid" : "0",
+    "translate" : "0",
+    "status" : "1",
+    "module" : "scout_trails",
+    "field_scout_trail_tips" : { "und" : [ { "target_id" : "32" } ] }
+  }');
+  $items['10'] = entity_import('scout_trail', '{
+    "trail_id" : "10",
+    "type" : "scout_trail",
+    "language" : "und",
+    "title" : "Scout Trails HelpPage",
+    "description" : "Invites user to start tutorial",
+    "uid" : "1",
+    "published" : "1",
+    "created" : "1396061956",
+    "changed" : "1396063997",
+    "tnid" : "0",
+    "translate" : "0",
+    "status" : "1",
+    "module" : "scout_trails",
+    "field_scout_trail_tips" : { "und" : [ { "target_id" : "33" } ] }
   }');
   return $items;
 }
