@@ -1,5 +1,5 @@
 name = Scout Pak
-description = Tutorial Scout Trails on Scout Trails
+description = Tutorial Scout Trails on Scout Trails.  FAST TRACK tour begins at admin/help/scout or admin/help/scout_trails.
 core = 7.x
 package = Scout
 dependencies[] = context
