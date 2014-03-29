@@ -36,7 +36,7 @@
   <br />
 
   <div class="row">
-    <div class="twelve columns">
+    <div class="twelve columns scout">
       <h2 style="font-size: 14px;">2. Create Scout Tips and Scout Trails.</h2>
       <br />
       <ol>
