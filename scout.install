@@ -1,5 +1,6 @@
 <?php
 
+
 /**
  * Implements hook_requirements().
  * Check installation requirements and do status reporting.
@@ -7,6 +8,10 @@
  * @see http://api.drupalize.me/api/drupal/function/hook_requirements/7
  */
 function scout_requirements($phase) {
+  // This module is dependent on the Zurb Joyride jquery library
+  // and for now we're locking in a dependency on version 2.0.3.
+
+  $joyride_version = '2.0.3';
   $requirements = array();
   $t = get_t();
 
@@ -14,7 +19,7 @@ function scout_requirements($phase) {
   $library = $library = libraries_detect('joyride');
   $library_installed = $library && !empty($library['installed']);
 
-  $js_name = 'jquery.joyride-' . JOYRIDE_LIBRARY_VERSION . '.js';
+  $js_name = 'jquery.joyride-' . $joyride_version . '.js';
   $base_path = 'sites/all/libraries/joyride';
 
   switch ($phase) {
