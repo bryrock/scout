@@ -104,11 +104,15 @@ function scout_trails_entity_info() {
     'access callback' => 'scout_trails_type_access',
     'module' => 'scout_trails',
     // Enable the entity API's admin UI.
+    // Really no reason for this UI for end users because we don't want them changing fields or adding new types.
+    // It is handy, though.  Keeping for further development, only.
+/*
     'admin ui' => array(
       'path' => 'admin/structure/scout/scout-trail-types',
       'file' => 'inc/scout_trails.controllers.inc',
       'controller class' => 'ScoutTrailTypeUIController',
     ),
+*/
   );
 
   // Scout tip entities - Scout Trails are collections of these entities (supports joyride tour tips).
@@ -167,11 +171,15 @@ function scout_trails_entity_info() {
     'access callback' => 'scout_trails_type_access',
     'module' => 'scout_trails',
     // Enable the entity API's admin UI.
+    // Really no reason for this UI for end users because we don't want them changing fields or adding new types.
+    // It is handy, though.  Keeping for further development, only.
+/*
     'admin ui' => array(
       'path' => 'admin/structure/scout/scout-tip-types',
       'file' => 'inc/scout_trails.controllers.inc',
       'controller class' => 'ScoutTipTypeUIController',
     ),
+*/
   );
 
   // Support entity cache module.
