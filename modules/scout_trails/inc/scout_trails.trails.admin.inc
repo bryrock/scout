@@ -140,9 +140,10 @@ function scout_trail_form_submit(&$form, &$form_state) {
   $trail->changed = REQUEST_TIME;
 //  dpm($trail, '$scout_trail scout_trail_form_submit');
 
+  // Determine if new trail or update
+  $update = TRUE ? (isset($trail->trail_id)) : FALSE;
 
   // Save and go back.
-  //field_attach_submit($type, $entity, $form, &$form_state, $options = array());
   field_attach_submit('scout_trail', $trail, $form, $form_state);
   scout_trail_save($trail);
 
@@ -151,8 +152,15 @@ function scout_trail_form_submit(&$form, &$form_state) {
   $redirect = $redirect['admin ui']['path'];
   $form_state['redirect'] = $redirect;
 
-  watchdog('scout_trail', 'Created / updated scout trail %title.', array('%title' => $trail->title));
-  drupal_set_message(t('%title has been created or updated.', array('%title' => $trail->title)));
+  // Log and message
+  If (!$update) {
+	  watchdog('scout_trail', 'Created new scout trail "%title".', array('%title' => $trail->title));
+	  drupal_set_message(t('Scout Trail "%title" has been created.', array('%title' => $trail->title)));
+  }
+  else {
+    watchdog('scout_trail', 'Updated scout trail "%title" (%id).', array('%title' => $trail->title,'%id' => $trail->trail_id));
+    drupal_set_message(t('Scout Trail "%title" (%id) has been updated.', array('%title' => $trail->title,'%id' => $trail->trail_id)));
+  }
 }
 
 /**

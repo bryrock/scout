@@ -140,8 +140,10 @@ function scout_tip_form_submit(&$form, &$form_state) {
   $scout_tip->changed = REQUEST_TIME;
 //  dpm($scout_tip, '$scout_tip scout_tip_form_submit');
 
+  // Determine if new tip or update
+  $update = TRUE ? (isset($scout_tip->tip_id)) : FALSE;
+
   // Save and go back.
-  //field_attach_submit($type, $entity, $form, &$form_state, $options = array());
   field_attach_submit('scout_tip', $scout_tip, $form, $form_state);
   scout_tip_save($scout_tip);
 
@@ -150,8 +152,15 @@ function scout_tip_form_submit(&$form, &$form_state) {
   $redirect = $redirect['admin ui']['path'];
   $form_state['redirect'] = $redirect;
 
-  watchdog('scout_tip', 'Created / updated scout tip %title.', array('%title' => $scout_tip->title));
-  drupal_set_message(t('%title has been created or updated.', array('%title' => $scout_tip->title)));
+  // Log and message
+  If (!$update) {
+	  watchdog('scout_tip', 'Created new scout tip "%title".', array('%title' => $scout_tip->title));
+	  drupal_set_message(t('Scout Tip "%title" has been created.', array('%title' => $scout_tip->title)));
+  }
+  else {
+    watchdog('scout_tip', 'Updated scout tip "%title" (%id).', array('%title' => $scout_tip->title,'%id' => $scout_tip->tip_id));
+    drupal_set_message(t('Scout Tip "%title" (%id) has been updated.', array('%title' => $scout_tip->title,'%id' => $scout_tip->tip_id)));
+  }
 }
 
 /**
