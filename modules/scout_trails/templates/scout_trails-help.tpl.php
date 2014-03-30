@@ -10,7 +10,7 @@
       <h2 style="font-size: 14px;">Contents of this document</h2>
       <br />
       <ol>
-        <li>Explore Scout Tips & Trails.</li>
+        <li>Enable Scout Pak to Explore Tutorial Scout Tips & Trails (and Context).</li>
         <li>Create a Scout Tip.</li>
         <li>Add your Scout Tip to a Scout Trail.</li>
         <li>Add your Scout Trail to a page, using Context.</li>
@@ -25,9 +25,10 @@
 
   <div class="row">
     <div class="twelve columns">
-      <h2 style="font-size: 14px;">1. Explore Scout Tips & Trails.</h2>
-      <p>This module/features package includes some exported scout trails and context that will give you some idea of how to create Scout Tips & Trails, and how they behave.</p>
-      <p>If you have successfully installed scout and scout_trails (and all the dependencies), there should be some trails available in content administration.</p>
+      <h2 style="font-size: 14px;">1. Enable Scout Pak to Explore Tutorial Scout Tips & Trails (and Context).</h2>
+      <p>The Scout Pak feature includes some exported scout trails and context that will give you some idea of how to create Scout Tips & Trails, and how they behave.</p>
+      <p>If you have successfully installed scout, scout_trails and scout_pak (and all the dependencies), there should be some trails available in content administration.</p>
+      <p><strong>If you have enabled the Scout Pak feature (scout_pak), you should see a modal Scout tip hovering over this page, inviting you to take the FastTrack tour.</strong></p>
       <br />
       <ol>
         <li>Navigate to <a href="http:/admin/content" target="_blank">admin/content</a> and you should see a tab labeled "Scout Trails." </li>
@@ -73,7 +74,8 @@
         <li>Click the "add scout trail" link and complete the form.</li>
         <li>Add text for the label (trail name) and a brief description.</li>
         <li>Select the tip you create by typing its name in the autocomplete field.  If you know its id, you can type that in parens. Like, (23).</li>
-        <li>Save your Scout Trail.</li>
+        <li><strong>New Feature: Now you can also add new Scout Tips without leaving the trail form.</strong></li>
+        <li>Save your Scout Trail*.</li>
       </ol>
       <hr>
     </div>
