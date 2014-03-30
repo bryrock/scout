@@ -502,7 +502,6 @@ function scout_trails_form_scout_trail_form_alter(&$form, &$form_state, $form_id
  * Implements hook_entity_property_info_alter().
  */
 function scout_trails_entity_property_info_alter(&$info) {
-//TODO - Figure out if this is doing anything at all.
   $properties = &$info['scout_trail']['properties'];
   $properties['created'] = array(
     'label' => t("Date created"),
@@ -521,7 +520,7 @@ function scout_trails_entity_property_info_alter(&$info) {
   $properties['uid'] = array(
     'label' => t("Scout"),
     'type' => 'user',
-    'description' => t("The author of the task."),
+    'description' => t("The UID of the author of a Scout Trail."),
     'setter callback' => 'entity_property_verbatim_set',
     'setter permission' => 'admin scout trails',
     'required' => TRUE,
@@ -781,6 +780,7 @@ function scout_trails_view($scout_trail, $view_mode = 'full') {
   drupal_set_title($scout_trail->title);
   return $content;
 }
+
 /**
   * Implements hook_views_api().
   */
@@ -789,60 +789,6 @@ function scout_trails_api() {
     'api' => 3,
     'path' => drupal_get_path('module', 'scout_trails'),
   );
-}
-
-/**
- * Implements hook_views_data_alter().
- */
-function scout_trails_views_data_alter(&$data) {
-
-/*
-$data['scout_trail']['table']['group'] = t('Scout Trails');
-$data['scout_trail']['table']['base'] = array(
-  'field' => 'trail_id', // This is the identifier field for the view.
-  'title' => t('Scout Trails'),
-  'help' => t('Scout Trails table contains trails.'),
-  'weight' => -10,
-  );
-
-$data['scout_tip']['table']['group'] = t('Scout Tips');
-$data['scout_tip']['table']['base'] = array(
-  'field' => 'tip_id', // This is the identifier field for the view.
-  'title' => t('Scout Tips'),
-  'help' => t('Scout Tips table contains collections of tips related to trails.'),
-  'weight' => -10,
-  );
-*/
-
-$data['scout_tip']['table']['join'] = array(
-
-  // Index this array by the table name to which this table refers.
-  // 'left_field' is the primary key in the referenced table.
-  // 'field' is the foreign key in this table.
-  'scout_trail' => array(
-    'left_field' => 'trail_id',
-    'field' => 'trail_id',
-  ),
-);
-
-// This example adds a relationship to table {foo}, so that 'foo' views can
-// add this table using a relationship. Because we don't want to write over
-// the primary key field definition for the {foo}.fid field, we use a dummy
-// field name as the key.
-$data['scout_trail']['dummy_name'] = array(
-  'title' => t('Scout Trails relationship'),
-  'help' => t('Scout Tips help'),
-  'relationship' => array(
-    'base' => 'scout_trail', // Table we're joining to.
-    'base field' => 'trail_id', // Field on the joined table.
-    'field' => 'trail_id', // Real field name on the 'foo' table.
-    'handler' => 'views_handler_relationship',
-    'label' => t('Trail ID'),
-    'title' => t('Parent Trail ID'),
-    'help' => t('More information about relationship.'),
-  ),
-);
-
 }
 
 /**
