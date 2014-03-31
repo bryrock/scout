@@ -256,6 +256,14 @@ function scout_trails_menu() {
     'file' => 'inc/scout_trails.trails.admin.inc',
   );
 
+  // Autocomplete callback for tagging a Scout Tip.
+  $items['admin/content/scout-trails/scout-tips/ajax/tag'] = array(
+    'page callback' => 'scout_tips_ui_autocomplete_tag',
+    'access arguments' => array('admin scout trails'),
+    'type' => MENU_CALLBACK,
+    'file' => 'inc/scout_trails.tips.admin.inc',
+  );
+
 //  $scout_trails_uri = 'admin/content/scout-trails';
 //  $scout_trails_uri_argument_position = 4;
 

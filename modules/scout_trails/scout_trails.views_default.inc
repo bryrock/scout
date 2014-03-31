@@ -221,6 +221,38 @@ function scout_trails_views_default_views() {
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['group_by'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Scout Tip: Tag */
+  $handler->display->display_options['filters']['tag']['id'] = 'tag';
+  $handler->display->display_options['filters']['tag']['table'] = 'scout_tip';
+  $handler->display->display_options['filters']['tag']['field'] = 'tag';
+  $handler->display->display_options['filters']['tag']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['tag']['expose']['operator_id'] = 'tag_op';
+  $handler->display->display_options['filters']['tag']['expose']['label'] = 'Tag';
+  $handler->display->display_options['filters']['tag']['expose']['operator'] = 'tag_op';
+  $handler->display->display_options['filters']['tag']['expose']['identifier'] = 'tag';
+  $handler->display->display_options['filters']['tag']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  /* Filter criterion: Scout Tip: Export Status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'scout_tip';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['status']['expose']['operator_id'] = 'status_op';
+  $handler->display->display_options['filters']['status']['expose']['label'] = 'Export Status';
+  $handler->display->display_options['filters']['status']['expose']['operator'] = 'status_op';
+  $handler->display->display_options['filters']['status']['expose']['identifier'] = 'status';
+  $handler->display->display_options['filters']['status']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
   $handler->display->display_options['path'] = 'admin/content/scout-trails/scout-tips';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Scout Tips';
@@ -228,6 +260,56 @@ function scout_trails_views_default_views() {
   $handler->display->display_options['menu']['name'] = 'management';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Tags */
+  $handler = $view->new_display('entityreference', 'Tags', 'tags');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['display_description'] = 'Searches Tips by tags and displays tags';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'entityreference_style';
+  $handler->display->display_options['style_options']['search_fields'] = array(
+    'tag' => 'tag',
+    'type' => 0,
+    'tip_id' => 0,
+    'title' => 0,
+    'nothing' => 0,
+    'nothing_1' => 0,
+    'created' => 0,
+    'changed' => 0,
+    'name' => 0,
+    'status' => 0,
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'entityreference_fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Scout Tip: User that created this Scout Tip */
+  $handler->display->display_options['relationships']['Tip Scout']['id'] = 'Tip Scout';
+  $handler->display->display_options['relationships']['Tip Scout']['table'] = 'scout_tip';
+  $handler->display->display_options['relationships']['Tip Scout']['field'] = 'Tip Scout';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Scout Tip: Tag */
+  $handler->display->display_options['fields']['tag']['id'] = 'tag';
+  $handler->display->display_options['fields']['tag']['table'] = 'scout_tip';
+  $handler->display->display_options['fields']['tag']['field'] = 'tag';
+  $handler->display->display_options['fields']['tag']['label'] = '';
+  $handler->display->display_options['fields']['tag']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Scout Tip: Tag */
+  $handler->display->display_options['arguments']['tag']['id'] = 'tag';
+  $handler->display->display_options['arguments']['tag']['table'] = 'scout_tip';
+  $handler->display->display_options['arguments']['tag']['field'] = 'tag';
+  $handler->display->display_options['arguments']['tag']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['tag']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tag']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tag']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['tag']['limit'] = '0';
   $export['scout_tips'] = $view;
 
   $view = new view();
@@ -524,6 +606,15 @@ function scout_trails_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Scout Trail: Tag */
+  $handler->display->display_options['sorts']['tag']['id'] = 'tag';
+  $handler->display->display_options['sorts']['tag']['table'] = 'scout_trail';
+  $handler->display->display_options['sorts']['tag']['field'] = 'tag';
+  /* Sort criterion: Scout Trail: Trail ID */
+  $handler->display->display_options['sorts']['trail_id']['id'] = 'trail_id';
+  $handler->display->display_options['sorts']['trail_id']['table'] = 'scout_trail';
+  $handler->display->display_options['sorts']['trail_id']['field'] = 'trail_id';
   $handler->display->display_options['path'] = 'admin/content/scout-trails/list';
   $handler->display->display_options['menu']['type'] = 'default tab';
   $handler->display->display_options['menu']['title'] = 'Scout Trails';
@@ -536,6 +627,56 @@ function scout_trails_views_default_views() {
   $handler->display->display_options['tab_options']['title'] = 'Scout Trails';
   $handler->display->display_options['tab_options']['description'] = 'Manage scout trails';
   $handler->display->display_options['tab_options']['weight'] = '0';
+
+  /* Display: Tags */
+  $handler = $view->new_display('entityreference', 'Tags', 'tags');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['display_description'] = 'Searches trails by tags and displays tags';
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'admin scout tours';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'entityreference_style';
+  $handler->display->display_options['style_options']['search_fields'] = array(
+    'tag' => 'tag',
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'entityreference_fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Scout Trail: User that created this Scout Trail */
+  $handler->display->display_options['relationships']['Trail Scout']['id'] = 'Trail Scout';
+  $handler->display->display_options['relationships']['Trail Scout']['table'] = 'scout_trail';
+  $handler->display->display_options['relationships']['Trail Scout']['field'] = 'Trail Scout';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Scout Trail: Tag */
+  $handler->display->display_options['fields']['tag']['id'] = 'tag';
+  $handler->display->display_options['fields']['tag']['table'] = 'scout_trail';
+  $handler->display->display_options['fields']['tag']['field'] = 'tag';
+  $handler->display->display_options['fields']['tag']['label'] = '';
+  $handler->display->display_options['fields']['tag']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['tag']['alter']['trim_whitespace'] = TRUE;
+  $handler->display->display_options['fields']['tag']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['tag']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Scout Trail: Tag */
+  $handler->display->display_options['arguments']['tag']['id'] = 'tag';
+  $handler->display->display_options['arguments']['tag']['table'] = 'scout_trail';
+  $handler->display->display_options['arguments']['tag']['field'] = 'tag';
+  $handler->display->display_options['arguments']['tag']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['tag']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tag']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tag']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['tag']['validate']['type'] = 'php';
+  $handler->display->display_options['arguments']['tag']['limit'] = '0';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
   $export['scout_trails'] = $view;
 
   return $export;

@@ -100,6 +100,7 @@ function scout_tip_form($form, &$form_state, $scout_tip = NULL) {
     '#title' => t('Tag'),
     '#description' => t('Optional tag for organizing / grouping tips in admin view.'),
     '#default_value' => $scout_tip->tag,
+    '#autocomplete_path' => 'admin/content/scout-trails/scout-tips/ajax/tag',
   );
 
   $form['uid'] = array(
@@ -156,8 +157,8 @@ function scout_tip_form_submit(&$form, &$form_state) {
   field_attach_submit('scout_tip', $scout_tip, $form, $form_state);
   scout_tip_save($scout_tip);
 
-  // Redirect user back to list of Scout Trails (since tips are part of trails).
-  $redirect = entity_get_info('scout_trail');
+  // Redirect user back to list of Scout Tips.
+  $redirect = entity_get_info('scout_tip');
   $redirect = $redirect['admin ui']['path'];
   $form_state['redirect'] = $redirect;
 
@@ -300,4 +301,21 @@ function scout_tip_type_form_delete_confirm_submit($form, &$form_state) {
   drupal_set_message(t('@type %title has been deleted.', array('@type' => $tip_type->type, '%title' => $tip_type->label)));
 
   $form_state['redirect'] = 'admin/structure/scout/scout-tip-types/';
+}
+
+/**
+ * Page callback for views tag autocomplete
+ */
+function scout_tips_ui_autocomplete_tag($string = '') {
+  $matches = array();
+  $views = views_get_view_result('scout_tips','tags','all');
+  foreach ($views as $key=>$value) {
+    if (!empty($value->scout_tip_tag) && strpos($value->scout_tip_tag, $string) === 0) {
+      $matches[$value->scout_tip_tag] = check_plain($value->scout_tip_tag);
+      if (count($matches) >= 10) {
+        break;
+      }
+    }
+  }
+  drupal_json_output($matches);
 }
