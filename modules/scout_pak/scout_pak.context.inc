@@ -78,7 +78,7 @@ function scout_pak_context_default_contexts() {
   $export['fast_track_scout_trail_create'] = $context;
 
   $context = new stdClass();
-  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->disabled = TRUE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'first_time_scout';
   $context->description = 'After new install, this points administrator to help info';
