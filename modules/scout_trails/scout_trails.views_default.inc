@@ -207,8 +207,15 @@ function scout_trails_views_default_views() {
   $handler->display->display_options['fields']['tag']['id'] = 'tag';
   $handler->display->display_options['fields']['tag']['table'] = 'scout_tip';
   $handler->display->display_options['fields']['tag']['field'] = 'tag';
-  $handler->display->display_options['fields']['tag']['label'] = 'Scout Tip Tag';
   $handler->display->display_options['fields']['tag']['exclude'] = TRUE;
+  /* Sort criterion: Scout Tip: Tag */
+  $handler->display->display_options['sorts']['tag']['id'] = 'tag';
+  $handler->display->display_options['sorts']['tag']['table'] = 'scout_tip';
+  $handler->display->display_options['sorts']['tag']['field'] = 'tag';
+  /* Sort criterion: Scout Tip: scout tip ID */
+  $handler->display->display_options['sorts']['tip_id']['id'] = 'tip_id';
+  $handler->display->display_options['sorts']['tip_id']['table'] = 'scout_tip';
+  $handler->display->display_options['sorts']['tip_id']['field'] = 'tip_id';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
