@@ -61,6 +61,14 @@ class ScoutInlineEntityFormController extends EntityInlineEntityFormController {
       '#description' => t('Displays as title in a Scout Tip.'),
       '#default_value' => $entity->title,
     );
+    $entity_form['scout_tip']['tag'] = array(
+      '#type' => 'textfield',
+      '#required' => FALSE,
+      '#title' => t('Tag'),
+      '#description' => t('Optional tag for organizing / grouping tips in admin view.'),
+      '#default_value' => $entity->tag,
+      '#autocomplete_path' => 'admin/content/scout-trails/scout-tips/ajax/tag',
+    );
 
 //    $langcode = entity_language('scout_tip', $entity);
     if (!empty($info['fieldable'])) {
@@ -80,6 +88,7 @@ class ScoutInlineEntityFormController extends EntityInlineEntityFormController {
     $entity = $entity_form['#entity'];
     $entity_values = drupal_array_get_nested_value($form_state['values'], $entity_form['#parents']);
     $entity->title = $entity_values['scout_tip']['title'];
+    $entity->tag = $entity_values['scout_tip']['tag'];
     $entity->changed = REQUEST_TIME;
     $parent = $form_state['trail'];
     $info = entity_get_info($this->entityType);
