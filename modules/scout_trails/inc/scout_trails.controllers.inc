@@ -151,6 +151,7 @@ class ScoutTrailController extends EntityAPIController {
     $values += array(
       'title' => '',
       'description' => '',
+      'tag' => '(default)',
       'created' => REQUEST_TIME,
       'changed' => REQUEST_TIME,
       'uid' => $user->uid,

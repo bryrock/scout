@@ -255,7 +255,7 @@ function scout_trails_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['grouping'] = array(
     0 => array(
-      'field' => 'type',
+      'field' => 'tag',
       'rendered' => 1,
       'rendered_strip' => 0,
     ),
@@ -270,10 +270,10 @@ function scout_trails_views_default_views() {
     'nothing_1' => 'nothing',
     'created' => 'created',
     'changed' => 'changed',
-    'uid' => 'uid',
-    'status' => 'status',
+    'name' => 'name',
     'field_scout_trail_tips' => 'field_scout_trail_tips',
-    'field_scout_trail_tips_1' => 'field_scout_trail_tips_1',
+    'status' => 'status',
+    'tag' => 'tag',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
@@ -334,14 +334,7 @@ function scout_trails_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'uid' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'status' => array(
+    'name' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -353,7 +346,16 @@ function scout_trails_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_scout_trail_tips_1' => array(
+    'status' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'tag' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -461,6 +463,7 @@ function scout_trails_views_default_views() {
   $handler->display->display_options['fields']['field_scout_trail_tips']['table'] = 'field_data_field_scout_trail_tips';
   $handler->display->display_options['fields']['field_scout_trail_tips']['field'] = 'field_scout_trail_tips';
   $handler->display->display_options['fields']['field_scout_trail_tips']['group_type'] = 'stddev_pop';
+  $handler->display->display_options['fields']['field_scout_trail_tips']['label'] = 'Scout Tips on trail';
   $handler->display->display_options['fields']['field_scout_trail_tips']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_scout_trail_tips']['alter']['text'] = '[field_scout_trail_tips]-[field_scout_trail_tips-target_id]';
   $handler->display->display_options['fields']['field_scout_trail_tips']['alter']['make_link'] = TRUE;
@@ -480,10 +483,32 @@ function scout_trails_views_default_views() {
   $handler->display->display_options['fields']['status']['field'] = 'status';
   $handler->display->display_options['fields']['status']['label'] = 'Status';
   $handler->display->display_options['fields']['status']['separator'] = '';
+  /* Field: Scout Trail: Tag */
+  $handler->display->display_options['fields']['tag']['id'] = 'tag';
+  $handler->display->display_options['fields']['tag']['table'] = 'scout_trail';
+  $handler->display->display_options['fields']['tag']['field'] = 'tag';
+  $handler->display->display_options['fields']['tag']['exclude'] = TRUE;
+  /* Filter criterion: Scout Trail: Tag */
+  $handler->display->display_options['filters']['tag']['id'] = 'tag';
+  $handler->display->display_options['filters']['tag']['table'] = 'scout_trail';
+  $handler->display->display_options['filters']['tag']['field'] = 'tag';
+  $handler->display->display_options['filters']['tag']['group'] = 1;
+  $handler->display->display_options['filters']['tag']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['tag']['expose']['operator_id'] = 'tag_op';
+  $handler->display->display_options['filters']['tag']['expose']['label'] = 'Tag';
+  $handler->display->display_options['filters']['tag']['expose']['operator'] = 'tag_op';
+  $handler->display->display_options['filters']['tag']['expose']['identifier'] = 'tag';
+  $handler->display->display_options['filters']['tag']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
   /* Filter criterion: Scout Trail: Export Status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'scout_trail';
   $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['exposed'] = TRUE;
   $handler->display->display_options['filters']['status']['expose']['operator_id'] = 'status_op';
   $handler->display->display_options['filters']['status']['expose']['label'] = 'Status';

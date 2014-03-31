@@ -98,7 +98,7 @@ function scout_tip_form($form, &$form_state, $scout_tip = NULL) {
     '#type' => 'textfield',
     '#required' => FALSE,
     '#title' => t('Tag'),
-    '#description' => t('Optional tag for organizing / grouping trails in admin view.'),
+    '#description' => t('Optional tag for organizing / grouping tips in admin view.'),
     '#default_value' => $scout_tip->tag,
   );
 

@@ -81,18 +81,14 @@ function scout_trail_form($form, &$form_state, $scout_trail = NULL) {
     '#default_value' => $scout_trail->description,
   );
 
-/*
-  $form['trail']['trail_ref_stops'] = array(
-    '#type' => 'entityreference',
-    '#title' => t('Referenced Scout Stops'),
-    '#description' => t('The Scout Stops on this trail.'),
-    '#era_entity_type' => 'scout_stop',
-    '#era_bundles' => array('public'),
-    '#era_cardinality' => 1,
-//    '#collapsible' => FALSE,
+  $form['trail']['tag'] = array(
+    '#type' => 'textfield',
+    '#required' => FALSE,
+    '#title' => t('Tag'),
+    '#description' => t('Optional tag for organizing / grouping trails in admin view.'),
+    '#default_value' => $scout_trail->tag,
   );
 
-*/
   $form['uid'] = array(
     '#type' => 'value',
     '#value' => $user->uid,
@@ -137,6 +133,7 @@ function scout_trail_form_submit(&$form, &$form_state) {
   $trail = $form_state['trail'];
   $trail->title = $form_state['values']['title'];
   $trail->description = $form_state['values']['description'];
+  $trail->tag = $form_state['values']['tag'];
   $trail->changed = REQUEST_TIME;
 //  dpm($trail, '$scout_trail scout_trail_form_submit');
 
