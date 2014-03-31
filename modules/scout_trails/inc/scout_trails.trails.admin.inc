@@ -87,6 +87,7 @@ function scout_trail_form($form, &$form_state, $scout_trail = NULL) {
     '#title' => t('Tag'),
     '#description' => t('Optional tag for organizing / grouping trails in admin view.'),
     '#default_value' => $scout_trail->tag,
+    '#autocomplete_path' => 'admin/content/scout-trails/ajax/tag',
   );
 
   $form['uid'] = array(
@@ -321,4 +322,22 @@ function scout_trail_type_form($form, &$form_state, $trail_type, $op = 'edit') {
     );
   }
   return $form;
+}
+
+/**
+ * Page callback for views tag autocomplete
+ */
+function scout_trails_ui_autocomplete_tag($string = '') {
+  $matches = array();
+  // get matches from default views:
+  $views = views_get_view_result('scout_trails','tags','all');
+  foreach ($views as $key=>$value) {
+    if (!empty($value->scout_trail_tag) && strpos($value->scout_trail_tag, $string) === 0) {
+      $matches[$value->scout_trail_tag] = check_plain($value->scout_trail_tag);
+      if (count($matches) >= 10) {
+        break;
+      }
+    }
+  }
+  drupal_json_output($matches);
 }
