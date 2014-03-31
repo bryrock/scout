@@ -356,6 +356,7 @@ class ScoutTipController extends EntityAPIController {
     global $user;
     $values += array(
       'title' => '',
+      'tag' => '',
       'description' => '',
       'created' => REQUEST_TIME,
       'changed' => REQUEST_TIME,

@@ -12,7 +12,7 @@
  */
 
 function scout_tips_form_list($form, $form_state) {
-	dpm($form_state['values']['trailtip_edit'],'$form_state[values][trailtip_edit] - scout_tips_form_list()');
+	//dpm($form_state['values']['trailtip_edit'],'$form_state[values][trailtip_edit] - scout_tips_form_list()');
 	return $form['trail']['trailtips']['hidden'];
 }
 
@@ -94,6 +94,14 @@ function scout_tip_form($form, &$form_state, $scout_tip = NULL) {
     '#default_value' => $scout_tip->title,
   );
 
+  $form['scout_tip']['tag'] = array(
+    '#type' => 'textfield',
+    '#required' => FALSE,
+    '#title' => t('Tag'),
+    '#description' => t('Optional tag for organizing / grouping trails in admin view.'),
+    '#default_value' => $scout_tip->tag,
+  );
+
   $form['uid'] = array(
     '#type' => 'value',
     '#value' => $user->uid,
@@ -137,8 +145,9 @@ function scout_tip_form($form, &$form_state, $scout_tip = NULL) {
 function scout_tip_form_submit(&$form, &$form_state) {
   $scout_tip = $form_state['scout_tip'];
   $scout_tip->title = $form_state['values']['title'];
+  $scout_tip->tag = $form_state['values']['tag'];
   $scout_tip->changed = REQUEST_TIME;
-//  dpm($scout_tip, '$scout_tip scout_tip_form_submit');
+  //dpm($scout_tip, '$scout_tip scout_tip_form_submit');
 
   // Determine if new tip or update
   $update = TRUE ? (isset($scout_tip->tip_id)) : FALSE;

@@ -35,7 +35,7 @@ function scout_trails_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['grouping'] = array(
     0 => array(
-      'field' => 'type',
+      'field' => 'tag',
       'rendered' => 1,
       'rendered_strip' => 0,
     ),
@@ -47,10 +47,10 @@ function scout_trails_views_default_views() {
     'nothing' => 'nothing',
     'nothing_1' => 'nothing',
     'created' => 'created',
-    'changed' => 'changed',
-    'uid' => 'uid',
-    'published' => 'published',
+    'changed' => 'created',
+    'name' => 'name',
     'status' => 'status',
+    'tag' => 'tag',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
@@ -89,7 +89,7 @@ function scout_trails_views_default_views() {
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
-      'separator' => '',
+      'separator' => ' / ',
       'empty_column' => 0,
     ),
     'changed' => array(
@@ -99,14 +99,7 @@ function scout_trails_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'uid' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'published' => array(
+    'name' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -114,6 +107,13 @@ function scout_trails_views_default_views() {
       'empty_column' => 0,
     ),
     'status' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'tag' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -183,7 +183,7 @@ function scout_trails_views_default_views() {
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'scout_tip';
   $handler->display->display_options['fields']['created']['field'] = 'created';
-  $handler->display->display_options['fields']['created']['label'] = 'Created';
+  $handler->display->display_options['fields']['created']['label'] = 'Created / Updated';
   $handler->display->display_options['fields']['created']['date_format'] = 'short';
   /* Field: Scout Tip: Date changed */
   $handler->display->display_options['fields']['changed']['id'] = 'changed';
@@ -196,13 +196,19 @@ function scout_trails_views_default_views() {
   $handler->display->display_options['fields']['name']['table'] = 'users';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['relationship'] = 'Tip Scout';
-  $handler->display->display_options['fields']['name']['label'] = 'Tip Scout';
+  $handler->display->display_options['fields']['name']['label'] = 'Scout';
   /* Field: Scout Tip: Export Status */
   $handler->display->display_options['fields']['status']['id'] = 'status';
   $handler->display->display_options['fields']['status']['table'] = 'scout_tip';
   $handler->display->display_options['fields']['status']['field'] = 'status';
   $handler->display->display_options['fields']['status']['label'] = 'Status';
   $handler->display->display_options['fields']['status']['separator'] = '';
+  /* Field: Scout Tip: Tag */
+  $handler->display->display_options['fields']['tag']['id'] = 'tag';
+  $handler->display->display_options['fields']['tag']['table'] = 'scout_tip';
+  $handler->display->display_options['fields']['tag']['field'] = 'tag';
+  $handler->display->display_options['fields']['tag']['label'] = 'Scout Tip Tag';
+  $handler->display->display_options['fields']['tag']['exclude'] = TRUE;
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');

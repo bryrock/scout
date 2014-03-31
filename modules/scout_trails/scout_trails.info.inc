@@ -68,16 +68,15 @@ function scout_trails_entity_property_info() {
     'required' => TRUE,
     'schema field' => 'uid',
   );
-  $properties['published'] = array(
-    'label' => t("Published"),
-    'description' => t("Whether the trail is published or unpublished."),
+  $properties['tag'] = array(
+    'label' => t("Tag"),
+    'description' => t("An optional tag used to group/sort scout trails in the admin interface."),
     // Although the status is expected to be boolean, its schema suggests
     // it is an integer, so we follow the schema definition.
-    'type' => 'integer',
-    'options list' => 'entity_metadata_status_options_list',
+     'type' => 'text',
     'setter callback' => 'entity_property_verbatim_set',
     'setter permission' => 'admin scout trails',
-    'schema field' => 'published',
+    'schema field' => 'tag',
   );
   $properties['created'] = array(
     'label' => t("Date created"),
@@ -126,7 +125,7 @@ function scout_trails_entity_property_info() {
   $properties['language'] = array(
     'label' => t('Language'),
     'type' => 'token',
-    'description' => t("The language the node is written in."),
+    'description' => t("The language the scout tip is written in."),
     'setter callback' => 'entity_property_verbatim_set',
     'setter permission' => 'admin scout trails',
     'options list' => 'entity_metadata_language_list',
@@ -150,16 +149,13 @@ function scout_trails_entity_property_info() {
     'required' => true,
     'schema field' => 'uid',
   );
-  $properties['published'] = array(
-    'label' => t("Published"),
-    'description' => t("Whether the scout tip is published or unpublished."),
-    // Although the status is expected to be boolean, its schema suggests
-    // it is an integer, so we follow the schema definition.
-    'type' => 'integer',
-    'options list' => 'entity_metadata_status_options_list',
+  $properties['tag'] = array(
+    'label' => t("Tag"),
+    'description' => t("An optional tag used to group/sort scout tips in the admin interface."),
+    'type' => 'text',
     'setter callback' => 'entity_property_verbatim_set',
     'setter permission' => 'admin scout trails',
-    'schema field' => 'published',
+    'schema field' => 'tag',
   );
   $properties['created'] = array(
     'label' => t("Date created"),
