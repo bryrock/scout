@@ -52,7 +52,6 @@ function scout_trails_schema() {
         'not null' => TRUE,
         'default' => 0,
       ),
-      //Not sure if will need this, but keeping in-case
       'tag' => array(
         'description' => 'A tag used to group/sort scout trails in the admin interface',
         'type' => 'varchar',

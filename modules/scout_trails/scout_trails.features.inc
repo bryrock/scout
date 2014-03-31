@@ -23,7 +23,6 @@ function scout_trails_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
 
-
 /**
  * Implements hook_default_scout_tip_type().
  */
@@ -37,7 +36,6 @@ function scout_trails_default_scout_tip_type() {
   }');
   return $items;
 }
-
 
 /**
  * Implements hook_default_scout_trail_type().
