@@ -527,6 +527,15 @@ function scout_trails_entity_property_info_alter(&$info) {
     'required' => TRUE,
     'schema field' => 'uid',
   );
+  $properties['status'] = array(
+    'label' => t("Export Status"),
+    'type' => 'integer',
+    'description' => t("The exportable (features) status the of a Scout Trail."),
+    'setter callback' => 'entity_property_verbatim_set',
+    'setter permission' => 'admin scout trails',
+    'required' => TRUE,
+    'schema field' => 'status',
+  );
 }
 
 
