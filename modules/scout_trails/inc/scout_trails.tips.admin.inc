@@ -12,7 +12,7 @@
  */
 
 function scout_tips_form_list($form, $form_state) {
-	dpm($form_state['values']['trailtip_edit'],'$form_state[values][trailtip_edit] - scout_tips_form_list()');
+	//dpm($form_state['values']['trailtip_edit'],'$form_state[values][trailtip_edit] - scout_tips_form_list()');
 	return $form['trail']['trailtips']['hidden'];
 }
 
@@ -94,6 +94,15 @@ function scout_tip_form($form, &$form_state, $scout_tip = NULL) {
     '#default_value' => $scout_tip->title,
   );
 
+  $form['scout_tip']['tag'] = array(
+    '#type' => 'textfield',
+    '#required' => FALSE,
+    '#title' => t('Tag'),
+    '#description' => t('Optional tag for organizing / grouping tips in admin view.'),
+    '#default_value' => $scout_tip->tag,
+    '#autocomplete_path' => 'admin/content/scout-trails/scout-tips/ajax/tag',
+  );
+
   $form['uid'] = array(
     '#type' => 'value',
     '#value' => $user->uid,
@@ -137,20 +146,31 @@ function scout_tip_form($form, &$form_state, $scout_tip = NULL) {
 function scout_tip_form_submit(&$form, &$form_state) {
   $scout_tip = $form_state['scout_tip'];
   $scout_tip->title = $form_state['values']['title'];
-  dsm($scout_tip, '$scout_tip scout_tip_form_submit');
+  $scout_tip->tag = $form_state['values']['tag'];
+  $scout_tip->changed = REQUEST_TIME;
+  //dpm($scout_tip, '$scout_tip scout_tip_form_submit');
+
+  // Determine if new tip or update
+  $update = TRUE ? (isset($scout_tip->tip_id)) : FALSE;
 
   // Save and go back.
-  //field_attach_submit($type, $entity, $form, &$form_state, $options = array());
-  field_attach_submit('scout_tip', $scout_tip, $form, &$form_state);
+  field_attach_submit('scout_tip', $scout_tip, $form, $form_state);
   scout_tip_save($scout_tip);
 
-  // Redirect user back to list of Scout Trails (since tips are part of trails).
-  $redirect = entity_get_info('scout_trail');
+  // Redirect user back to list of Scout Tips.
+  $redirect = entity_get_info('scout_tip');
   $redirect = $redirect['admin ui']['path'];
   $form_state['redirect'] = $redirect;
 
-  watchdog('scout_tip', 'Created scout tip %title.', array('%title' => $scout_tip->title));
-  drupal_set_message(t('%title has been created.', array('%title' => $scout_tip->title)));
+  // Log and message
+  If (!$update) {
+	  watchdog('scout_tip', 'Created new scout tip "%title".', array('%title' => $scout_tip->title));
+	  drupal_set_message(t('Scout Tip "%title" has been created.', array('%title' => $scout_tip->title)));
+  }
+  else {
+    watchdog('scout_tip', 'Updated scout tip "%title" (%id).', array('%title' => $scout_tip->title,'%id' => $scout_tip->tip_id));
+    drupal_set_message(t('Scout Tip "%title" (%id) has been updated.', array('%title' => $scout_tip->title,'%id' => $scout_tip->tip_id)));
+  }
 }
 
 /**
@@ -281,4 +301,21 @@ function scout_tip_type_form_delete_confirm_submit($form, &$form_state) {
   drupal_set_message(t('@type %title has been deleted.', array('@type' => $tip_type->type, '%title' => $tip_type->label)));
 
   $form_state['redirect'] = 'admin/structure/scout/scout-tip-types/';
+}
+
+/**
+ * Page callback for views tag autocomplete
+ */
+function scout_tips_ui_autocomplete_tag($string = '') {
+  $matches = array();
+  $views = views_get_view_result('scout_tips','tags','all');
+  foreach ($views as $key=>$value) {
+    if (!empty($value->scout_tip_tag) && strpos($value->scout_tip_tag, $string) === 0) {
+      $matches[$value->scout_tip_tag] = check_plain($value->scout_tip_tag);
+      if (count($matches) >= 10) {
+        break;
+      }
+    }
+  }
+  drupal_json_output($matches);
 }

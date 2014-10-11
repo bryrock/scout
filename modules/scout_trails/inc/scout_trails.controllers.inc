@@ -151,6 +151,7 @@ class ScoutTrailController extends EntityAPIController {
     $values += array(
       'title' => '',
       'description' => '',
+      'tag' => '(default)',
       'created' => REQUEST_TIME,
       'changed' => REQUEST_TIME,
       'uid' => $user->uid,
@@ -222,25 +223,16 @@ class ScoutTrailUIController extends EntityBundleableUIController {
       'file' => 'system.admin.inc',
     );
 
-    // Change the add page menu to multiple types of entities
-    // May not need the code below.  It adds a page that's only helpful to prevent
-    // having to select an entity type when there's only one to choose from.
+    // Change the add page default access callback
+    // to a function that skips having to select type when there is only one.
     // (See scout_trails.pages.inc)
-/*
-    $items[$this->path . '/add']['weight'] = -20;
-    $items[$this->path . '/add']['title'] = 'Add a Scout Trail';
-    $items[$this->path . '/add']['description'] = 'Add a new scout trail';
     $items[$this->path . '/add']['page callback'] = 'scout_trail_add_page';
-    $items[$this->path . '/add']['access callback'] = 'entity_access';
-    $items[$this->path . '/add']['access arguments'] = array('create', 'scout_trail');
-*/
 
     // Pass add links through to a form factory.
     $types = scout_trail_types();
-//    dsm($types, '$types in ScoutTrailUIController hook_menu');
     foreach ($types as $type => $info) {
       $items[$this->path . '/add/' . $type] = array(
-        'title' => 'Add ' . $type . ' Scout Trail',
+        'title' => 'Add Scout Trail of type ' . $type,
         'page callback' => 'scout_trails_forms_wrapper',
         'page arguments' => array($type, NULL, 'add'),
         'access callback' => 'entity_access',
@@ -286,24 +278,24 @@ class ScoutTipUIController extends EntityBundleableUIController {
     );
 
     // Change the add page default access callback
-    $items[$this->path . '/add']['weight'] = -20;
-    $items[$this->path . '/add']['title'] = 'Add a Scout Tip';
-    $items[$this->path . '/add']['description'] = 'Add a new scout tip';
+    // to a function that skips having to select type when there is only one.
+    // (See scout_trails.pages.inc)
     $items[$this->path . '/add']['page callback'] = 'scout_tip_admin_add_page';
-    $items[$this->path . '/add']['access callback'] = 'user_access';
-    $items[$this->path . '/add']['access arguments'] = array('admin scout tours');
 
     // Pass add links through to a form factory.
     // Override default titles and page callback.
     $types = scout_tip_types();
-//    dsm($types, '$types in ScoutTipUIController hook_menu');
     foreach ($types as $type => $info) {
-      $items[$this->path . '/add/' . $type]['title'] = t('Add ' . $type . ' Scout Tip');
+      $items[$this->path . '/add/' . $type]['title'] = t('Add Scout Tip of type ' . $type);
       $items[$this->path . '/add/' . $type]['page callback'] = 'scout_tips_forms_wrapper';
       $items[$this->path . '/add/' . $type]['page arguments'] = array($type, NULL, 'add');
       $items[$this->path . '/add/' . $type]['access callback'] = 'entity_access';
       $items[$this->path . '/add/' . $type]['access arguments'] = array('create', 'scout_tip', $type);
-    }
+      $items[$this->path . '/add/' . $type]['file'] = 'inc/scout_trails.tips.admin.inc';
+      $items[$this->path . '/add/' . $type]['file path'] = drupal_get_path('module', 'scout_trails');
+   }
+
+    // EntityBundleableUIController handles loading and editing scout tip entities.
 
     // Add delete menu items.
     $items[$this->path . '/' . $wildcard . '/delete']['page callback'] = 'drupal_get_form';
@@ -325,15 +317,17 @@ class ScoutTrailTypeUIController extends EntityDefaultUIController {
   /**
    * Overrides hook_menu() defaults.
    */
+/*
   public function hook_menu() {
     $items = parent::hook_menu();
     $items[$this->path]['description'] = t('Manage types of Scout Trails.');
     $items[$this->path]['title'] = t('Scout Trail types');
-    $items[$this->path]['type'] = MENU_LOCAL_TASK;
+//    $items[$this->path]['type'] = MENU_LOCAL_TASK;
 //    $items[$this->path]['type'] = MENU_DEFAULT_LOCAL_TASK;
 
     return $items;
   }
+*/
 }
 
 /**
@@ -343,14 +337,16 @@ class ScoutTipTypeUIController extends EntityDefaultUIController {
   /**
    * Overrides hook_menu() defaults.
    */
+/*
   public function hook_menu() {
     $items = parent::hook_menu();
     $items[$this->path]['description'] = t('Manage types of Scout Tips.');
     $items[$this->path]['title'] = t('Scout Tip types');
-    $items[$this->path]['type'] = MENU_LOCAL_TASK;
+//    $items[$this->path]['type'] = MENU_LOCAL_TASK;
 //    $items[$this->path]['type'] = MENU_DEFAULT_LOCAL_TASK;
     return $items;
   }
+*/
 }
 
 /**
@@ -361,6 +357,7 @@ class ScoutTipController extends EntityAPIController {
     global $user;
     $values += array(
       'title' => '',
+      'tag' => '(default)',
       'description' => '',
       'created' => REQUEST_TIME,
       'changed' => REQUEST_TIME,

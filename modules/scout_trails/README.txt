@@ -8,9 +8,11 @@ Scout brings Joyride functionality along with the Drupal 8 ease of tour creation
 
 Scout Trails are collections of Scout Tips. Both are custom entities.
 
-Scout Tips are created by filling out a form, in a familiar manner similar to adding Drupal content. HTML is optional, but not required.
+Scout Tips can created by filling out a form, in a familiar manner similar to adding Drupal content. HTML is optional, but not required.
 
 Scout Trails are also created via a short form, used for assembling collections of Scout Tip entity references.
+
+Scout Trails now feature inline entity forms (from Commerce Guys), allowing you to create new scout tips without leaving the trail form.  You can also find existing tips and add them.
 
 Once Scout Trails are created and saved, they are available for use by Context.
 
@@ -18,6 +20,7 @@ Scout Tips and Trails are exportable (using Features), so they can be created on
 
 ---
 
-Requires: Context, Chaos tools, Entity API, Entity Connect, Entity Reference, Features, Fieldgroup, Field, Field SQL storage, Options, List, Number, Scout (included), Libraries, Text, Views
+Scout Trails Requires: Context, Chaos tools, Entity API, Entity Reference, Features, Fieldgroup, inline_entity_form, List, Number, Options, Scout, Text, Views
 
-Once installed, there is help information and a skinny tutorial at /admin/help/scout_trails.
+
+Once installed, there is help information at /admin/help/scout_trails.  If you also enable scout_pak, you can use the FastTrack tutorial, which also starts at /admin/help/scout_trails.

@@ -81,18 +81,15 @@ function scout_trail_form($form, &$form_state, $scout_trail = NULL) {
     '#default_value' => $scout_trail->description,
   );
 
-/*
-  $form['trail']['trail_ref_stops'] = array(
-    '#type' => 'entityreference',
-    '#title' => t('Referenced Scout Stops'),
-    '#description' => t('The Scout Stops on this trail.'),
-    '#era_entity_type' => 'scout_stop',
-    '#era_bundles' => array('public'),
-    '#era_cardinality' => 1,
-//    '#collapsible' => FALSE,
+  $form['trail']['tag'] = array(
+    '#type' => 'textfield',
+    '#required' => FALSE,
+    '#title' => t('Tag'),
+    '#description' => t('Optional tag for organizing / grouping trails in admin view.'),
+    '#default_value' => $scout_trail->tag,
+    '#autocomplete_path' => 'admin/content/scout-trails/ajax/tag',
   );
 
-*/
   $form['uid'] = array(
     '#type' => 'value',
     '#value' => $user->uid,
@@ -137,10 +134,15 @@ function scout_trail_form_submit(&$form, &$form_state) {
   $trail = $form_state['trail'];
   $trail->title = $form_state['values']['title'];
   $trail->description = $form_state['values']['description'];
+  $trail->tag = $form_state['values']['tag'];
+  $trail->changed = REQUEST_TIME;
+//  dpm($trail, '$scout_trail scout_trail_form_submit');
+
+  // Determine if new trail or update
+  $update = TRUE ? (isset($trail->trail_id)) : FALSE;
 
   // Save and go back.
-  //field_attach_submit($type, $entity, $form, &$form_state, $options = array());
-  field_attach_submit('scout_trail', $trail, $form, &$form_state);
+  field_attach_submit('scout_trail', $trail, $form, $form_state);
   scout_trail_save($trail);
 
   // Redirect user back to list of task types.
@@ -148,8 +150,15 @@ function scout_trail_form_submit(&$form, &$form_state) {
   $redirect = $redirect['admin ui']['path'];
   $form_state['redirect'] = $redirect;
 
-  watchdog('scout_trail', 'Created scout trail %title.', array('%title' => $trail->title));
-  drupal_set_message(t('%title has been created.', array('%title' => $trail->title)));
+  // Log and message
+  If (!$update) {
+	  watchdog('scout_trail', 'Created new scout trail "%title".', array('%title' => $trail->title));
+	  drupal_set_message(t('Scout Trail "%title" has been created.', array('%title' => $trail->title)));
+  }
+  else {
+    watchdog('scout_trail', 'Updated scout trail "%title" (%id).', array('%title' => $trail->title,'%id' => $trail->trail_id));
+    drupal_set_message(t('Scout Trail "%title" (%id) has been updated.', array('%title' => $trail->title,'%id' => $trail->trail_id)));
+  }
 }
 
 /**
@@ -313,4 +322,22 @@ function scout_trail_type_form($form, &$form_state, $trail_type, $op = 'edit') {
     );
   }
   return $form;
+}
+
+/**
+ * Page callback for views tag autocomplete
+ */
+function scout_trails_ui_autocomplete_tag($string = '') {
+  $matches = array();
+  // get matches from default views:
+  $views = views_get_view_result('scout_trails','tags','all');
+  foreach ($views as $key=>$value) {
+    if (!empty($value->scout_trail_tag) && strpos($value->scout_trail_tag, $string) === 0) {
+      $matches[$value->scout_trail_tag] = check_plain($value->scout_trail_tag);
+      if (count($matches) >= 10) {
+        break;
+      }
+    }
+  }
+  drupal_json_output($matches);
 }

@@ -11,7 +11,7 @@ function scout_trail_view($scout_trail) {
 /**
  * Page to select Scout Trail Type to add new scout trail.
  */
-function fantorrent_scout_trail_add_page() {
+function scout_trail_add_page() {
   $trails = array();
   foreach (scout_trail_types() as $scout_trail_type_key => $scout_trail_type) {
     $trails[] = l(entity_label('scout_trail_type', $scout_trail_type), 'admin/content/scout-trails/add/' . $scout_trail_type_key);
@@ -31,7 +31,7 @@ function fantorrent_scout_trail_add_page() {
 /**
  * Page to select Scout Tip Type to add new scout tip.
  */
-function fantorrent_scout_tip_admin_add_page() {
+function scout_tip_admin_add_page() {
 //  $scout_trails_uri = 'admin/config/user-interface/scout-tours/';
   $items = array();
   foreach (scout_tip_types() as $scout_tip_type_key => $scout_tip_type) {

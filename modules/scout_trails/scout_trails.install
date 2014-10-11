@@ -52,12 +52,12 @@ function scout_trails_schema() {
         'not null' => TRUE,
         'default' => 0,
       ),
-      //Not sure if will need this, but keeping in-case
-      'published' => array(
-        'description' => 'Boolean indicating whether the scout trail is published (visible to non-administrators).',
-        'type' => 'int',
+      'tag' => array(
+        'description' => 'A tag used to group/sort scout trails in the admin interface',
+        'type' => 'varchar',
+        'length' => 255,
         'not null' => TRUE,
-        'default' => 1,
+        'default' => '',
       ),
       'created' => array(
         'description' => 'The Unix timestamp when the scout trail was created.',
@@ -211,12 +211,12 @@ function scout_trails_schema() {
         'not null' => TRUE,
         'default' => 0,
       ),
-      //Not sure if will need this, but keeping in-case
-      'published' => array(
-        'description' => 'Boolean indicating whether the scout tip is published (visible to non-administrators).',
-        'type' => 'int',
+      'tag' => array(
+        'description' => 'A tag used to group/sort scout tips in the admin interface.',
+        'type' => 'varchar',
+        'length' => 255,
         'not null' => TRUE,
-        'default' => 1,
+        'default' => '',
       ),
       'created' => array(
         'description' => 'The Unix timestamp when the scout tip was created.',

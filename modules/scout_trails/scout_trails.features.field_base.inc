@@ -250,7 +250,14 @@ function scout_trails_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_scout_trail_tips',
-    'foreign keys' => array(),
+    'foreign keys' => array(
+      'scout_tip' => array(
+        'columns' => array(
+          'target_id' => 'tip_id',
+        ),
+        'table' => 'scout_tip',
+      ),
+    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -262,6 +269,9 @@ function scout_trails_field_default_field_bases() {
       'handler' => 'base',
       'handler_settings' => array(
         'behaviors' => array(
+          'test_field_behavior' => array(
+            'status' => 0,
+          ),
           'views-select-list' => array(
             'status' => 0,
           ),
@@ -271,7 +281,9 @@ function scout_trails_field_default_field_bases() {
           'property' => 'title',
           'type' => 'property',
         ),
-        'target_bundles' => array(),
+        'target_bundles' => array(
+          'scout_tip' => 'scout_tip',
+        ),
       ),
       'profile2_private' => FALSE,
       'target_type' => 'scout_tip',

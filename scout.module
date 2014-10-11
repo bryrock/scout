@@ -139,12 +139,6 @@ function scout_theme($existing, $type, $theme, $path) {
       'variables' => array(),
       'template' => 'templates/scout-help',
     ),
-/*
-    'joyride_demo' => array(
-      'variables' => array(),
-      'template' => 'templates/joyride-demo',
-    ),
-*/
     'scout_trailhead' => array(
       'variables' => array('link_title' => NULL, 'options' => array()),
       'template' => 'templates/scout-trailhead',
@@ -162,14 +156,6 @@ function scout_help($path, $arg) {
   switch ($path) {
     case 'admin/help#scout':
       return theme('scout_help');
-/*
-    case 'admin/help#joyride#demo#default':
-      return theme('scout_demo');
-    case 'admin/help#joyride#demo#manual-trigger':
-      return theme('scout_demo');
-    case 'admin/help#joyride#demo#play-only-once':
-      return theme('scout_demo');
-*/
   }
 }
 
@@ -180,43 +166,6 @@ function scout_help($path, $arg) {
  */
 function scout_menu() {
   $items = array();
-
-/*
-  $items['admin/config/user-interface/joyride'] = array(
-    'title' => 'Joyride Demo',
-    'page callback' => 'theme',
-    'page arguments' => array('joyride_demo'),
-    'access arguments' => array('access administration pages'),
-    'type' => MENU_NORMAL_ITEM,
-  );
-
-  $items['admin/config/user-interface/joyride/auto-start'] = array(
-    'title' => 'Joyride Demo (Start tour automatically)',
-    'page callback' => 'theme',
-    'page arguments' => array('joyride_demo'),
-    'access arguments' => array('access administration pages'),
-    'type' => MENU_DEFAULT_LOCAL_TASK,
-    'weight' => -10,
-  );
-
-  $items['admin/config/user-interface/joyride/manual-trigger'] = array(
-    'title' => 'Joyride Demo (Use manual trigger to start tour)',
-    'page callback' => 'theme',
-    'page arguments' => array('joyride_demo'),
-    'access arguments' => array('access administration pages'),
-    'type' => MENU_LOCAL_TASK,
-    'weight' => 10,
-  );
-
-  $items['admin/config/user-interface/joyride/play-once'] = array(
-    'title' => 'Joyride Demo (Play tour only once)',
-    'page callback' => 'theme',
-    'page arguments' => array('joyride_demo'),
-    'access arguments' => array('access administration pages'),
-    'type' => MENU_LOCAL_TASK,
-    'weight' => 20,
-  );
-*/
 
   return $items;
 }

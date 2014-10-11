@@ -8,12 +8,18 @@ Scout brings Joyride functionality along with the Drupal 8 ease of tour creation
 
 This module provides integration of the Zurb Joyride Jquery library and adds a custom Context reaction plug-in for placing Scout Trails on your Drupal web pages.
 
-In order to create Scout Tips and Trails, install the separate module, scout_trails (should be included in same download with scout, in its "modules" sub-directory).  It has its own README.txt to help you get started.
+In order to create Scout Tips and Trails, install the Scout & Scout Trails modules (scout_trails is included in Scout's "modules" sub-directory).
+
+It has its own README.txt to help you get started.
 
 ---
 
-Requires: Context, Chaos tools, Libraries (>=7.x-2.0)
-
-Required by: Scout Trails
+Scout Requires: Context and Libraries (>=7.x-2.0)
 
 Download version 2.0.3 of Joyride jquery plugins at https://github.com/zurb/joyride from https://github.com/zurb/joyride/archive/v2.0.3.tar.gz and place the sites/all/libraries/joyride.  Make sure the folder/directory in libraries is named "joyride" but don't worry about the file names inside the joyride folder.  That is, you should not have to remove the version information from them.
+
+---
+
+Scout Trails Requires: Context, Chaos tools, Entity API, Entity Reference, Features, Fieldgroup, inline_entity_form, List, Number, Options, Scout, Text, Views
+
+
