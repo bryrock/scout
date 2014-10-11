@@ -66,12 +66,19 @@ class scout_context_reaction_trail extends context_reaction {
     );
   }
 
+  /**
+   * Options form submit handler.
+   */
+
   function options_form_submit($values) {
     if(!isset($values['trail_play_once'])) $values['trail_play_once'] = FALSE;
     $values['trail_play_once'] = empty($values['trail_auto_start']) ? FALSE : $values['trail_play_once'];
     return $values;
   }
 
+  /**
+   * Execute.
+   */
   function execute(&$vars = NULL) {
     $contexts = $this->get_contexts();
 
