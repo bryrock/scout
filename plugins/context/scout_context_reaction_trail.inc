@@ -109,17 +109,17 @@ class scout_context_reaction_trail extends context_reaction {
         $trail_content = $context->reactions[$this->plugin]['trail_content'];
         if(empty($trail_content)) return FALSE;
 
-        // Here we collect the scout_tip entities from the scout_trail entity,
-        // to begin formatting the trail content.
+        // Collect the scout_tips from the scout_trail and prepare,
+        // to format trail content.
         $scout_trail_wrapper = entity_metadata_wrapper('scout_trail', $trail_content);
         $scout_tips = $scout_trail_wrapper->field_scout_trail_tips;
         $scout_tip_content = array();
 
-        // Retrieve and sanitize content from each attached scout tip
+        // Retrieve content from each attached scout tip
         foreach ($scout_tips as $key => $scout_tip) {
-          $scout_tip_content[] = $scout_tip->value(array('sanitize'=>TRUE));
+          $scout_tip_content[] = $scout_tip->value();
         }
-        // Preprocess trail stops into (html) trail content for theming and Joyride library jquery
+        // Preprocess trail stops into (sanitized html) trail content for theming and Joyride library jquery
         $trail_content = scout_trails_markup_scout_trail($scout_tip_content);
 
         // Build the jquery settings with our completed content and context settings.
@@ -130,7 +130,7 @@ class scout_context_reaction_trail extends context_reaction {
             'play_once' => (boolean)$context->reactions[$this->plugin]['trail_play_once'],
           ),
         );
-        //dpm($js_settings,'$js_settings - after set');
+
         drupal_add_js($js_settings, 'setting');
       }
     }
