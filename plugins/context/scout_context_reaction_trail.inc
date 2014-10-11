@@ -13,21 +13,6 @@ class scout_context_reaction_trail extends context_reaction {
    */
   function options_form($context) {
 
-    //Populate existing trails options for trail content selection
-    $query = db_select('scout_trail', 'r')->extend('PagerDefault');
-    $query
-      ->fields('r', array('trail_id'))
-      ->condition('r.status', 0, '<>')
-      ->orderBy('r.title', 'ASC');
-
-    $trail_ids = $query
-//      ->limit(100)
-      ->execute()
-      ->fetchCol();
-
-    $type = array();
-    $scout_trails = scout_trail_load_multiple($trail_ids, $type);
-
     $trail_options = array();
     foreach($scout_trails as $key) {
       // Need a better way to find field we are looking for based on type.
@@ -36,6 +21,17 @@ class scout_context_reaction_trail extends context_reaction {
 
 //      $trail_options[$key->trail_id] = t($key->title . ' (a ' . $key->type . ' trail with ' . format_plural($tips, '1 tip', '@count tips') . ')');
       $trail_options[$key->trail_id] = t($key->title . ' (a Scout trail with ' . format_plural($tips, '1 Scout tip', '@count Scout tips') . ')');
+    //Find Scout trails and get their ids.
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'scout_trail')
+      ->addMetaData('account', user_load(1)); // Run the query as user 1.
+    $result = $query->execute();
+
+    if (isset($result['scout_trail'])) {
+      $trail_ids = array_keys($result['scout_trail']);
+    }
+    else {
+	    drupal_set_message(t('You must create some Scout Trails before they can be used for Context.'), 'warning');
     }
 
     $context_values = $this->fetch_from_context($context, 'values');
