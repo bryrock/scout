@@ -111,18 +111,13 @@ class scout_context_reaction_trail extends context_reaction {
 
         // Here we collect the scout_tip entities from the scout_trail entity,
         // to begin formatting the trail content.
-        $scout_trail = scout_trail_load($trail_content,FALSE);
-
-//        if ($scout_trail->type == 'scout_trail') $scout_tips = $scout_trail->field_scout_trail_tips['und'];
-//        if ($scout_trail->type == 'cub_scout') $scout_tips = $scout_trail->field_scout_trail_tips['und'];
-        $scout_tips = $scout_trail->field_scout_trail_tips['und'];
-        //dpm($scout_tips,'$scout_tips');
-
+        $scout_trail_wrapper = entity_metadata_wrapper('scout_trail', $trail_content);
+        $scout_tips = $scout_trail_wrapper->field_scout_trail_tips;
         $scout_tip_content = array();
 
-        // Get each scout tip tip_id and load it
-        foreach ($scout_tips as $key) {
-	        $scout_tip_content[] = scout_tip_load($key['target_id'], FALSE);
+        // Retrieve and sanitize content from each attached scout tip
+        foreach ($scout_tips as $key => $scout_tip) {
+          $scout_tip_content[] = $scout_tip->value(array('sanitize'=>TRUE));
         }
         // Preprocess trail stops into (html) trail content for theming and Joyride library jquery
         $trail_content = scout_trails_markup_scout_trail($scout_tip_content);
