@@ -103,7 +103,7 @@ class scout_context_reaction_trail extends context_reaction {
           return FALSE;
         }
         drupal_add_js(drupal_get_path('module', 'scout') . '/inc/js/scout_trail_context.js');
-        $customCss = drupal_add_css(drupal_get_path('module', 'scout') . '/inc/css/scout-' . JOYRIDE_LIBRARY_VERSION . '.css');
+        drupal_add_css(drupal_get_path('module', 'scout') . '/inc/css/scout-' . JOYRIDE_LIBRARY_VERSION . '.css');
 
         // Trail content consists of a scout_trail entity pointing to one or more scout_tip entities
         $trail_content = $context->reactions[$this->plugin]['trail_content'];
