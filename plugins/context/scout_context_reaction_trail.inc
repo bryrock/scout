@@ -1,6 +1,16 @@
 <?php
 
+/**
+ * Expose Scout Trail as a context reactions.
+ */
 class scout_context_reaction_trail extends context_reaction {
+
+  /**
+   * Options form.
+   *
+   * Populate options form with existing scout trails
+   * for trail content selection in reaction.
+   */
   function options_form($context) {
 
     //Populate existing trails options for trail content selection
