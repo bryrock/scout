@@ -1,4 +1,15 @@
-This is the Read Me file for Scout.
+Scout
+-----
+
+Please Note:
+
+This is the 7.x-2.x fork of the Scout project.  It's now in development.  Everything below this section of the README is subject to change until this notice is removed.
+
+The purpose of this fork is refactoring only.  The intent is to "skinny down" this module to its minimum required functionality and performance requirements, and to update some antiquated approaches to handling entities.  There is no intent to add any new features, however any discovered bugs along the way will be fixed.
+
+October 11, 2014
+
+---
 
 Scout is a Site Navigation aid. It can be used to assist new visitors to your site. It can also by used to help train content managers, guiding them through steps for creation and administration of site content.
 
