@@ -13,14 +13,6 @@ class scout_context_reaction_trail extends context_reaction {
    */
   function options_form($context) {
 
-    $trail_options = array();
-    foreach($scout_trails as $key) {
-      // Need a better way to find field we are looking for based on type.
-      // This need started when I made it possible to create new types on the fly.
-      if ($key->type == 'scout_trail') $tips = count($key->field_scout_trail_tips['und']);
-
-//      $trail_options[$key->trail_id] = t($key->title . ' (a ' . $key->type . ' trail with ' . format_plural($tips, '1 tip', '@count tips') . ')');
-      $trail_options[$key->trail_id] = t($key->title . ' (a Scout trail with ' . format_plural($tips, '1 Scout tip', '@count Scout tips') . ')');
     //Find Scout trails and get their ids.
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'scout_trail')
@@ -32,6 +24,14 @@ class scout_context_reaction_trail extends context_reaction {
     }
     else {
 	    drupal_set_message(t('You must create some Scout Trails before they can be used for Context.'), 'warning');
+    }
+
+    // Populate options list with available Scout trails
+    $trail_option = array();
+    foreach($trail_ids as $key =>$trail) {
+      $trail_wrapper = entity_metadata_wrapper('scout_trail', $trail);
+      $tips = count($trail_wrapper->field_scout_trail_tips);
+      $trail_options[$key] = t($trail_wrapper->title->value() . ' (a Scout trail with ' . format_plural($tips, '1 Scout tip', '@count Scout tips') . ')');
     }
 
     $context_values = $this->fetch_from_context($context, 'values');
