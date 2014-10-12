@@ -821,18 +821,25 @@ function scout_trails_set_breadcrumb() {
  * @param $trail_tips
  *   An array of objects (scout_tip entities).
  *
- * Build Joyride compatible tips content from Scout Trail scout_trail entities.
+ * returns $trail_content
+ *
+ * Markup Joyride compatible scout tips.
  */
 function scout_trails_markup_scout_trail(&$trail_tips) {
-  // We're going to collect values and create a bunch of variables to use for markup,
+  // Collect values and create a bunch of variables to use for markup,
   // and pass those along as trail content for Joyride.
+    $sanitize = array(
+      'sanitize' => TRUE,
+      );
+
     $trail_content = '';
-    foreach($trail_tips as $trail_tip){
+    foreach($trail_tips as $delta => $trail_tip){
+      $tip_wrapper = entity_metadata_wrapper('scout_tip',$trail_tip->tip_id);
+
       // Get the basic content: title, text & button text
-      $tip_title = $trail_tip->title;
-      //dpm($tip_title,'$tip_title');
-      $tip_text = $trail_tip->field_scout_tip_text['und'][0]['value'];
-      $button_text = $trail_tip->field_scout_tip_button_text['und'][0]['value'];
+      $tip_title = $tip_wrapper->title->value($sanitize);
+      $tip_text = $tip_wrapper->field_scout_tip_text->raw($sanitize);
+      $button_text = $tip_wrapper->field_scout_tip_button_text->value($sanitize);
 
       // How this Scout Tip is anchored to the page:
       //   options are by data id or class id selectors OR modal (anchored to entire page).
@@ -842,28 +849,28 @@ function scout_trails_markup_scout_trail(&$trail_tips) {
       $selector_id = '';
       $selector_class = '';
 
-      $selector = $trail_tip->field_scout_tip_selector_type['und'][0]['value'];
+      $selector = $tip_wrapper->field_scout_tip_selector_type->value();
       $modal = TRUE ? $selector == 'Modal' : $modal = FALSE;
 
       // We don't know yet if the selectors have been set, so find out.
       // We'll set these here if they exist, and use them further down, if we need them.
 
-      if ((!$modal) && (isset($trail_tip->field_scout_tip_selector_id['und'][0]['value']))) {
-	      $selector_id = $trail_tip->field_scout_tip_selector_id['und'][0]['value'];
+      if ((!$modal) && (isset($tip_wrapper->field_scout_tip_selector_id))) {
+	      $selector_id = $tip_wrapper->field_scout_tip_selector_id->value();
       }
-      if ((!$modal) && (isset($trail_tip->field_scout_tip_selector_class['und'][0]['value']))) {
-	      $selector_class = $trail_tip->field_scout_tip_selector_class['und'][0]['value'];
+      if ((!$modal) && (isset($tip_wrapper->field_scout_tip_selector_class))) {
+	      $selector_class = $tip_wrapper->field_scout_tip_selector_class->value();
       }
 
       // What Joyride means by "location" is the orientation (above/below/right/left) to the selector the tip is anchored to.
       // So, please pardon any confusion.
-      $tip_orientation = $trail_tip->field_scout_tip_orientation['und'][0]['value'];
+      $tip_orientation = $tip_wrapper->field_scout_tip_orientation->value();
 
       // This next class is an optional custom class that can be added to the Scout Tip for custom styling.
-      $tip_class = $trail_tip->field_scout_tip_class['und'][0]['value'];
+      $tip_class = $tip_wrapper->field_scout_tip_class->value();
 
       // Animation is whether or not the tip pops or fades
-      $tip_animation = $trail_tip->field_scout_tip_animation['und'][0]['value'];
+      $tip_animation = $tip_wrapper->field_scout_tip_animation->value();
 
       // Variables are gathered, so now we begin the trail content markup for Joyride.
       // Each scout tip will be one line item in Joyride's Ordered List
