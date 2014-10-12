@@ -63,54 +63,6 @@ class ScoutTip extends Entity {
 }
 
 /**
-* Scout Trail Type Controller.
-*/
-class ScoutTrailTypeController extends EntityAPIControllerExportable {
-   public function create(array $values = array()) {
-    $values += array(
-      'label' => '',
-      'description' => '',
-    );
-    return parent::create($values);
-  }
-
-  /**
-   * Save Scout Trail Type.
-   */
-  public function save($entity, DatabaseTransaction $transaction = NULL) {
-    parent::save($entity, $transaction);
-    // Rebuild menu registry. We do not call menu_rebuild directly, but set
-    // variable that indicates rebuild in the end.
-    // @see _http://drupal.org/node/1399618
-    variable_set('menu_rebuild_needed', TRUE);
-  }
-}
-
-/**
-* Scout Tip Type Controller.
-*/
-class ScoutTipTypeController extends EntityAPIControllerExportable {
-   public function create(array $values = array()) {
-    $values += array(
-      'label' => '',
-      'description' => '',
-    );
-    return parent::create($values);
-  }
-
-  /**
-   * Save Scout Tip Type.
-   */
-  public function save($entity, DatabaseTransaction $transaction = NULL) {
-    parent::save($entity, $transaction);
-    // Rebuild menu registry. We do not call menu_rebuild directly, but set
-    // variable that indicates rebuild in the end.
-    // @see _http://drupal.org/node/1399618
-    variable_set('menu_rebuild_needed', TRUE);
-  }
-}
-
-/**
 * Scout Trails Controller.
 */
 class ScoutTrailController extends EntityAPIController {
