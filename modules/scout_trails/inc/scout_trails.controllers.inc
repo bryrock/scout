@@ -149,18 +149,16 @@ class ScoutTrailUIController extends EntityBundleableUIController {
     $items[$this->path . '/add']['page callback'] = 'scout_trail_add_page';
 
     // Pass add links through to a form factory.
-    $types = scout_trail_types();
-    foreach ($types as $type => $info) {
-      $items[$this->path . '/add/' . $type] = array(
-        'title' => 'Add Scout Trail of type ' . $type,
-        'page callback' => 'scout_trails_forms_wrapper',
-        'page arguments' => array($type, NULL, 'add'),
-        'access callback' => 'entity_access',
-        'access arguments' => array('create', 'scout_trail', $type),
-        'file' => 'inc/scout_trails.trails.admin.inc',
-        'file path' => drupal_get_path('module', 'scout_trails'),
-      );
-    }
+    $type = 'scout_trail';
+    $items[$this->path . '/add/' . $type] = array(
+      'title' => 'Add Scout Trail of type ' . $type,
+      'page callback' => 'scout_trails_forms_wrapper',
+      'page arguments' => array($type, NULL, 'add'),
+      'access callback' => 'entity_access',
+      'access arguments' => array('create', 'scout_trail', $type),
+      'file' => 'inc/scout_trails.trails.admin.inc',
+      'file path' => drupal_get_path('module', 'scout_trails'),
+    );
 
     // EntityBundleableUIController handles loading and editing scout trail entities.
     // Deleting scout trail entities.
@@ -204,16 +202,14 @@ class ScoutTipUIController extends EntityBundleableUIController {
 
     // Pass add links through to a form factory.
     // Override default titles and page callback.
-    $types = scout_tip_types();
-    foreach ($types as $type => $info) {
-      $items[$this->path . '/add/' . $type]['title'] = t('Add Scout Tip of type ' . $type);
-      $items[$this->path . '/add/' . $type]['page callback'] = 'scout_tips_forms_wrapper';
-      $items[$this->path . '/add/' . $type]['page arguments'] = array($type, NULL, 'add');
-      $items[$this->path . '/add/' . $type]['access callback'] = 'entity_access';
-      $items[$this->path . '/add/' . $type]['access arguments'] = array('create', 'scout_tip', $type);
-      $items[$this->path . '/add/' . $type]['file'] = 'inc/scout_trails.tips.admin.inc';
-      $items[$this->path . '/add/' . $type]['file path'] = drupal_get_path('module', 'scout_trails');
-   }
+    $type = 'scout_tip';
+    $items[$this->path . '/add/' . $type]['title'] = t('Add Scout Tip of type ' . $type);
+    $items[$this->path . '/add/' . $type]['page callback'] = 'scout_tips_forms_wrapper';
+    $items[$this->path . '/add/' . $type]['page arguments'] = array($type, NULL, 'add');
+    $items[$this->path . '/add/' . $type]['access callback'] = 'entity_access';
+    $items[$this->path . '/add/' . $type]['access arguments'] = array('create', 'scout_tip', $type);
+    $items[$this->path . '/add/' . $type]['file'] = 'inc/scout_trails.tips.admin.inc';
+    $items[$this->path . '/add/' . $type]['file path'] = drupal_get_path('module', 'scout_trails');
 
     // EntityBundleableUIController handles loading and editing scout tip entities.
 
