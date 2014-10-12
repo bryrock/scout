@@ -87,33 +87,6 @@ function scout_trails_entity_info() {
       'menu wildcard' => '%scout_trail',
     ),
   );
-  // The entity that holds information about the default Scout Trail type
-  $return['scout_trail_type'] = array(
-    'label' => t('Scout Trail Type'),
-    'entity class' => 'ScoutTrailType',
-    'controller class' => 'ScoutTrailTypeController',
-    'base table' => 'scout_trail_type',
-    'fieldable' => FALSE,
-    'bundle of' => 'scout_trail',
-    'exportable' => TRUE,
-    'entity keys' => array(
-      'id' => 'id',
-      'name' => 'type',
-      'label' => 'label',
-    ),
-    'access callback' => 'scout_trails_type_access',
-    'module' => 'scout_trails',
-    // Enable the entity API's admin UI.
-    // Really no reason for this UI for end users because we don't want them changing fields or adding new types.
-    // It is handy, though.  Keeping for further development, only.
-/*
-    'admin ui' => array(
-      'path' => 'admin/structure/scout/scout-trail-types',
-      'file' => 'inc/scout_trails.controllers.inc',
-      'controller class' => 'ScoutTrailTypeUIController',
-    ),
-*/
-  );
 
   // Scout tip entities - Scout Trails are collections of these entities (supports joyride tour tips).
   $return['scout_tip'] = array(
@@ -154,44 +127,12 @@ function scout_trails_entity_info() {
     ),
   );
 
-  // The entity that holds information about the default Scout Tip type
-  $return['scout_tip_type'] = array(
-    'label' => t('Scout Tip Type'),
-    'entity class' => 'ScoutTipType',
-    'controller class' => 'EntityAPIControllerExportable',
-    'base table' => 'scout_tip_type',
-    'fieldable' => TRUE,
-    'bundle of' => 'scout_tip',
-    'exportable' => TRUE,
-    'entity keys' => array(
-      'id' => 'id',
-      'name' => 'type',
-      'label' => 'label',
-    ),
-    'access callback' => 'scout_trails_type_access',
-    'module' => 'scout_trails',
-    // Enable the entity API's admin UI.
-    // Really no reason for this UI for end users because we don't want them changing fields or adding new types.
-    // It is handy, though.  Keeping for further development, only.
-/*
-    'admin ui' => array(
-      'path' => 'admin/structure/scout/scout-tip-types',
-      'file' => 'inc/scout_trails.controllers.inc',
-      'controller class' => 'ScoutTipTypeUIController',
-    ),
-*/
-  );
-
   // Support entity cache module.
   if (module_exists('entitycache')) {
     $return['scout_trail']['field cache'] = FALSE;
     $return['scout_trail']['entity cache'] = TRUE;
-    $return['scout_trail_type']['field cache'] = FALSE;
-    $return['scout_trail_type']['entity cache'] = TRUE;
     $return['scout_tip']['field cache'] = FALSE;
     $return['scout_tip']['entity cache'] = TRUE;
-    $return['scout_tip_type']['field cache'] = FALSE;
-    $return['scout_tip_type']['entity cache'] = TRUE;
   }
 //  dsm($return,'scout_trails_entity_info');
 //  dsm($return['scout_trail']['entity class'],'entity class');
