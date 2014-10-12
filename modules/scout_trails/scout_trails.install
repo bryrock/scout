@@ -124,57 +124,6 @@ function scout_trails_schema() {
     ),
   );
 
-  $schema['scout_trail_type'] = array(
-    'description' => 'Stores information about defined scout trail types.',
-    'fields' => array(
-      'id' => array(
-        'type' => 'serial',
-        'not null' => TRUE,
-        'description' => 'Primary Key: Unique scout_trail type identifier.',
-      ),
-      'type' => array(
-        'description' => 'The machine-readable name of this scout trail type.',
-        'type' => 'varchar',
-        'length' => 32,
-        'not null' => TRUE,
-      ),
-      'label' => array(
-        'description' => 'The human-readable name of this scout trail type.',
-        'type' => 'varchar',
-        'length' => 255,
-        'not null' => TRUE,
-        'default' => '',
-      ),
-      'description' => array(
-        'description' => 'A brief description of this type.',
-        'type' => 'text',
-        'not null' => TRUE,
-        'size' => 'medium',
-        'translatable' => TRUE,
-      ),
-      // exportable status (not published status)
-      'status' => array(
-        'type' => 'int',
-        'not null' => TRUE,
-        // Set the default to ENTITY_CUSTOM without using the constant as it is
-       // not safe to use it at this point.
-        'default' => 0x01,
-        'size' => 'tiny',
-        'description' => 'The exportable status of the entity.',
-      ),
-       'module' => array(
-        'description' => 'The name of the providing module if the entity has been defined in code.',
-        'type' => 'varchar',
-        'length' => 255,
-        'not null' => FALSE,
-      ),
-   ) + entity_exportable_schema_fields(),
-    'primary key' => array('id'),
-    'unique keys' => array(
-      'type' => array('type'),
-    ),
-  );
-
   $schema['scout_tip'] = array(
     'description' => 'The base table for scout tips.',
     'fields' => array(
@@ -281,57 +230,6 @@ function scout_trails_schema() {
       ),
       'type' => array('scout_tip_type' => 'type'),
 
-    ),
-  );
-
-  $schema['scout_tip_type'] = array(
-    'description' => 'Stores information about defined scout_tip types.',
-    'fields' => array(
-      'id' => array(
-        'type' => 'serial',
-        'not null' => TRUE,
-        'description' => 'Primary Key: Unique scout_tip type ID.',
-      ),
-      'type' => array(
-        'description' => 'The machine-readable name of this scout_tip_type.',
-        'type' => 'varchar',
-        'length' => 255,
-        'not null' => TRUE,
-      ),
-      'label' => array(
-        'description' => 'The human-readable name of this scout_tip_type.',
-        'type' => 'varchar',
-        'length' => 255,
-        'not null' => TRUE,
-        'default' => '',
-      ),
-      'description' => array(
-        'description' => 'A brief description of this type.',
-        'type' => 'text',
-        'not null' => TRUE,
-        'size' => 'medium',
-        'translatable' => TRUE,
-      ),
-      // exportable status (not published status)
-      'status' => array(
-        'type' => 'int',
-        'not null' => TRUE,
-        // Set the default to ENTITY_CUSTOM without using the constant as it is
-       // not safe to use it at this point.
-        'default' => 0x01,
-        'size' => 'tiny',
-        'description' => 'The exportable status of the entity.',
-      ),
-       'module' => array(
-        'description' => 'The name of the providing module if the entity has been defined in code.',
-        'type' => 'varchar',
-        'length' => 255,
-        'not null' => FALSE,
-      ),
-    ) + entity_exportable_schema_fields(),
-    'primary key' => array('id'),
-    'unique keys' => array(
-      'type' => array('type'),
     ),
   );
 
