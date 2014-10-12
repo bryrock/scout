@@ -180,7 +180,7 @@ class ScoutTrailUIController extends EntityBundleableUIController {
 }
 
 /**
- * UI controller for Scout Trails.
+ * UI controller for Scout Tips.
  */
 class ScoutTipUIController extends EntityBundleableUIController {
   /**
