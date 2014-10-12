@@ -63,22 +63,6 @@ class ScoutTip extends Entity {
 }
 
 /**
-* Scout Tip Type class.
-*/
-class ScoutTipType extends Entity {
-  public $type;
-  public $label;
-  public $weight = 0;
-  public function __construct($values = array()) {
-    parent::__construct($values, 'scout_tip_type');
-  }
-
-  function isLocked() {
-    return isset($this->status) && empty($this->is_new) && (($this->status & ENTITY_IN_CODE) || ($this->status & ENTITY_FIXED));
-  }
-}
-
-/**
 * Scout Trail Type Controller.
 */
 class ScoutTrailTypeController extends EntityAPIControllerExportable {
