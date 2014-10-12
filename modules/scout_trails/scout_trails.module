@@ -144,30 +144,6 @@ function scout_trails_entity_info() {
 * Implements hook_entity_info_alter().
 */
 function scout_trails_entity_info_alter(&$entity_info) {
-  foreach (scout_trail_types() as $type => $info) {
-    $entity_info['scout_trail']['bundles'][$type] = array(
-      'label' => $info->label,
-      'admin' => array(
-        'path' => 'admin/structure/scout/scout-trail-types/manage/%scout_trail_type',
-        'real path' => 'admin/structure/scout/scout-trail-types/manage/' . $type,
-        'bundle argument' => 5,
-        'access arguments' => array('admin scout trails'),
-      ),
-    );
-  }
-
-  foreach (scout_tip_types() as $type => $info) {
-    $entity_info['scout_tip']['bundles'][$type] = array(
-      'label' => $info->label,
-      'admin' => array(
-        'path' => 'admin/structure/scout/scout-tip-types/manage/%scout_tip_type',
-        'real path' => 'admin/structure/scout/scout-tip-types/manage/' . $type,
-        'bundle argument' => 5,
-        'access arguments' => array('admin scout trails'),
-      ),
-    );
-  }
-
   // Add support for inline entity forms
   if (isset($entity_info['scout_tip'])) {
     $entity_info['scout_tip']['inline entity form'] = array(
