@@ -181,34 +181,6 @@ function scout_trails_menu() {
     'file' => 'inc/scout_trails.tips.admin.inc',
   );
 
-//  $scout_trails_uri = 'admin/content/scout-trails';
-//  $scout_trails_uri_argument_position = 4;
-
-  foreach (scout_trail_types() as $type => $info) {
-   $items['admin/structure/scout/scout-trail-types/%scout_trail_type/delete'] = array(
-    'title' => 'Delete',
-    'page callback' => 'drupal_get_form',
-    'page arguments' => array('scout_trail_type_form_delete_confirm', 4),
-    'access arguments' => array('admin scout trails'),
-    'weight' => 1,
-    'type' => MENU_NORMAL_ITEM,
-    'file' => 'inc/scout_trails.trails.admin.inc',
-  );
-
-   $items['admin/structure/scout/scout-tip-types/%scout_tip_type/delete'] = array(
-    'title' => 'Delete',
-    'page callback' => 'drupal_get_form',
-    'page arguments' => array('scout_tip_type_form_delete_confirm', 4),
-    'access arguments' => array('admin scout trails'),
-    'weight' => 1,
-    'type' => MENU_NORMAL_ITEM,
-    'file' => 'inc/scout_trails.tips.admin.inc',
-  );
-
-  }
-  
-//  dsm($items,'$items');
-
   return $items;
 }
 
@@ -232,31 +204,6 @@ function scout_trails_permission() {
     ),
   );
 
-  //Generate permissions per trail type -- CAN WE DITCH THIS?
-  foreach (scout_trail_types() as $type) {
-    $type_name = check_plain($type->type);
-    $permissions += array(
-      "edit any $type_name trail" => array(
-        'title' => t('%type_name: Edit any trail', array('%type_name' => $type->label)),
-      ),
-      "view any $type_name trail" => array(
-        'title' => t('%type_name: View any trail', array('%type_name' => $type->label)),
-      ),
-    );
-  }  
-
-  foreach (scout_tip_types() as $type) {
-    $type_name = check_plain($type->type);
-    $permissions += array(
-      "edit any $type_name tip" => array(
-        'title' => t('%type_name: Edit any tip', array('%type_name' => $type->label)),
-      ),
-      "view any $type_name tip" => array(
-        'title' => t('%type_name: View any tip', array('%type_name' => $type->label)),
-      ),
-    );
-  }  
-  
   return $permissions;
 }
 
