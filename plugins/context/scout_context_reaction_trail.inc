@@ -23,15 +23,16 @@ class scout_context_reaction_trail extends context_reaction {
       $trail_ids = array_keys($result['scout_trail']);
     }
     else {
+      $trail_ids = array();
 	    drupal_set_message(t('You must create some Scout Trails before they can be used for Context.'), 'warning');
     }
 
     // Populate options list with available Scout trails
-    $trail_option = array();
+    $trail_options = array();
     foreach($trail_ids as $key =>$trail) {
       $trail_wrapper = entity_metadata_wrapper('scout_trail', $trail);
       $tips = count($trail_wrapper->field_scout_trail_tips);
-      $trail_options[$key] = t($trail_wrapper->title->value() . ' (a Scout trail with ' . format_plural($tips, '1 Scout tip', '@count Scout tips') . ')');
+      $trail_options[$trail] = t($trail_wrapper->title->value() . ' (a Scout trail with ' . format_plural($tips, '1 Scout tip', '@count Scout tips') . ')');
     }
 
     $context_values = $this->fetch_from_context($context, 'values');
