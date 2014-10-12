@@ -32,22 +32,6 @@ class ScoutTrail extends Entity {
 }
 
 /**
-* Scout Trail Type class.
-*/
-class ScoutTrailType extends Entity {
-  public $type;
-  public $label;
-  public $weight = 0;
-  public function __construct($values = array()) {
-    parent::__construct($values, 'scout_trail_type');
-  }
-
-  function isLocked() {
-    return isset($this->status) && empty($this->is_new) && (($this->status & ENTITY_IN_CODE) || ($this->status & ENTITY_FIXED));
-  }
-}
-
-/**
 * Scout Tips class.
 */
 class ScoutTip extends Entity {
