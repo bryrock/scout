@@ -76,9 +76,7 @@ function scout_trails_entity_info() {
       ),
     ),
     'load hook' => 'scout_trail_load',
-    'uri callback' => 'entity_class_uri',
     'label callback' => 'entity_class_label',
-//    'creation callback' => 'scout_trail_create', // Don't define, use controller default.
     'access callback' => 'scout_trails_access',
     'module' => 'scout_trails',
     // The information below is used by the ScoutTrailUIController (which extends the EntityDefaultUIController)
@@ -116,9 +114,7 @@ function scout_trails_entity_info() {
         ),
       ),
     'load hook' => 'scout_tip_load',
-    'uri callback' => 'entity_class_uri',
     'label callback' => 'entity_class_label',
-//    'creation callback' => 'scout_trail_create', // Don't define, use controller default.
     'access callback' => 'scout_trails_access',
     'module' => 'scout_trails',
     // The information below is used by the ScoutTipUIController (which extends the EntityDefaultUIController)
@@ -142,8 +138,6 @@ function scout_trails_entity_info() {
     $return['scout_tip']['field cache'] = FALSE;
     $return['scout_tip']['entity cache'] = TRUE;
   }
-//  dsm($return,'scout_trails_entity_info');
-//  dsm($return['scout_trail']['entity class'],'entity class');
 
   return $return;
 }
