@@ -64,7 +64,11 @@ function scout_trails_entity_info() {
     'bundle keys' => array(
       'bundle' => 'type',
     ),
-    'bundles' => array(),
+      'bundles' => array(
+        'scout_trail' => array(
+          'label' => t('Scout Trail', array(), array('context' => 'a trail of Scout Tips')),
+        ),
+      ),
     'view modes' => array(
       'full' => array(
         'label' => t('Default'),
@@ -106,7 +110,11 @@ function scout_trails_entity_info() {
     'bundle keys' => array(
       'bundle' => 'type',
     ),
-    'bundles' => array(),
+      'bundles' => array(
+        'scout_tip' => array(
+          'label' => t('Scout Tip', array(), array('context' => 'components of a Scout Trail')),
+        ),
+      ),
     'load hook' => 'scout_tip_load',
     'uri callback' => 'entity_class_uri',
     'label callback' => 'entity_class_label',
