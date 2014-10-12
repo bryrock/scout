@@ -112,8 +112,18 @@ class scout_context_reaction_trail extends context_reaction {
 
         // Collect the scout_tips from the scout_trail and prepare,
         // to format trail content.
-        $scout_trail_wrapper = entity_metadata_wrapper('scout_trail', $trail_content);
-        $scout_tips = $scout_trail_wrapper->field_scout_trail_tips;
+        // Catch exception in cases where trails referenced for use in context no longer exist.
+        try {
+          $scout_trail_wrapper = entity_metadata_wrapper('scout_trail', $trail_content);
+          $scout_tips = $scout_trail_wrapper->field_scout_trail_tips;
+        }
+        catch (EntityMetadataWrapperException $e) {
+          //drupal_set_message(t('Scout trail %trail, assigned to this page, was not found.', array('%trail' => $trail_content)), 'warning');
+          watchdog('Scout Trails', 'Scout trail %trail, assigned to this page, was not found.', array('%trail' => $trail_content), WATCHDOG_ERROR,t('Check <a href="@url">context settings</a> page.', array('@url' => url('admin/structure/context'))));
+          $scout_tips = array();
+          return;
+        }
+
         $scout_tip_content = array();
 
         // Retrieve content from each attached scout tip
