@@ -1,7 +1,7 @@
 <?php
 
 /**
-* Scout Trails Controllers.
+* Scout Trails & Tips Controllers.
 */
 
 /**
@@ -228,45 +228,6 @@ class ScoutTipUIController extends EntityBundleableUIController {
 
     return $items;
   }
-}
-
-/**
- * UI controller for Scout Trail Types.
- */
-class ScoutTrailTypeUIController extends EntityDefaultUIController {
-  /**
-   * Overrides hook_menu() defaults.
-   */
-/*
-  public function hook_menu() {
-    $items = parent::hook_menu();
-    $items[$this->path]['description'] = t('Manage types of Scout Trails.');
-    $items[$this->path]['title'] = t('Scout Trail types');
-//    $items[$this->path]['type'] = MENU_LOCAL_TASK;
-//    $items[$this->path]['type'] = MENU_DEFAULT_LOCAL_TASK;
-
-    return $items;
-  }
-*/
-}
-
-/**
- * UI controller for Scout Tip Types.
- */
-class ScoutTipTypeUIController extends EntityDefaultUIController {
-  /**
-   * Overrides hook_menu() defaults.
-   */
-/*
-  public function hook_menu() {
-    $items = parent::hook_menu();
-    $items[$this->path]['description'] = t('Manage types of Scout Tips.');
-    $items[$this->path]['title'] = t('Scout Tip types');
-//    $items[$this->path]['type'] = MENU_LOCAL_TASK;
-//    $items[$this->path]['type'] = MENU_DEFAULT_LOCAL_TASK;
-    return $items;
-  }
-*/
 }
 
 /**
