@@ -327,17 +327,10 @@ function scout_tips_default_entity($type) {
  */
 function scout_trails_forms() {
   $forms = array();
-  if ($types = scout_trail_types()) {
-    foreach (array_keys($types) as $type) {
-      $forms[$type . '_scout_trail_form']['callback'] = 'scout_trail_form';
-    }
-  }
-  if ($types = scout_tip_types()) {
-    foreach (array_keys($types) as $type) {
-      $forms[$type . '_scout_tip_form']['callback'] = 'scout_tip_form';
-    }
-  }
-//  dpm($forms, '$forms - scout_trails_forms');
+  $type = 'scout_trail';
+  $forms[$type . '_scout_trail_form']['callback'] = 'scout_trail_form';
+  $type = 'scout_tip';
+  $forms[$type . '_scout_tip_form']['callback'] = 'scout_tip_form';
   return $forms;
 }
 
