@@ -6,7 +6,7 @@
 
 /************************************************************************************
  *
- * Scout Tips  (tip types below)
+ * Scout Tips Forms
  *
  ************************************************************************************
  */
@@ -182,125 +182,6 @@ function scout_tip_form_submit_delete(&$form, &$form_state) {
   $redirect = entity_get_info('scout_tip');
   $redirect = $redirect['admin ui']['path'];
   $form_state['redirect'] = $redirect . '/' . $scout_tip . '/delete';
-}
-
-/**
- * Submit handler for Scout Trails & Scout Tips.
- */
-// IMPORTANT!  This is located in scout_trails.trails.admin.inc
-
-
-/************************************************************************************
- *
- * Scout Tip Types
- *
- ************************************************************************************
- */
-
-
-/**
- * Generates the scout tip type editing form.
- */
-function scout_tip_type_form($form, &$form_state, $tip_type, $op = 'edit') {
-  // insert module info
-  $tip_type->module = 'scout_trails';
-
-  //build default type name if this type is cloned
-  if ($op == 'clone') {
-    $tip_type->label .= ' (cloned)';
-    $tip_type->type = '';
-  }
-
-  $form['label'] = array(
-    '#title' => t('Label'),
-    '#type' => 'textfield',
-    '#default_value' => $tip_type->label,
-    '#description' => t('The human-readable name of this tip type.'),
-    '#required' => TRUE,
-    '#size' => 30,
-  );
-
-  // Machine-readable type name.
-  $form['type'] = array(
-    '#type' => 'machine_name',
-    '#default_value' => isset($tip_type->type) ? $tip_type->type : '',
-    '#maxlength' => 32,
-    '#disabled' => $tip_type->isLocked() && $op != 'clone',
-    '#machine_name' => array(
-      'exists' => 'scout_tip_types',
-      'source' => array('label'),
-    ),
-    '#description' => t('A unique machine-readable name for this scout tip type. It must only contain lowercase letters, numbers, and underscores.'),
-  );
-
-  $form['description'] = array(
-    '#type' => 'textarea',
-    '#default_value' => isset($tip_type->description) ? $tip_type->description : '',
-    '#description' => t('Description about the scout tip type.'),
-  );
-
-  $form['actions'] = array('#type' => 'actions');
-  $form['actions']['submit'] = array(
-    '#type' => 'submit',
-    '#value' => t('Save tip type'),
-    '#weight' => 40,
-  );
-
-  if (!$tip_type->isLocked() && $op != 'add' && $op != 'clone') {
-    $form['actions']['delete'] = array(
-      '#type' => 'submit',
-      '#value' => t('Delete tip type'),
-      '#weight' => 45,
-      '#limit_validation_errors' => array(),
-      '#submit' => array('scout_tip_type_form_submit_delete')
-    );
-  }
-  return $form;
-}
-
-/**
- * Submit handler for creating/editing scout_tip_type.
- */
-function scout_tip_type_form_submit(&$form, &$form_state) {
-  $tip_type = entity_ui_form_submit_build_entity($form, $form_state);
-  // Save and go back.
-  scout_tip_type_save($tip_type);
-
-  // Redirect user back to list of task types.
-  $form_state['redirect'] = 'admin/structure/scout/scout-tip-types/';
-}
-
-function scout_tip_type_form_submit_delete(&$form, &$form_state) {
-  $form_state['redirect'] = 'admin/structure/scout/scout-tip-types/' . $form_state['scout_tip_type']->type . '/delete';
-}
-
-/**
- * Scout Tip type delete form.
- */
-function scout_tip_type_form_delete_confirm($form, &$form_state, $tip_type) {
-  $form_state['scout_tip_type'] = $tip_type;
-  // Always provide entity id in the same form key as in the entity edit form.
-  $form['scout_tip_type_id'] = array('#type' => 'value', '#value' => entity_id('scout_tip_type' ,$tip_type));
-  return confirm_form($form,
-    t('Are you sure you want to delete scout tip type %title?', array('%title' => entity_label('scout_tip_type', $tip_type))),
-    'scout_tip/' . entity_id('scout_tip_type' ,$tip_type),
-    t('This action cannot be undone.'),
-    t('Delete'),
-    t('Cancel')
-  );
-}
-
-/**
- * Scout Tip type delete form submit handler.
- */
-function scout_tip_type_form_delete_confirm_submit($form, &$form_state) {
-  $tip_type = $form_state['scout_tip_type'];
-  scout_tip_type_delete($tip_type);
-
-  watchdog('scout_tip_type', '@type: deleted %title.', array('@type' => $tip_type->type, '%title' => $tip_type->label));
-  drupal_set_message(t('@type %title has been deleted.', array('@type' => $tip_type->type, '%title' => $tip_type->label)));
-
-  $form_state['redirect'] = 'admin/structure/scout/scout-tip-types/';
 }
 
 /**
