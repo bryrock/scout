@@ -1,7 +1,10 @@
 <?php
 /**
  * @file
- * Code for the Scout feature.
+ * The module file for Scout.
+ *
+ * Sets up library and context dependencies.
+ *
  */
 
 include_once 'scout.features.inc';
@@ -18,7 +21,6 @@ define('JOYRIDE_LIBRARY_VERSION', '2.0.3');
  *
  * @see http://drupal.org/documentation/modules/libraries
  */
-
 function scout_libraries_info() {
   $libraries['joyride'] = array(
     'name' => 'Joyride',
@@ -120,7 +122,7 @@ function scout_context_registry() {
  */
 function scout_init() {
   $plugin = context_get_plugin('reaction', 'scout_trail');
-  if($plugin) $plugin->execute();
+  if ($plugin) $plugin->execute();
 }
 
 /**
@@ -162,7 +164,6 @@ function scout_help($path, $arg) {
 /**
  * Implements hook_menu().
  *
- * @see
  */
 function scout_menu() {
   $items = array();
@@ -220,7 +221,7 @@ function scout_block_view($delta = '') {
 /**
  * Implements hook_context_page_reaction().
  */
-function scout_context_page_reaction(){
+function scout_context_page_reaction() {
   if ($plugin = context_get_plugin('reaction', 'scout_trail')) {
     $plugin->execute();
   }

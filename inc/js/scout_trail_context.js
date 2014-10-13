@@ -1,3 +1,9 @@
+//<?php
+/**
+ * @file
+ * Handles Context js for Scout Trails.
+ */
+
 (function ($) {
   Drupal.behaviors.scoutContext = {
     attach:function (context, settings) {

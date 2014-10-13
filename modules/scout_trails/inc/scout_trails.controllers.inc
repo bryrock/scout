@@ -1,12 +1,12 @@
 <?php
+/**
+ * @file
+ * Entity and controller classes for Scout Trail & Tips
+ */
 
 /**
-* Scout Trails & Tips Controllers.
-*/
-
-/**
-* Scout Trails class.
-*/
+ * Scout Trails class.
+ */
 class ScoutTrail extends Entity {
 
   public function __construct($values = array()) {
@@ -32,8 +32,8 @@ class ScoutTrail extends Entity {
 }
 
 /**
-* Scout Tips class.
-*/
+ * Scout Tips class.
+ */
 class ScoutTip extends Entity {
 
   public function __construct($values = array()) {
@@ -63,8 +63,8 @@ class ScoutTip extends Entity {
 }
 
 /**
-* Scout Trails Controller.
-*/
+ * Scout Trails Controller.
+ */
 class ScoutTrailController extends EntityAPIController {
   public function create(array $values = array()) {
     global $user;
@@ -91,7 +91,7 @@ class ScoutTrailController extends EntityAPIController {
     $content['description'] = array(
       '#theme' => 'field',
       '#weight' => 0,
-      '#title' =>t('Description'),
+      '#title' => t('Description'),
       '#access' => TRUE,
       '#label_display' => 'hidden',
       '#view_mode' => 'full',
@@ -105,13 +105,13 @@ class ScoutTrailController extends EntityAPIController {
       0 => array('#markup' => check_plain($entity->description))
     );
 
-     $content['updated'] = array(
-       '#markup' => t('<div class-"scout-trail-plain-entity-updated">Updated: !update </div>', array('!update' => format_date($entity->changed, 'short')))
-     );
+    $content['updated'] = array(
+      '#markup' => t('<div class-"scout-trail-plain-entity-updated">Updated: !update </div>', array('!update' => format_date($entity->changed, 'short')))
+    );
 
-     $content['author'] = array(
-       '#markup' => t('<div class-"scout-trail-plain-entity-scout">Scout: !author </div>', array('!author' => $wrapper->uid->name->value(array('sanitize' => TRUE))))
-     );
+    $content['author'] = array(
+      '#markup' => t('<div class-"scout-trail-plain-entity-scout">Scout: !author </div>', array('!author' => $wrapper->uid->name->value(array('sanitize' => TRUE))))
+    );
 
      // Set Breadcrumbs
     scout_trails_set_breadcrumb();
@@ -163,14 +163,14 @@ class ScoutTrailUIController extends EntityBundleableUIController {
     // EntityBundleableUIController handles loading and editing scout trail entities.
     // Deleting scout trail entities.
     $items[$this->path . '/' . $wildcard . '/delete'] = array(
-	    'title' => t('Delete'),
-	    'page callback' => 'drupal_get_form',
-	    'page arguments' => array('scout_trail_delete_form', $scout_trail_uri_argument_position, 'delete'),
-	    'access callback' => 'entity_access',
+      'title' => 'Delete',
+      'page callback' => 'drupal_get_form',
+      'page arguments' => array('scout_trail_delete_form', $scout_trail_uri_argument_position, 'delete'),
+      'access callback' => 'entity_access',
       'access arguments' => array('delete', 'scout_trail', $scout_trail_uri_argument_position),
-	    'file' => 'inc/scout_trails.trails.admin.inc',
+      'file' => 'inc/scout_trails.trails.admin.inc',
       'file path' => drupal_get_path('module', 'scout_trails'),
-	  );
+    );
 //    dsm($items,'overrride - ScoutTrailUIController');
     return $items;
   }
@@ -227,8 +227,8 @@ class ScoutTipUIController extends EntityBundleableUIController {
 }
 
 /**
-* Scout Tip Controller.
-*/
+ * Scout Tip Controller.
+ */
 class ScoutTipController extends EntityAPIController {
   public function create(array $values = array()) {
     global $user;
@@ -255,7 +255,7 @@ class ScoutTipController extends EntityAPIController {
     $content['description'] = array(
       '#theme' => 'field',
       '#weight' => 0,
-      '#title' =>t('Scout Tip Title'),
+      '#title' => t('Scout Tip Title'),
       '#access' => TRUE,
       '#label_display' => 'above',
       '#view_mode' => 'full',

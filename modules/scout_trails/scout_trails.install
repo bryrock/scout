@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Install, update and uninstall functions for the Scout Tours module.
+ * Install, update and uninstall functions for the Scout Trails module.
  */
 
 /**
@@ -114,7 +114,7 @@ function scout_trails_schema() {
       'uid'            => array('uid'),
       'tnid'           => array('tnid'),
       'translate'      => array('translate'),
-   ),
+    ),
     'foreign keys' => array(
       'scout_trail_author' => array(
         'table' => 'users',
@@ -219,7 +219,7 @@ function scout_trails_schema() {
       'uid'           => array('uid'),
       'tnid'          => array('tnid'),
       'translate'     => array('translate'),
-   ),
+    ),
     'unique keys' => array(
       'title' => array('title'),
     ),

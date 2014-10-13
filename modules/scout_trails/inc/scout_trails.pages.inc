@@ -1,4 +1,9 @@
 <?php
+/**
+ * @file
+ * Helpers for Scout admin pages.
+ *
+ */
 
 /**
  * Scout view callback.

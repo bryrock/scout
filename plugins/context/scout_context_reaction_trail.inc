@@ -1,4 +1,11 @@
 <?php
+/**
+ * @file
+ * Extends context_reaction class
+ *
+ * Allows adding Scout Trails to Context options.
+ * Also executes reaction.
+ */
 
 /**
  * Expose Scout Trail as a context reactions.
@@ -24,12 +31,12 @@ class scout_context_reaction_trail extends context_reaction {
     }
     else {
       $trail_ids = array();
-	    drupal_set_message(t('You must create some Scout Trails before they can be used for Context.'), 'warning');
+      drupal_set_message(t('You must create some Scout Trails before they can be used for Context.'), 'warning');
     }
 
     // Populate options list with available Scout trails
     $trail_options = array();
-    foreach($trail_ids as $key =>$trail) {
+    foreach ($trail_ids as $key => $trail) {
       $trail_wrapper = entity_metadata_wrapper('scout_trail', $trail);
       $tips = count($trail_wrapper->field_scout_trail_tips);
       $trail_options[$trail] = t($trail_wrapper->title->value() . ' (a Scout trail with ' . format_plural($tips, '1 Scout tip', '@count Scout tips') . ')');
@@ -72,7 +79,7 @@ class scout_context_reaction_trail extends context_reaction {
    */
 
   function options_form_submit($values) {
-    if(!isset($values['trail_play_once'])) $values['trail_play_once'] = FALSE;
+    if (!isset($values['trail_play_once'])) $values['trail_play_once'] = FALSE;
     $values['trail_play_once'] = empty($values['trail_auto_start']) ? FALSE : $values['trail_play_once'];
     return $values;
   }
@@ -108,7 +115,7 @@ class scout_context_reaction_trail extends context_reaction {
 
         // Trail content consists of a scout_trail entity pointing to one or more scout_tip entities
         $trail_content = $context->reactions[$this->plugin]['trail_content'];
-        if(empty($trail_content)) return FALSE;
+        if (empty($trail_content)) return FALSE;
 
         // Collect the scout_tips from the scout_trail and prepare,
         // to format trail content.
@@ -119,7 +126,7 @@ class scout_context_reaction_trail extends context_reaction {
         }
         catch (EntityMetadataWrapperException $e) {
           //drupal_set_message(t('Scout trail %trail, assigned to this page, was not found.', array('%trail' => $trail_content)), 'warning');
-          watchdog('Scout Trails', 'Scout trail %trail, assigned to this page, was not found.', array('%trail' => $trail_content), WATCHDOG_ERROR,t('Check <a href="@url">context settings</a> page.', array('@url' => url('admin/structure/context'))));
+          watchdog('Scout Trails', 'Scout trail %trail, assigned to this page, was not found.', array('%trail' => $trail_content), WATCHDOG_ERROR, t('Check <a href="@url">context settings</a> page.', array('@url' => url('admin/structure/context'))));
           $scout_tips = array();
           return;
         }

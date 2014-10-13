@@ -4,15 +4,15 @@
  * Code for the Scout Trails feature.
  */
 
-	include_once 'scout_trails.features.inc';
+  include_once 'scout_trails.features.inc';
 
-	// These four includes sometimes throw "Deprecated function: Call-time pass-by-reference has been deprecated in include_once()"
-	// depending on PHP version,
-	// but they don't work at all if removed, relying only on project info file to load them.
-	include_once 'inc/scout_trails.tips.admin.inc';
-	include_once 'inc/scout_trails.trails.admin.inc';
-	include_once 'inc/scout_trails.pages.inc';
-	include_once 'inc/scout_trails.controllers.inc';
+  // These four includes sometimes throw "Deprecated function: Call-time pass-by-reference has been deprecated in include_once()"
+  // depending on PHP version,
+  // but they don't work at all if removed, relying only on project info file to load them.
+  include_once 'inc/scout_trails.tips.admin.inc';
+  include_once 'inc/scout_trails.trails.admin.inc';
+  include_once 'inc/scout_trails.pages.inc';
+  include_once 'inc/scout_trails.controllers.inc';
 
 /**
  * Implements hook_theme().
@@ -104,7 +104,7 @@ function scout_trails_entity_info() {
       'id' => 'tip_id',
       'bundle' => 'type',
       'label' => 'title',
-     ),
+    ),
     'bundle keys' => array(
       'bundle' => 'type',
     ),
@@ -143,8 +143,8 @@ function scout_trails_entity_info() {
 }
 
 /**
-* Implements hook_entity_info_alter().
-*/
+ * Implements hook_entity_info_alter().
+ */
 function scout_trails_entity_info_alter(&$entity_info) {
   // Add support for inline entity forms
   if (isset($entity_info['scout_tip'])) {
@@ -187,8 +187,7 @@ function scout_trails_menu() {
 }
 
 /**
- * implements hook_permission
- *
+ * Implements hook_permission().
  */
 function scout_trails_permission() {
   // We set up permisssions to manage entity types, manage all entities and the
@@ -211,7 +210,7 @@ function scout_trails_permission() {
 
 
 /**
-* Access callback for Scout Trails.
+ * Access callback for Scout Trails.
  *
  * Determines whether the given user has access to Scout Trails functionality.
  *
@@ -251,7 +250,7 @@ function scout_trail_uri($scout_trail) {
 /**
  * Form factory for Scout Trail forms.
  * @param string $type
- *   Trail or Tip type machine name 
+ *   Trail or Tip type machine name
  * @param stdClass $entity
  *   The entity to create a form for
  * @param string $op
@@ -260,14 +259,13 @@ function scout_trail_uri($scout_trail) {
 function scout_trails_forms_wrapper($type, $entity, $op='add') {
   if (!isset($entity)) {
     $entity = scout_trails_default_entity($type);
- }
+  }
   else {
     $type = $entity->type;
   }
   // Set Breadcrumbs
   scout_trails_set_breadcrumb();
-
-	$form = drupal_get_form($type . '_scout_trail_form', $entity);
+  $form = drupal_get_form($type . '_scout_trail_form', $entity);
   return $form;
 }
 
@@ -283,12 +281,12 @@ function scout_trails_forms_wrapper($type, $entity, $op='add') {
 function scout_tips_forms_wrapper($type, $entity, $op='add') {
   if (!isset($entity)) {
     $entity = scout_tips_default_entity($type);
- }
+  }
   else {
     $type = $entity->type;
   }
 
-	$form = drupal_get_form($type . '_scout_tip_form', $entity);
+  $form = drupal_get_form($type . '_scout_tip_form', $entity);
   return $form;
 }
 
@@ -346,16 +344,6 @@ function scout_trails_form_alter(&$form, &$form_state, $form_id) {
  */
 function scout_trails_form_scout_trail_form_alter(&$form, &$form_state, $form_id) {
 //  dpm('Implements hook_form_BASE_FORM_ID_alter()');
-/*
-  dpm($form, '$form - scout_trails_form_alter');  // pretty print array using Krumo to messages
-  dpm($form_id, '$form_id - scout_trails_form_alter');  // print form ID to messages
-  dpm($form_state, '$form_state - scout_trails_form_alter');  // pretty print array using Krumo to messages
-*/
-/*
-  drupal_set_message($form_id);  // print form ID to messages
-  drupal_set_message(print_r($form, TRUE));  // print array to messages
-*/
-
 }
 
 /**
@@ -410,15 +398,15 @@ function scout_trails_entity_property_info_alter(&$info) {
  ********************** Scout Trail API's ********************************
  ******************************************************************************/
 /**
-* Load a Scout Trail.
-*/
+ * Load a Scout Trail.
+ */
 function scout_trail_load($trail_id, $reset = FALSE) {
   $scout_trails = scout_trail_load_multiple(array($trail_id), array(), $reset);
   return reset($scout_trails);
 }
 
 /**
-* Load multiple Scout Trails based on certain conditions.
+ * Load multiple Scout Trails based on certain conditions.
  *
  * @param $trail_ids
  *   An array of entity IDs.
@@ -448,8 +436,8 @@ function scout_trail_save(ScoutTrail $trail) {
 }
 
 /**
-* Delete single Scout Trail.
-*/
+ * Delete single Scout Trail.
+ */
 function scout_trail_delete(ScoutTrail $trail) {
   $trail->delete();
 }
@@ -464,69 +452,20 @@ function scout_trail_delete_multiple(array $trail_ids) {
   entity_get_controller('scout_trail')->delete($trail_ids);
 }
 
-
-/*******************************************************************************
- ********************** Scout Trail Type API's ********************************
- ******************************************************************************/
-
-/**
- * Access callback for Scout Trail Type.
- */
-function scout_trails_type_access($op, $entity = NULL) {
-  return user_access('admin scout trails');
-}
-
-/**
- * Load Scout Trail Type.
- */
-function scout_trail_type_load($scout_trail_type) {
-  return scout_trail_types($scout_trail_type);
-}
-
-/**
- * List of Scout Trail Types.
- */
-function scout_trail_types($trail_type_name = NULL) {
-  $types = entity_load_multiple_by_name('scout_trail_type', isset($trail_type_name) ? array($trail_type_name) : FALSE);
-  return isset($trail_type_name) ? reset($types) : $types;
-}
-
-/**
- * Save Scout Trail type entity.
- */
-function scout_trail_type_save(&$scout_trail_type) {
-  entity_save('scout_trail_type', $scout_trail_type);
-}
-
-/**
-* Delete single case trail type.
-*/
-function scout_trail_type_delete($task_type) {
-  entity_delete('scout_trail_type', entity_id('scout_trail_type' ,$task_type));
-}
-
-/**
-* Delete multiple case trail types.
-*/
-function scout_trail_type_delete_multiple($task_type_ids) {
-  entity_delete_multiple('scout_trail_type', $task_type_ids);
-}
-
-
 /*******************************************************************************
  ********************** Scout Tip API's ********************************
  ******************************************************************************/
 
 /**
-* Load a Scout Tip.
-*/
+ * Load a Scout Tip.
+ */
 function scout_tip_load($tip_id, $reset = FALSE) {
   $scout_tips = scout_tip_load_multiple(array($tip_id), array(), $reset);
   return reset($scout_tips);
 }
 
 /**
-* Load multiple Scout Trail Tips based on certain conditions.
+ * Load multiple Scout Trail Tips based on certain conditions.
  *
  * @param $tip_ids
  *   An array of entity IDs.
@@ -556,8 +495,8 @@ function scout_tip_save(ScoutTip $tip_id) {
 }
 
 /**
-* Delete single Scout Tip.
-*/
+ * Delete single Scout Tip.
+ */
 function scout_tip_delete(ScoutTip $tip_id) {
   $tip_id->delete();
 }
@@ -572,69 +511,10 @@ function scout_tip_delete_multiple(array $tip_ids) {
   entity_get_controller('scout_tip')->delete($tip_ids);
 }
 
-/*******************************************************************************
- ********************** Scout Tip Type API's ********************************
- ******************************************************************************/
-
-/**
- * Access callback for Scout Tip Type.
- */
-function scout_tip_type_access($op, $entity = NULL) {
-  return user_access('admin scout trails');
-}
-
-/**
- * Load Scout Tip Type.
- */
-function scout_tip_type_load($scout_tip_type) {
-  return scout_tip_types($scout_tip_type);
-}
-
-/**
- * List of Scout Tip Types.
- */
-function scout_tip_types($tip_type_name = NULL) {
-  $types = entity_load_multiple_by_name('scout_tip_type', isset($tip_type_name) ? array($tip_type_name) : FALSE);
-  return isset($tip_type_name) ? reset($types) : $types;
-}
-
-/**
- * Save Scout Tip type entity.
- */
-function scout_tip_type_save(&$scout_tip_type) {
-  entity_save('scout_tip_type', $scout_tip_type);
-}
-
-/**
-* Delete single case tip type.
-*/
-function scout_tip_type_delete($task_type) {
-  entity_delete('scout_tip_type', entity_id('scout_tip_type' ,$task_type));
-}
-
-/**
-* Delete multiple case tip types.
-*/
-function scout_tip_type_delete_multiple($task_type_ids) {
-  entity_delete_multiple('scout_tip_type', $task_type_ids);
-}
-
-
-/**
- * Implements hook_entity_insert().
- */
-/*
-function scout_trails_entity_insert($entity, $entity_type) {
-  if ($entity_type == 'scout_trail') {
-    $_SESSION['entity_hook_test']['entity_insert'][] = entity_id($entity_type, $entity);
-  }
-}
-*/
-
 /**
  * Menu title callback for showing individual entities
  */
-function scout_trails_page_title(ScoutTrail $patharg){
+function scout_trails_page_title(ScoutTrail $patharg) {
   return $patharg->name;
 }
 
@@ -643,7 +523,7 @@ function scout_trails_page_title(ScoutTrail $patharg){
  * Sets up content to show an individual scout trail
  * @todo - get rid of drupal_set_title();
  */
-function scout_trails_view($scout_trail, $view_mode = 'full') {    
+function scout_trails_view($scout_trail, $view_mode = 'full') {
   $controller = entity_get_controller('scout_trail');
   $content = $controller->view(array($scout_trail->trail_id => $scout_trail));
   drupal_set_title($scout_trail->title);
@@ -651,8 +531,8 @@ function scout_trails_view($scout_trail, $view_mode = 'full') {
 }
 
 /**
-  * Implements hook_views_api().
-  */
+ * Implements hook_views_api().
+ */
 function scout_trails_api() {
   return array(
     'api' => 3,
@@ -692,8 +572,8 @@ function scout_trails_markup_scout_trail(&$trail_tips) {
       );
 
     $trail_content = '';
-    foreach($trail_tips as $delta => $trail_tip){
-      $tip_wrapper = entity_metadata_wrapper('scout_tip',$trail_tip->tip_id);
+    foreach ($trail_tips as $delta => $trail_tip) {
+      $tip_wrapper = entity_metadata_wrapper('scout_tip', $trail_tip->tip_id);
 
       // Get the basic content: title, text & button text
       $tip_title = $tip_wrapper->title->value($sanitize);
@@ -715,10 +595,10 @@ function scout_trails_markup_scout_trail(&$trail_tips) {
       // We'll set these here if they exist, and use them further down, if we need them.
 
       if ((!$modal) && (isset($tip_wrapper->field_scout_tip_selector_id))) {
-	      $selector_id = $tip_wrapper->field_scout_tip_selector_id->value();
+        $selector_id = $tip_wrapper->field_scout_tip_selector_id->value();
       }
       if ((!$modal) && (isset($tip_wrapper->field_scout_tip_selector_class))) {
-	      $selector_class = $tip_wrapper->field_scout_tip_selector_class->value();
+        $selector_class = $tip_wrapper->field_scout_tip_selector_class->value();
       }
 
       // What Joyride means by "location" is the orientation (above/below/right/left) to the selector the tip is anchored to.
@@ -738,21 +618,22 @@ function scout_trails_markup_scout_trail(&$trail_tips) {
       // Build a modal scout tip, if this is modal
       if ($modal) {
         $trail_content .= 'data-text="' . $button_text . '" class="' . $tip_class . '" data-options="tipLocation:' . $tip_orientation . ';tipAnimation:' . $tip_animation . '">';
-      } else {
+      }
+      else {
 
         // Otherwise get any selectors that we gathered above
         if (!empty($selector_id)) {
-	         $trail_content .= 'data-id="' . $selector_id . '" ';
+          $trail_content .= 'data-id="' . $selector_id . '" ';
         }
         if (!empty($selector_class)) {
-	         $trail_content .= 'data-class="' . $selector_class . '" ';
+          $trail_content .= 'data-class="' . $selector_class . '" ';
         }
 
         // Add the rest of the location/orientation and button related stuff, including any custom class added.
         $trail_content .= 'data-text="' . $button_text . '" class="' . $tip_class . '" data-options="tipLocation:' . $tip_orientation . ';tipAnimation:' . $tip_animation . '">';
       }
       // All tips have title and text
-      $trail_content .= '<h2>' .  $tip_title . '</h2>';
+      $trail_content .= '<h2>' . $tip_title . '</h2>';
       $trail_content .= '<p>' . $tip_text . '</p> </li>';
     }
     //dpm($trail_content,'$trail_content');

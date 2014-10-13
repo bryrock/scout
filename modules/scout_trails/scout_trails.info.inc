@@ -146,7 +146,7 @@ function scout_trails_entity_property_info() {
     'description' => t('The author of this scout tip'),
     'setter callback' => 'entity_property_verbatim_set',
     'setter permission' => 'admin scout trails',
-    'required' => true,
+    'required' => TRUE,
     'schema field' => 'uid',
   );
   $properties['tag'] = array(
@@ -180,14 +180,5 @@ function scout_trails_entity_property_info() {
     'schema field' => 'status',
   );
 
-//  dsm($info, '$info');
   return $info;
 }
-
-/**
- * Implements hook_entity_property_info_alter() on top of the Line Item module.
- */
-/*
-function scout_entity_property_info_alter(&$info) {
-}
-*/

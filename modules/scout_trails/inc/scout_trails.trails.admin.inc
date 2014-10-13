@@ -2,6 +2,9 @@
 /**
  * @file
  * scout_trails.trails.admin.inc
+ *
+ * Scout Trails Forms
+ *
  */
 
 /************************************************************************************
@@ -27,7 +30,7 @@ function scout_trail_delete_form($form, &$form_state, $trail) {
   $form_state['trail'] = $trail;
   $redirect = entity_get_info('scout_trail');
   $redirect = $redirect['admin ui']['path'];
-  $form_state['redirect'] = $redirect . '/' .  $trail->trail_id . '/edit';
+  $form_state['redirect'] = $redirect . '/' . $trail->trail_id . '/edit';
 
   return confirm_form($form,
     t('Are you sure you want to delete %title?', array('%title' => entity_label('scout_trail', $trail))),
@@ -50,7 +53,7 @@ function scout_trail_delete_form_submit($form, &$form_state) {
   scout_trail_delete($trail);
 
   drupal_set_message(t('The scout trail %name has been deleted.', array('%name' => $trail->title)));
-  watchdog('scout_trails', 'Deleted scout trail %name.', array('%name' =>$trail->title));
+  watchdog('scout_trails', 'Deleted scout trail %name.', array('%name' => $trail->title));
 }
 
 /**
@@ -152,19 +155,18 @@ function scout_trail_form_submit(&$form, &$form_state) {
 
   // Log and message
   If (!$update) {
-	  watchdog('scout_trail', 'Created new scout trail "%title".', array('%title' => $trail->title));
-	  drupal_set_message(t('Scout Trail "%title" has been created.', array('%title' => $trail->title)));
+    watchdog('scout_trail', 'Created new scout trail "%title".', array('%title' => $trail->title));
+    drupal_set_message(t('Scout Trail "%title" has been created.', array('%title' => $trail->title)));
   }
   else {
-    watchdog('scout_trail', 'Updated scout trail "%title" (%id).', array('%title' => $trail->title,'%id' => $trail->trail_id));
-    drupal_set_message(t('Scout Trail "%title" (%id) has been updated.', array('%title' => $trail->title,'%id' => $trail->trail_id)));
+    watchdog('scout_trail', 'Updated scout trail "%title" (%id).', array('%title' => $trail->title, '%id' => $trail->trail_id));
+    drupal_set_message(t('Scout Trail "%title" (%id) has been updated.', array('%title' => $trail->title, '%id' => $trail->trail_id)));
   }
 }
 
 /**
  * Submit handler for deleting scout_trail.
  */
-
 function scout_trail_form_submit_delete(&$form, &$form_state) {
   $trail = $form_state['trail']->trail_id;
   $redirect = entity_get_info('scout_trail');
@@ -198,8 +200,8 @@ function scout_trails_selector_validate($element, &$form_state, $form) {
 function scout_trails_ui_autocomplete_tag($string = '') {
   $matches = array();
   // get matches from default views:
-  $views = views_get_view_result('scout_trails','tags','all');
-  foreach ($views as $key=>$value) {
+  $views = views_get_view_result('scout_trails', 'tags', 'all');
+  foreach ($views as $key => $value) {
     if (!empty($value->scout_trail_tag) && strpos($value->scout_trail_tag, $string) === 0) {
       $matches[$value->scout_trail_tag] = check_plain($value->scout_trail_tag);
       if (count($matches) >= 10) {

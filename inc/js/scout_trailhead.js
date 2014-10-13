@@ -1,3 +1,8 @@
+//<?php
+/**
+ * @file
+ * Handles Context js for Scout trailhead block.
+ */
 (function ($) {
   Drupal.behaviors.scoutManualTrigger = {
     attach:function (context, settings) {

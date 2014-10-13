@@ -1,5 +1,8 @@
 <?php
-
+/**
+ * @file
+ * Install, update, and uninstall functions for the Scout module.
+ */
 
 /**
  * Implements hook_requirements().

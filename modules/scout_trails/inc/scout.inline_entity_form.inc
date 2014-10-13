@@ -4,7 +4,6 @@
  * @file
  * Defines the inline entity form controller for Scout Tips (in Scout Trails).
  */
-
 class ScoutInlineEntityFormController extends EntityInlineEntityFormController {
 
   /**
@@ -101,24 +100,25 @@ class ScoutInlineEntityFormController extends EntityInlineEntityFormController {
     // Determine if new tip or update
     $update_tip = TRUE ? (isset($entity->tip_id)) : FALSE;
 
-    if ((!$update_tip) && (!$update_trail)){
-	    // New Tip in a New Trail
-	    watchdog('scout_trail', 'Created new inline scout tip "%title" in a new trail.', array('%title' => $entity->title));
+    if ((!$update_tip) && (!$update_trail)) {
+      // New Tip in a New Trail
+      watchdog('scout_trail', 'Created new inline scout tip "%title" in a new trail.', array('%title' => $entity->title));
       drupal_set_message(t('Scout Tip "%title" has been created inline in a new trail.', array('%title' => $entity->title)));
     }
     elseif ((!$update_tip) && $update_trail) {
       // New Tip in Updated Trail
-	    watchdog('scout_trail', 'Created new inline scout tip "%title" in trail "%trail".', array('%title' => $entity->title,'%trail' => $form_state['trail']->title));
-      drupal_set_message(t('Scout Tip "%title" has been created inline in trail "%trail".', array('%title' => $entity->title,'%trail' => $form_state['trail']->title)));
+      watchdog('scout_trail', 'Created new inline scout tip "%title" in trail "%trail".', array('%title' => $entity->title, '%trail' => $form_state['trail']->title));
+      drupal_set_message(t('Scout Tip "%title" has been created inline in trail "%trail".', array('%title' => $entity->title, '%trail' => $form_state['trail']->title)));
     }
-    elseif ($update_tip && (!$update_trail)){
+    elseif ($update_tip && (!$update_trail)) {
       // Edited Tip in New Trail
-	    watchdog('scout_trail', 'Updated inline scout tip "%title" in a new trail.', array('%title' => $entity->title));
+      watchdog('scout_trail', 'Updated inline scout tip "%title" in a new trail.', array('%title' => $entity->title));
       drupal_set_message(t('Scout Tip "%title" has been updated inline in a new trail.', array('%title' => $entity->title)));
-    } else {
+    }
+    else {
         // Edited Tip in Edited Trail
-	      watchdog('scout_trail', 'Updated inline scout tip "%title" in trail "%trail".', array('%title' => $entity->title,'%trail' => $form_state['trail']->title));
-        drupal_set_message(t('Scout Tip "%title" has been updated inline in trail "%trail".', array('%title' => $entity->title,'%trail' => $form_state['trail']->title)));
+        watchdog('scout_trail', 'Updated inline scout tip "%title" in trail "%trail".', array('%title' => $entity->title, '%trail' => $form_state['trail']->title));
+        drupal_set_message(t('Scout Tip "%title" has been updated inline in trail "%trail".', array('%title' => $entity->title, '%trail' => $form_state['trail']->title)));
     }
   }
 }

@@ -1,28 +1,13 @@
 <?php
+/**
+ * @file
+ * scout_trails.views.inc
+ */
 
 /**
  * Implements hook_views_data_alter().
  */
 function scout_trails_views_data_alter(&$data) {
-
-/*
-$data['scout_trail']['table']['group'] = t('Scout Trails');
-$data['scout_trail']['table']['base'] = array(
-  'field' => 'trail_id', // This is the identifier field for the view.
-  'title' => t('Scout Trails'),
-  'help' => t('Scout Trails table contains trails.'),
-  'weight' => -10,
-  );
-
-$data['scout_tip']['table']['group'] = t('Scout Tips');
-$data['scout_tip']['table']['base'] = array(
-  'field' => 'tip_id', // This is the identifier field for the view.
-  'title' => t('Scout Tips'),
-  'help' => t('Scout Tips table contains collections of tips related to trails.'),
-  'weight' => -10,
-  );
-*/
-
   $data['scout_tip']['table']['join'] = array(
 
     // Index this array by the table name to which this table refers.

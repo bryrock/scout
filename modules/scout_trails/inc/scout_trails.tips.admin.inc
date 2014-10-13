@@ -2,18 +2,13 @@
 /**
  * @file
  * scout_trails.tips.admin.inc
- */
-
-/************************************************************************************
  *
  * Scout Tips Forms
  *
- ************************************************************************************
  */
-
 function scout_tips_form_list($form, $form_state) {
-	//dpm($form_state['values']['trailtip_edit'],'$form_state[values][trailtip_edit] - scout_tips_form_list()');
-	return $form['trail']['trailtips']['hidden'];
+  //dpm($form_state['values']['trailtip_edit'],'$form_state[values][trailtip_edit] - scout_tips_form_list()');
+  return $form['trail']['trailtips']['hidden'];
 }
 
 /**
@@ -32,7 +27,7 @@ function scout_tip_delete_form($form, &$form_state, $scout_tip) {
   $form_state['scout_tip'] = $scout_tip;
   $redirect = entity_get_info('scout_tip');
   $redirect = $redirect['admin ui']['path'];
-  $form_state['redirect'] = $redirect . '/' .  $scout_tip->tip_id . '/edit';
+  $form_state['redirect'] = $redirect . '/' . $scout_tip->tip_id . '/edit';
 
   return confirm_form($form,
     t('Are you sure you want to delete the scout tip %title?', array('%title' => entity_label('scout_tip', $scout_tip))),
@@ -55,7 +50,7 @@ function scout_tip_delete_form_submit($form, &$form_state) {
   scout_tip_delete($scout_tip);
 
   drupal_set_message(t('The scout tip %name has been deleted.', array('%name' => $scout_tip->title)));
-  watchdog('scout_trails', 'Deleted scout tip %name.', array('%name' =>$scout_tip->title));
+  watchdog('scout_trails', 'Deleted scout tip %name.', array('%name' => $scout_tip->title));
 }
 
 /**
@@ -164,19 +159,18 @@ function scout_tip_form_submit(&$form, &$form_state) {
 
   // Log and message
   If (!$update) {
-	  watchdog('scout_tip', 'Created new scout tip "%title".', array('%title' => $scout_tip->title));
-	  drupal_set_message(t('Scout Tip "%title" has been created.', array('%title' => $scout_tip->title)));
+    watchdog('scout_tip', 'Created new scout tip "%title".', array('%title' => $scout_tip->title));
+    drupal_set_message(t('Scout Tip "%title" has been created.', array('%title' => $scout_tip->title)));
   }
   else {
-    watchdog('scout_tip', 'Updated scout tip "%title" (%id).', array('%title' => $scout_tip->title,'%id' => $scout_tip->tip_id));
-    drupal_set_message(t('Scout Tip "%title" (%id) has been updated.', array('%title' => $scout_tip->title,'%id' => $scout_tip->tip_id)));
+    watchdog('scout_tip', 'Updated scout tip "%title" (%id).', array('%title' => $scout_tip->title, '%id' => $scout_tip->tip_id));
+    drupal_set_message(t('Scout Tip "%title" (%id) has been updated.', array('%title' => $scout_tip->title, '%id' => $scout_tip->tip_id)));
   }
 }
 
 /**
  * Submit handler for deleting scout_tip.
  */
-
 function scout_tip_form_submit_delete(&$form, &$form_state) {
   $scout_tip = $form_state['scout_tip']->tip_id;
   $redirect = entity_get_info('scout_tip');
@@ -189,8 +183,8 @@ function scout_tip_form_submit_delete(&$form, &$form_state) {
  */
 function scout_tips_ui_autocomplete_tag($string = '') {
   $matches = array();
-  $views = views_get_view_result('scout_tips','tags','all');
-  foreach ($views as $key=>$value) {
+  $views = views_get_view_result('scout_tips', 'tags', 'all');
+  foreach ($views as $key => $value) {
     if (!empty($value->scout_tip_tag) && strpos($value->scout_tip_tag, $string) === 0) {
       $matches[$value->scout_tip_tag] = check_plain($value->scout_tip_tag);
       if (count($matches) >= 10) {
